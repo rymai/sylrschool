@@ -1,0 +1,21 @@
+
+User_1:
+  id: 1
+  email: sylvere.coutable@laposte.net
+  encrypted_password: "$2a$11$xWLJ4TnU2aqDw4eIJlsLH.HCcJmrRqTJLa.4PNNgKdxww1Yq9DZC6"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 1
+  current_sign_in_at: 2018-03-30 15:38:39.693432000 Z
+  last_sign_in_at: 2018-03-30 15:38:39.693432000 Z
+  current_sign_in_ip: !ruby/object:IPAddr
+    family: 23
+    addr: 1
+    mask_addr: 340282366920938463463374607431768211455
+  last_sign_in_ip: !ruby/object:IPAddr
+    family: 23
+    addr: 1
+    mask_addr: 340282366920938463463374607431768211455
+  created_at: 2018-03-30 15:38:39.677750000 Z
+  updated_at: 2018-03-30 15:38:39.693432000 Z

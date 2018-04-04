@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nb_max_student: 1
+  default_location: MyString
+  description: MyText
+  custo: MyString
+
+two:
+  name: MyString
+  nb_max_student: 1
+  default_location: MyString
+  description: MyText
+  custo: MyString

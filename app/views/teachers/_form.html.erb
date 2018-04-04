@@ -1,0 +1,37 @@
+<%= form_for(@teacher) do |f| %>
+<% if @teacher.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+	<ul>
+		<% @teacher.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<%= render :partial=>"shared/form_person",
+:locals=>{:f=>f,
+:object=> @teacher,
+:status=>Teacher.all_person_status} %>
+
+<div class="field">
+	<%= f.label t("label_teacher_notebooks") %>
+	<br/>
+	<%= select_inout(f, @teacher, Notebook.get_all, :name) %>
+</div>
+<div class="field">
+	<%= f.label t("label_teacher_matters") %>
+	<br/>
+	<%= select_inout(f, @teacher, Matter.get_all, :name) %>
+
+	<div class="actions">
+		<div class="datagrid-actions">
+			<%= f.submit %>
+		</div>
+	</div>
+</div>
+<% end %>

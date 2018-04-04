@@ -1,0 +1,26 @@
+fr:
+  datagrid:
+    no_results:
+      "&mdash;&mdash;"
+    table:
+      order:
+        asc: "&uarr;"
+        desc: "&darr;"
+      no_columns: "Aucune colonnes sélectionnées"
+    form:
+      search: "Rechercher"
+      reset: "Reset"
+    filters:
+      xboolean:
+        "yes": "Oui"
+        "no": "Non"
+
+      dynamic:
+        operations:
+          ">=": "&ge;"
+          "<=": "&le;"
+          "=": "="
+          "=~": "&asymp;"
+  will_paginate:
+    previous_label: Page précédente
+    next_label: Page suivante

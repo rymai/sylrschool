@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  adress: MyString
+  postalcode: MyString
+  town: MyString
+  birthday: 2018-03-02
+  description: MyText
+  custo: MyString
+  defmatter_id: 1
+  defgradecontext_id: 
+
+two:
+  firstname: MyString
+  lastname: MyString
+  adress: MyString
+  postalcode: MyString
+  town: MyString
+  birthday: 2018-03-02
+  description: MyText
+  custo: MyString
+  defmatter_id: 1
+  defgradecontext_id: 

@@ -1,0 +1,20 @@
+
+Teacher_1:
+  id: 1
+  name: dfdgdg
+  person_status: enrolled
+  email: dfgdfg
+  firstname: gdfgd
+  lastname: dgdfg
+  adress: ''
+  postalcode: ''
+  town: ''
+  phone1: 
+  phone2: 
+  birthday: 2018-03-30
+  description: ''
+  custo: scolaire
+  defmatter_id: 1
+  defgradecontext_id: 
+  created_at: 2018-03-30 06:46:45.636514000 Z
+  updated_at: 2018-03-30 06:46:45.636514000 Z

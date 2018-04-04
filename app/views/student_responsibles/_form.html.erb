@@ -1,0 +1,29 @@
+<%= form_for(@student_responsible) do |f| %>
+  <% if @student_responsible.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student_responsible.errors.count, "error") %> prohibited this student_responsible from being saved:</h2>
+
+      <ul>
+      <% @student_responsible.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student_id %>
+    <%= f.collection_select(:student_id, Student.all.to_a, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible_id %>
+    <%= f.collection_select(:responsible_id, Responsible.all.to_a, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :custo %>
+    <%= f.text_field :custo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Grade Contexts</h1>
+
+<%= datagrid_form_for @grid, :method => :get, :url => grade_contexts_path %>
+
+
+<%= will_paginate(@grid.assets) %>
+<%= datagrid_table @grid %>
+<%= will_paginate(@grid.assets) %>
+
+<div class="datagrid-actions">
+<%= link_to 'New Grade context', new_grade_context_path %>
+</div>

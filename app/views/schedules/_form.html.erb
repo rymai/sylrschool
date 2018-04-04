@@ -1,0 +1,51 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.select(:schedule_type, SYLR::C_ALL_SCHEDULE_TYPES.map {|r| [r.humanize, r]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time,:start_year=>Date.today.year-1,:end_year=>Date.today.year+1 %>
+  </div>
+  <div class="field">
+    <%= f.label :all_of_day %>
+    <%= f.check_box :all_of_day %>
+  </div>
+  <div class="field">
+    <%= f.label :duration_in_mn %>
+    <%= f.number_field :duration %>
+  </div>
+  <div class="field">
+	<%= f.label :label_schedule_schedule_father %>
+	
+	<%= f.collection_select(:schedule_father_id, Schedule.get_all, :id, :ident_long) %>
+</div>
+
+<div class="field">
+	<%= f.label :label_schedule_schedule_teaching %>
+	
+	<%= f.collection_select(:schedule_teaching_id, Teaching.get_all, :id, :name) %>
+</div>
+
+  <div class="field">
+    <%= f.label :custo %>
+    <%= f.text_field :custo %>
+  </div>
+  <div class="actions">
+  	<div class="datagrid-actions">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

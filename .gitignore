@@ -15,3 +15,20 @@
 /log/*
 !/log/.keep
 /tmp
+
+#syl begin
+.keep
+.project
+.tmp
+.rvmrc
+## PROJECT::GENERAL
+*~
+*.obsolete
+*.sov
+*.dat
+/doc
+log
+explo/*
+rdoc
+config/database.yml
+Copy *

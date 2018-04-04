@@ -1,0 +1,11 @@
+
+Matter_1:
+  id: 1
+  name: ccwx
+  matter_type_id: 1
+  matter_duration_id: 1
+  matter_nb_max_student: 4
+  description: "sdsdfsdf\r\nfsddgd\r\ngghjhjghjghjghjg\r\nghjghjghjgh"
+  custo: scolaire
+  created_at: 2018-03-29 19:58:49.993109000 Z
+  updated_at: 2018-03-29 20:13:10.604262000 Z

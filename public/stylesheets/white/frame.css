@@ -1,0 +1,258 @@
+/* ===================================
+ * surcharge bootstrap
+ * ===================================
+ */
+/* onglet du haut gauche*/
+.navbar .brand {
+	display: block;
+	float: left;
+	padding: 2px 4px 2px;
+	margin-left: 0px;
+	font-size: 12px;
+	height: 14px;
+	line-height: 14px;
+	font-weight: 200;
+	color: #777777;
+	text-shadow: 0 1px 0 #ffffff;
+}
+.container {
+	margin-right: 0px;
+	margin-left: 0px;
+	*zoom: 1;
+}
+.btn-toolbar {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: 0;
+}
+.navbar-inner {
+	height: 40px;
+	min-height: 40px;
+}
+div.datagrid-actions{
+padding-left: 10px;
+}
+div.datagrid-actions a{
+	width: 170px;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	text-decoration: none;
+	text-align: center;  
+	color: white;
+	background-color: #555555;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 7px 15px;
+}
+#main a:hover {
+	background-color: black;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	height: 28px;
+	width: 250px;
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 3px;
+	padding: 0px;
+}
+form {
+    margin: 0 0 3px;
+}
+/*=================================
+ * from datagrid
+ *=================================
+ */
+/* zone de saisie dans les filtres de liste*/
+.datagrid-filter input[class*="filter"] {
+	padding: 1px;
+}
+
+.datagrid-form {
+	padding: 5px;
+}
+.form {
+	marging: 5px;
+}
+.datagrid-filter label {
+	width: 250px;
+}
+/*=================================
+ *  from simple_calendar*
+ *=================================
+ */
+div.simple-calendar {
+	max-height: 80%;
+	max-width: 80%;
+}
+.wday-0 {
+	background-color: red;
+}
+.wday-6 {
+	background-color: red;
+}
+/*=================================
+ * specific
+ *=================================
+ */
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 16px;
+}
+h4 {
+	font-size: 12px;
+}
+body {
+	border: 0;
+	padding: 0;
+}
+
+th, td {
+	padding: 1px;
+	line-height: 14px;
+	vertical-align: top;
+	text-align: left;
+}
+th, td {
+	max-width: 320px;
+	word-wrap: break-word;
+}
+
+th {
+	background-color: #acacac;
+	font-weight: bold;
+}
+
+td {
+	background-color: #dfdfdf;
+}
+tr.even td {
+	background-color: #CCC;
+}
+tr.odd td {
+	background-color: #EEE;
+}
+
+
+
+/* boites */
+
+#main {
+	border: none;
+	border: 0px;
+	padding: 0px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.title {
+	font-variant: small-caps;
+	font-size: 25px;
+}
+.banner {
+	font-size: 12px;
+}
+
+legend {
+	color: black;
+	border: none;
+}
+p.error, li.error {
+	font-weight: bold;
+	font: 100% sans-serif;
+	color: red;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+p.warn {
+	font-weight: bold;
+	font: 100% sans-serif;
+	color: yellow;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+p.notice {
+	font-weight: bold;
+	font: 100% sans-serif;
+	color: green;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+img {
+	width: auto;
+	height: auto;
+}
+img.icone {
+	border: none;
+	background: transparent;
+	width: 16px;
+	height: 16px;
+}
+img.image {
+	border: 1px solid #666;
+	background: transparent;
+	width: 64px;
+	height: 64px;
+}
+img.thumbnail {
+	border: none;
+	background: transparent;
+	width: 64px;
+	height: 64px;
+}
+.help {
+	font-weight: bold;
+	cursor: help;
+	color: black;
+}
+img.help {
+	width: 16px;
+	height: 16px;
+}
+img.help_tr {
+	width: auto;
+	height: auto;
+	background: #242424;
+	border: 2px solid black;
+}
+
+label {
+	height: 14px;
+	width: 250px;
+	font-weight: bold;
+	font-size: 12px;
+	color: black;
+	text-align: right;
+	float: left;
+	margin: 0px;
+	margin-right: 2px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+div.field, div.actions {
+	margin: 0px;
+	margin-bottom: 4px;
+	padding: 0px;
+}
+textarea {
+	width: 200px;
+	height: 150px;
+}
+p {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+

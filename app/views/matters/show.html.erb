@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @matter.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @matter.matter_type.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @matter.matter_duration.name %>
+</p>
+
+<p>
+  <strong>Nbmaxstudent:</strong>
+  <%= @matter.matter_nb_max_student %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @matter.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @matter.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_matter_path(@matter) %> |
+<%= link_to 'Back', matters_path %>
+</div>

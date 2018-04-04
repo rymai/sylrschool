@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @responsible.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @responsible.email %>
+</p>
+<p>
+  <strong>Person status</strong>
+  <%= @responsible.person_status %>
+</p>
+<p>
+  <strong>Firstname:</strong>
+  <%= @responsible.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @responsible.lastname %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @responsible.adress %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @responsible.postalcode %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @responsible.town %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @responsible.birthday %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @responsible.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @responsible.custo %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @responsible.type_id %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_responsible_path(@responsible) %> |
+<%= link_to 'Back', responsibles_path %>
+</div>

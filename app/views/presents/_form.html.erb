@@ -1,0 +1,43 @@
+<%= form_for(@present) do |f| %>
+  <% if @present.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@present.errors.count, "error") %> prohibited this present from being saved:</h2>
+
+      <ul>
+      <% @present.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student %>
+    <%= f.collection_select(:student_id, Student.get_all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule %>
+    <%= f.collection_select(:schedule_id, Schedule.get_all, :id, :ident) %>
+  </div>
+  <div class="field">
+    <%= f.label :teaching %>
+    <%= f.collection_select(:teaching_id, Teaching.get_all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :present_type %>
+    <%= f.select(:present_type, SYLR::V_ALL_PRESENT_TYPES.map {|r| [r.humanize, r]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :custo %>
+    <%= f.text_field :custo %>
+  </div>
+  <div class="actions">
+  	<div class="datagrid-actions">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type_id: 1
+  duration_id: 1
+  nbmaxstudent: 1
+  description: MyText
+  custo: MyString
+
+two:
+  name: MyString
+  type_id: 1
+  duration_id: 1
+  nbmaxstudent: 1
+  description: MyText
+  custo: MyString

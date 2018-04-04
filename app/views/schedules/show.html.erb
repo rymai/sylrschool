@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @schedule.schedule_type %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @schedule.start_time %>
+</p>
+
+<p>
+  <strong>All of day</strong>
+  <%= @schedule.all_of_day %>
+</p>
+<p>
+  <strong>Duration:</strong>
+  <%= @schedule.duration %>
+</p>
+<p>
+  <strong>Schedule Father:</strong>
+  <%= @schedule.schedule_father.ident unless @schedule.schedule_father.nil? %>
+</p>
+<p>
+  <strong>Teaching:</strong>
+  <%= @schedule.schedule_teaching.ident unless @schedule.schedule_teaching.nil? %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @schedule.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
+</div>

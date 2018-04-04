@@ -1,0 +1,162 @@
+
+Element_2:
+  id: 2
+  name: littéraire
+  for_what: matter_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:11:26.402600000 Z
+  updated_at: 2018-03-30 15:09:52.819737000 Z
+
+Element_1:
+  id: 1
+  name: scientifique
+  for_what: matter_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:11:12.380278000 Z
+  updated_at: 2018-03-30 15:09:59.410641000 Z
+
+Element_3:
+  id: 3
+  name: sportif
+  for_what: matter_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:11:38.070742000 Z
+  updated_at: 2018-03-30 15:10:05.161719000 Z
+
+Element_4:
+  id: 4
+  name: 2deLittéraire
+  for_what: matter_duration_level
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:12:43.122679000 Z
+  updated_at: 2018-03-30 15:10:10.008065000 Z
+
+Element_5:
+  id: 5
+  name: 1ereScientifique
+  for_what: matter_duration_level
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:13:19.767062000 Z
+  updated_at: 2018-03-30 15:10:14.249989000 Z
+
+Element_6:
+  id: 6
+  name: Présent
+  for_what: present_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:13:56.721315000 Z
+  updated_at: 2018-03-30 15:10:18.613819000 Z
+
+Element_7:
+  id: 7
+  name: Absent
+  for_what: present_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:14:06.486493000 Z
+  updated_at: 2018-03-30 15:10:22.754798000 Z
+
+Element_8:
+  id: 8
+  name: Excusé
+  for_what: present_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:14:17.763244000 Z
+  updated_at: 2018-03-30 15:10:27.408629000 Z
+
+Element_9:
+  id: 9
+  name: Parent
+  for_what: responsible_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:14:44.811933000 Z
+  updated_at: 2018-03-30 15:10:31.817745000 Z
+
+Element_10:
+  id: 10
+  name: Tuteur
+  for_what: responsible_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:14:57.483849000 Z
+  updated_at: 2018-03-30 15:10:36.194590000 Z
+
+Element_11:
+  id: 11
+  name: Référent
+  for_what: responsible_type
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:15:09.167148000 Z
+  updated_at: 2018-03-30 15:10:40.855194000 Z
+
+Element_12:
+  id: 12
+  name: BAC Scientifique
+  for_what: teaching_domain
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:15:55.236644000 Z
+  updated_at: 2018-03-30 15:10:45.461942000 Z
+
+Element_13:
+  id: 13
+  name: BAC Littéraire
+  for_what: teaching_domain
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:16:12.674634000 Z
+  updated_at: 2018-03-30 15:10:50.439372000 Z
+
+Element_14:
+  id: 14
+  name: DUT Mécanique
+  for_what: teaching_domain
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:16:26.635096000 Z
+  updated_at: 2018-03-30 15:10:54.347352000 Z
+
+Element_15:
+  id: 15
+  name: BTS Comptabilité
+  for_what: teaching_domain
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:16:41.463523000 Z
+  updated_at: 2018-03-30 15:10:59.549197000 Z
+
+Element_16:
+  id: 16
+  name: Salle de classe
+  for_what: location_usage
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:17:22.541657000 Z
+  updated_at: 2018-03-30 15:11:04.127732000 Z
+
+Element_17:
+  id: 17
+  name: Bureau
+  for_what: location_usage
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:17:31.804744000 Z
+  updated_at: 2018-03-30 15:11:08.534773000 Z
+
+Element_18:
+  id: 18
+  name: Salle de sport
+  for_what: location_usage
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-28 09:17:51.013566000 Z
+  updated_at: 2018-03-30 15:11:13.195353000 Z

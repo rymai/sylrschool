@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @matter_duration.name %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @matter_duration.matter_duration_level_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @matter_duration.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @matter_duration.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @matter_duration.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_matter_duration_path(@matter_duration) %> |
+<%= link_to 'Back', matter_durations_path %>
+</div>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @grade_context.name %>
+</p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @grade_context.goal %>
+</p>
+
+<p>
+  <strong>Min value:</strong>
+  <%= @grade_context.min_value %>
+</p>
+
+<p>
+  <strong>Max value:</strong>
+  <%= @grade_context.max_value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @grade_context.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @grade_context.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_grade_context_path(@grade_context) %> |
+<%= link_to 'Back', grade_contexts_path %>
+</div>

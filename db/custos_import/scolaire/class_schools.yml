@@ -1,0 +1,20 @@
+
+ClassSchool_1:
+  id: 1
+  name: gfdgdfgdgd
+  nb_max_student: 2
+  default_location_id: 1
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-29 12:09:13.809562000 Z
+  updated_at: 2018-03-29 12:09:13.809562000 Z
+
+ClassSchool_2:
+  id: 2
+  name: gfdgdfgdgdfdsd
+  nb_max_student: 2
+  default_location_id: 1
+  description: ''
+  custo: scolaire
+  created_at: 2018-03-29 12:16:29.696184000 Z
+  updated_at: 2018-03-29 12:16:29.696184000 Z

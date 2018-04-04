@@ -1,0 +1,52 @@
+<%= form_for(@grade_context) do |f| %>
+<% if @grade_context.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@grade_context.errors.count, "error") %> prohibited this grade_context from being saved:</h2>
+
+    <ul>
+        <% @grade_context.errors.full_messages.each do |message| %>
+        <li>
+            <%= message %>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :name %>
+    
+    <%= f.text_field :name %>
+</div>
+<div class="field">
+    <%= f.label :goal %>
+    
+    <%= f.text_field :goal %>
+</div>
+<div class="field">
+    <%= f.label :min_value %>
+    
+    <%= f.text_field :min_value %>
+</div>
+<div class="field">
+    <%= f.label :max_value %>
+    
+    <%= f.text_field :max_value %>
+</div>
+<div class="field">
+    <%= f.label :description %>
+    
+    <%= f.text_area :description %>
+</div>
+<div class="field">
+    <%= f.label :custo %>
+    
+    <%= f.text_field :custo %>
+</div>
+<div class="datagrid-actions">
+<div class="actions">
+	<div class="datagrid-actions">
+    <%= f.submit %>
+    </div>
+</div>
+<% end %>

@@ -1,0 +1,47 @@
+<%= form_for(@grade) do |f| %>
+  <% if @grade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+      <ul>
+      <% @grade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :grade_grade_context %>
+    <%= f.collection_select(:grade_grade_context_id, GradeContext.get_all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_matter %>
+    <%= f.collection_select(:grade_matter_id, Matter.get_all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_student %>
+    <%= f.collection_select(:grade_student_id, Student.get_all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_date %>
+    <%= f.date_select :grade_date %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_value %>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :grade_description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :custo %>
+    <%= f.text_field :custo %>
+  </div>
+  <div class="actions">
+  	<div class="datagrid-actions">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade_grade_context_id: 
+  grade_matter_id: 
+  grade_student_id: 
+  grade_date: 2018-04-02
+  value: MyString
+  description: MyText
+  custo: MyString
+
+two:
+  grade_grade_context_id: 
+  grade_matter_id: 
+  grade_student_id: 
+  grade_date: 2018-04-02
+  value: MyString
+  description: MyText
+  custo: MyString

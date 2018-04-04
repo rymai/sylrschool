@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  schedule_id: 
+  teaching_id: 
+  present: MyString
+  description: MyText
+  custo: MyString
+
+two:
+  student_id: 
+  schedule_id: 
+  teaching_id: 
+  present: MyString
+  description: MyText
+  custo: MyString

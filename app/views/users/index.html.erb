@@ -1,0 +1,43 @@
+<p id="notice">
+    <%= notice %>
+</p>
+
+<h1>Listing Users</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+           	<th>:encrypted_password</th>
+            <th>:reset_password_token</th>
+            <th>:reset_password_sent_at</th>
+            <th>:remember_created_at</th>
+            <th>:sign_in_count</th>
+            <th>:current_sign_in_at</th>
+            <th>:last_sign_in_at</th>
+            <th>:current_sign_in_ip</th>
+            <th>:last_sign_in_ip</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.email %></td>
+            <td><%= user.encrypted_password %></td>
+            <td><%= user.reset_password_token %></td>
+            <td><%= user.reset_password_sent_at %></td>
+            <td><%= user.remember_created_at %></td>
+            <td><%= user.sign_in_count %></td>
+            <td><%= user.current_sign_in_at %></td>
+            <td><%= user.last_sign_in_at %></td>
+            <td><%= user.current_sign_in_ip %></td>
+            <td><%= user.last_sign_in_ip %></td>
+            <td><%= link_to 'Destroy', {:controller=>"users",:action=>:destroy,:id=>user.id}, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>

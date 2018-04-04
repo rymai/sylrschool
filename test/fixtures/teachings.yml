@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  teaching_class_school_id: 
+  teaching_schedule_id: 
+  teaching_teacher_id: 
+  teaching_matter_id: 
+  teaching_present_type: MyString
+  description: MyText
+  custo: MyString
+
+two:
+  name: MyString
+  teaching_class_school_id: 
+  teaching_schedule_id: 
+  teaching_teacher_id: 
+  teaching_matter_id: 
+  teaching_present_type: MyString
+  description: MyText
+  custo: MyString

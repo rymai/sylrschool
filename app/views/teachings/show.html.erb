@@ -1,0 +1,69 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<strong>Name:</strong>
+	<%= @teaching.name %>
+</p>
+
+<p>
+	<strong>Teaching class school:</strong>
+	<%= @teaching.teaching_class_school.name %>
+</p>
+
+<p>
+	<strong>Teaching teacher:</strong>
+	<%= @teaching.teaching_teacher.name %>
+</p>
+
+<p>
+	<strong>Teaching matter:</strong>
+	<%= @teaching.teaching_matter.name %>
+</p>
+<p>
+	<strong>Teaching start_time:</strong>
+	<%= @teaching.teaching_start_time %>
+</p>
+<p>
+	<strong>Teaching duration:</strong>
+	<%= @teaching.teaching_duration %>
+</p>
+<p>
+	
+	<strong>Teaching repetition:</strong>
+	<%= @teaching.teaching_repetition %>
+</p>
+<p>
+	<strong>Teaching repetition_number:</strong>
+	<%= @teaching.teaching_repetition_number %>
+</p>
+
+<p>
+	<strong>Description:</strong>
+	<%= @teaching.description %>
+</p>
+
+<p>
+	<strong>Custo:</strong>
+	<%= @teaching.custo %>
+</p>
+<div class="datagrid-actions">
+	<%= link_to 'Edit', edit_teaching_path(@teaching) %> |
+	<%= link_to 'Back', teachings_path %>
+</div>
+<% unless @schedules.nil? %>
+<%= month_calendar  events: @schedules do |date, schedules| %>
+<%= date.day %>
+<% schedules.each do |schedule| %>
+<div>
+	<%= link_to schedule.ident, schedule %>
+</div>
+<% end %>
+<% end %>
+<% else %>
+<%= month_calendar  do |date| %>
+<%= date.day %>
+<% end %>
+<% end %>
+

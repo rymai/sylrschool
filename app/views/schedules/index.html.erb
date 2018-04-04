@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Schedules</h1>
+
+<%= datagrid_form_for @grid, :method => :get, :url => schedules_path %>
+
+
+<%= will_paginate(@grid.assets) %>
+<%= datagrid_table @grid %>
+<%= will_paginate(@grid.assets) %>
+
+<div class="datagrid-actions">
+<%= link_to 'New Schedule', new_schedule_path %>
+</div>

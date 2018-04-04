@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+<p>
+  <strong>Person status</strong>
+  <%= @student.person_status %>
+</p>
+<p>
+  <strong>Firstname:</strong>
+  <%= @student.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @student.lastname %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @student.adress %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @student.postalcode %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @student.town %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @student.birthday %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @student.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @student.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+</div>

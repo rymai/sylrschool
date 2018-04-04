@@ -1,0 +1,42 @@
+<H1><%= t(:title_tools)%></H1>
+<%= form_tag("/main", :method=>:get) do |form| %>
+
+<fieldset>
+	<legend>
+		<%= t(:legend_preferences) %>
+	</legend>
+
+	<p>
+		<%= label_tag t(:label_language) %>
+		<%= select_tag(:locale, options_for_select(@languages,session[:language])) %>
+	</p>
+	<p>
+		<%= label_tag t(:label_theme) %>
+		<%= select_tag(:theme, options_for_select(@themes,session[:theme])) %>
+	</p>
+	<div class="datagrid-actions">
+		<%= submit_tag t(:submit_validate) %>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>
+		<%= t(:context_info) %>
+	</legend>
+	<hr>
+	<table>
+		<tr>
+			<th> <%= t(:variable_key)%></th>
+			<th> <%= t(:variable_value)%></th>
+		</tr>
+		<% for item in request.env %>
+		<% if item[0].index("rack.session") == nil %>
+		<tr class='<%= cycle("even", "odd") %>'>
+			<td> <%= item[0] %></td>
+			<td> <%= item[1] %></td>
+		</tr>
+		<%end %>
+		<% end %>
+	</table>
+</fieldset>
+<% end %>

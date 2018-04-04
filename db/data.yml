@@ -1,0 +1,447 @@
+
+---
+class_schools:
+  columns:
+  - id
+  - name
+  - nb_max_student
+  - default_location_id
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - gfdgdfgdgd
+    - '2'
+    - '1'
+    - ''
+    - scolaire
+    - '2018-03-29 12:09:13.809562'
+    - '2018-03-29 12:09:13.809562'
+  - - '2'
+    - gfdgdfgdgdfdsd
+    - '2'
+    - '1'
+    - ''
+    - scolaire
+    - '2018-03-29 12:16:29.696184'
+    - '2018-03-29 12:16:29.696184'
+
+---
+elements:
+  columns:
+  - id
+  - name
+  - for_what
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - scientifique
+    - matter_type
+    - ''
+    - fixe
+    - '2018-03-28 09:11:12.380278'
+    - '2018-03-28 09:11:12.380278'
+  - - '2'
+    - littéraire
+    - matter_type
+    - ''
+    - fixe
+    - '2018-03-28 09:11:26.4026'
+    - '2018-03-28 09:11:47.350826'
+  - - '3'
+    - sportif
+    - matter_type
+    - ''
+    - fixe
+    - '2018-03-28 09:11:38.070742'
+    - '2018-03-28 09:11:38.070742'
+  - - '4'
+    - 2deLittéraire
+    - matter_duration_level
+    - ''
+    - fixe
+    - '2018-03-28 09:12:43.122679'
+    - '2018-03-28 09:13:33.552123'
+  - - '5'
+    - 1ereScientifique
+    - matter_duration_level
+    - ''
+    - fixe
+    - '2018-03-28 09:13:19.767062'
+    - '2018-03-28 09:13:19.767062'
+  - - '6'
+    - Présent
+    - present_type
+    - ''
+    - fixe
+    - '2018-03-28 09:13:56.721315'
+    - '2018-03-28 09:13:56.721315'
+  - - '7'
+    - Absent
+    - present_type
+    - ''
+    - fixe
+    - '2018-03-28 09:14:06.486493'
+    - '2018-03-28 09:14:25.629892'
+  - - '8'
+    - Excusé
+    - present_type
+    - ''
+    - fixe
+    - '2018-03-28 09:14:17.763244'
+    - '2018-03-28 09:14:17.763244'
+  - - '9'
+    - Parent
+    - responsible_type
+    - ''
+    - fixe
+    - '2018-03-28 09:14:44.811933'
+    - '2018-03-28 09:14:44.811933'
+  - - '10'
+    - Tuteur
+    - responsible_type
+    - ''
+    - fixe
+    - '2018-03-28 09:14:57.483849'
+    - '2018-03-28 09:14:57.483849'
+  - - '11'
+    - Référent
+    - responsible_type
+    - ''
+    - fixe
+    - '2018-03-28 09:15:09.167148'
+    - '2018-03-28 09:15:09.167148'
+  - - '12'
+    - BAC Scientifique
+    - teaching_domain
+    - ''
+    - fixe
+    - '2018-03-28 09:15:55.236644'
+    - '2018-03-28 09:15:55.236644'
+  - - '13'
+    - BAC Littéraire
+    - teaching_domain
+    - ''
+    - fixe
+    - '2018-03-28 09:16:12.674634'
+    - '2018-03-28 09:16:12.674634'
+  - - '14'
+    - DUT Mécanique
+    - teaching_domain
+    - ''
+    - fixe
+    - '2018-03-28 09:16:26.635096'
+    - '2018-03-28 09:16:26.635096'
+  - - '15'
+    - BTS Comptabilité
+    - teaching_domain
+    - ''
+    - fixe
+    - '2018-03-28 09:16:41.463523'
+    - '2018-03-28 09:16:47.062612'
+  - - '16'
+    - Salle de classe
+    - location_usage
+    - ''
+    - fixe
+    - '2018-03-28 09:17:22.541657'
+    - '2018-03-28 09:17:22.541657'
+  - - '17'
+    - Bureau
+    - location_usage
+    - ''
+    - fixe
+    - '2018-03-28 09:17:31.804744'
+    - '2018-03-28 09:17:31.804744'
+  - - '18'
+    - Salle de sport
+    - location_usage
+    - ''
+    - fixe
+    - '2018-03-28 09:17:51.013566'
+    - '2018-03-28 09:17:51.013566'
+
+---
+locations:
+  columns:
+  - id
+  - name
+  - usage_id
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - classe 123
+    - '16'
+    - ''
+    - scolaire
+    - '2018-03-28 22:08:24.648694'
+    - '2018-03-28 22:08:24.648694'
+  - - '2'
+    - gymnase
+    - '18'
+    - ''
+    - scolaire
+    - '2018-03-28 22:11:38.011524'
+    - '2018-03-29 07:36:26.497063'
+  - - '3'
+    - bureau 231
+    - '17'
+    - ''
+    - scolaire
+    - '2018-03-28 22:12:17.279894'
+    - '2018-03-29 07:36:32.360783'
+  - - '4'
+    - dfdsdd
+    - '16'
+    - ''
+    - scolaire
+    - '2018-03-29 07:35:05.804297'
+    - '2018-03-29 07:35:05.804297'
+  - - '5'
+    - efssfdsd
+    - '16'
+    - ''
+    - scolaire
+    - '2018-03-29 08:57:59.66525'
+    - '2018-03-29 08:57:59.66525'
+
+---
+matter_durations:
+  columns:
+  - id
+  - name
+  - level_id
+  - value
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - dfsdsdfsf
+    - '5'
+    - '60'
+    - ''
+    - scolaire
+    - '2018-03-29 19:39:24.534717'
+    - '2018-03-29 19:39:24.534717'
+
+---
+matters:
+  columns:
+  - id
+  - name
+  - matter_type_id
+  - matter_duration_id
+  - matter_nb_max_student
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - ccwx
+    - '1'
+    - '1'
+    - '4'
+    - "sdsdfsdf\r\nfsddgd\r\ngghjhjghjghjghjg\r\nghjghjghjgh"
+    - scolaire
+    - '2018-03-29 19:58:49.993109'
+    - '2018-03-29 20:13:10.604262'
+
+---
+responsibles:
+  columns:
+  - id
+  - name
+  - person_status
+  - email
+  - firstname
+  - lastname
+  - adress
+  - postalcode
+  - town
+  - phone1
+  - phone2
+  - birthday
+  - description
+  - custo
+  - type_id
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - fgdg
+    - enrolled
+    - dfgd
+    - gdfg
+    - dfgd
+    - ''
+    - ''
+    - ''
+    - 
+    - 
+    - '2018-03-30'
+    - ''
+    - scolaire
+    - '9'
+    - '2018-03-30 06:52:27.024143'
+    - '2018-03-30 06:52:27.024143'
+
+---
+roles:
+  columns:
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+  - custo
+  records: 
+  - - '3'
+    - admin
+    - ''
+    - '2018-03-28 09:22:41.841581'
+    - '2018-03-28 09:22:41.841581'
+    - fixe
+  - - '4'
+    - support
+    - ''
+    - '2018-03-28 09:29:44.325389'
+    - '2018-03-28 09:29:44.325389'
+    - fixe
+  - - '6'
+    - student
+    - ''
+    - '2018-03-28 09:32:28.928384'
+    - '2018-03-28 09:32:28.928384'
+    - fixe
+  - - '7'
+    - teacher
+    - ''
+    - '2018-03-28 09:32:38.108987'
+    - '2018-03-28 09:32:38.108987'
+    - fixe
+  - - '8'
+    - responsible
+    - ''
+    - '2018-03-28 09:32:54.888019'
+    - '2018-03-28 09:32:54.888019'
+    - fixe
+
+---
+students:
+  columns:
+  - id
+  - name
+  - person_status
+  - email
+  - firstname
+  - lastname
+  - adress
+  - postalcode
+  - town
+  - phone1
+  - phone2
+  - birthday
+  - description
+  - custo
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - dfdgd
+    - enrolled
+    - gdfg
+    - ff
+    - ff
+    - ''
+    - ''
+    - ''
+    - 
+    - 
+    - '2018-03-30'
+    - ''
+    - scolaire
+    - '2018-03-30 06:46:12.655193'
+    - '2018-03-30 06:46:12.655193'
+
+---
+teachers:
+  columns:
+  - id
+  - name
+  - person_status
+  - email
+  - firstname
+  - lastname
+  - adress
+  - postalcode
+  - town
+  - phone1
+  - phone2
+  - birthday
+  - description
+  - custo
+  - defmatter_id
+  - defgradecontext_id
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - dfdgdg
+    - enrolled
+    - dfgdfg
+    - gdfgd
+    - dgdfg
+    - ''
+    - ''
+    - ''
+    - 
+    - 
+    - '2018-03-30'
+    - ''
+    - scolaire
+    - '1'
+    - 
+    - '2018-03-30 06:46:45.636514'
+    - '2018-03-30 06:46:45.636514'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - sylvere.coutable@laposte.net
+    - "$2a$11$5zqN9lpxzZXBCSejC1.a7.tJfEANW9h4phFxZH96wODqEt137m.va"
+    - 
+    - 
+    - '2018-03-29 09:50:21.731782'
+    - '5'
+    - '2018-03-30 04:34:54.893091'
+    - '2018-03-29 10:52:02.057046'
+    - "::1"
+    - "::1"
+    - '2018-03-28 20:17:18.131296'
+    - '2018-03-30 04:34:54.895063'

@@ -1,0 +1,349 @@
+/* Global styles */
+/* Styles for main page */
+
+* {
+	margin: 0;
+	padding: 0;
+	font: 11px sans-serif;
+}
+body {
+	/*font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica", "Arial", "sans-serif";*/
+	background: #000;
+	position: relative;
+	margin: 2px;
+	/*-webkit-text-size-adjust: auto;*/
+}
+span, p, li, ul, dl, dt, dd, legend {
+	text-decoration: none;
+	margin-left: 0px;
+	padding-left: 0px;
+	color: white;
+}
+
+span.thumbnail {
+	border: 1px solid #DDD;
+	margin: 2px;
+	padding: 3px;
+}
+
+ul.forum {
+	margin-left: 30px;
+}
+ul, dl {
+
+	margin-left: 1px;
+	padding-left: 0px;
+	text-indent: 0px;
+}
+li, dt {
+	font: bold 120% sans-serif;
+	margin-left: 0px;
+	padding-left: 0px;
+	text-indent: 5px;
+}
+dl {
+	text-indent: 10px;
+}
+h1 {
+	font: bold 200% sans-serif;
+	color: white;
+	border-top: 2px solid #666;
+	margin-bottom: 1px;
+}
+h2 {
+	font: bold 100% sans-serif;
+	color: white;
+}
+/* formulaire de saisie: new et edit principalement */
+/*
+ br {
+ clear: left;
+ }
+ */
+label {
+	/*font-weight: bold;*/
+	color: #FFFFFF;
+	text-align: right;
+	display: block;
+	float: left;
+	width: 180px;
+	margin-right: 2px;
+	margin-top: 2px;
+}
+/*
+ input, option, select, textarea {
+ display: block;
+ float: left;
+ margin-left: 2px;
+ margin-top: 2px;
+ text-decoration: none;
+ }
+ */
+
+table {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	color: white;
+}
+tr {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	color: white;
+}
+th {
+	font-weight: bold;
+	padding: 1px;
+	margin: 0;
+	background-color: #333;
+	border: 1px solid #DDD;
+	color: #FFF;
+	text-align: left;
+}
+td {
+	padding: 1px;
+	margin: 0;
+	background-color: #BBBBBB;
+	border: 1px solid #CCCCCC;
+	color: #000;
+	text-align: left;
+}
+/*header*/
+#container {
+	background: black;
+}
+#banner {
+	background: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid white;
+	text-align: center;
+	height: 10%;
+	margin: 0px;
+}
+#banner table {
+	margin-left: auto;
+	margin-right: auto;
+}
+.title {
+	font-variant: small-caps;
+	font-size: 25px;
+	color: white;
+}
+.banner {
+	font-size: 14px;
+	color: white;
+}
+/*end header*/
+
+/* boites */
+#columns {
+}
+#side {
+	float: left;
+	padding-top: 0px;
+	width: 180px;
+	border: 1px solid #BBBBBB;
+}
+#side fieldset {
+	padding-left: 5px;
+	margin-top: 5px;
+	border: none;
+	border-top: 1px solid white;
+}
+#main {
+	padding-top: 5px;
+	padding-left: 5px;
+	margin: 0 0 0 180px;
+	background: #333;
+	border-top: 1px solid white;
+}
+#menu fieldset legend {
+	color: #BBBBBB;
+	font-weight: bold;
+}
+/* fin des boites */
+
+div.favori-title {
+	color: white;
+}
+/* input file*/
+#datafile_uploaded_file {
+	max-width: 100px;
+}
+.translation_missing {
+	background-color: #00f0f0;
+}
+ul.help {
+	margin-top: 6px;
+}
+li.help {
+	margin-top: 3px;
+}
+ul.help_key {
+	list-style: decimal-leading-zero;
+	margin-top: 3px;
+	margin-left: 30px;
+	padding-left: 0px;
+	text-indent: 0px;
+}
+li.help_key ul.help_key {
+	margin-left: 20px;
+}
+li.help_key {
+	list-style: decimal-leading-zero;
+	margin-top: 2px;
+}
+ul.help_ul {
+	margin-top: 4px;
+}
+li.help_ul {
+	margin-top: 3px;
+}
+img {
+	width: auto;
+	height: auto;
+}
+img.icone {
+	border: none;
+	background: transparent;
+	width: 14px;
+	height: 14px;
+}
+img.thumbnail {
+	border: none;
+	background: transparent;
+	width: 65px;
+	height: 64px;
+}
+.help {
+	font-weight: bold;
+	cursor: help;
+	color: white;
+}
+img.help {
+	width: 16px;
+	height: 16px;
+}
+img.help_tr {
+	width: auto;
+	height: auto;
+	background: #242424;
+	border: 2px solid white;
+}
+/* Styles for the favori in the sidebar */
+
+li.favori {
+	color: white;
+}
+td.favori {
+	color: white;
+}
+#favori table {
+	border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+}
+/* END:favori */
+
+p.error{
+	font: 140% sans-serif;
+	border: 1px solid #666;
+	color: red;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+p.warn {
+	font: 140% sans-serif;
+	border: 1px solid #666;
+	color: yellow;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+p.notice {
+	font: 140% sans-serif;
+	border: 1px solid #666;
+	color: green;
+	background-color: #DDD;
+	margin-bottom: 15px;
+}
+/* menus en bas des listes*/
+
+table.menu_toolbar {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+table.menu_toolbar .menu_toolbar tr {
+	border: 0px;
+}
+a, th a, a.help_tr, .help a, a.menu, .menu_toolbar input, input.menu_toolbar {
+	border: 0px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #CCCCCC;
+	font-weight: bold;
+}
+.menu_toolbar td {
+	background: #333;
+	border: 0px;
+	height: 25px;
+	color: white;
+}
+.menu_toolbar a, a.menu_toolbar {
+	padding: 2px;
+	margin: 0px;
+	border: none;
+	color: #222222;
+	background: transparent url('/images/btn_submit.png') repeat center center;
+	height: 25px;
+}
+.menu_toolbar a:hover {
+	background: transparent url('/images/btn_submit_hover.png') repeat center center;
+	color: #EEEEEE;
+}
+input, option, select, textarea {
+	padding: 1pt;
+	margin: 1pt;
+	background-color: #A0A0A0;
+	color: black;
+}
+input[type=submit] {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	color: #222222;
+	background: transparent url('/images/btn_submit.png') no-repeat center center;
+	height: 25px;
+}
+input[type=submit]:hover {
+	background: transparent url('/images/btn_submit_hover.png') no-repeat center center;
+	color: #EEEEEE;
+}
+input:active, option:active, select:active, textarea:active {
+	outline: solid medium #CCCCFF;
+}
+input:focus, option:focus, select:focus, textarea:focus {
+	outline: solid medium #CCFFCC;
+}
+/* end menus en bas des listes*/
+
+/* a:hover, input:hover, img.help_tr:hover {*/
+
+a:hover, .help a:hover, a.help_tr:hover, a.menu:hover, a:hover, input:hover, select:hover, img.help_tr:hover {
+	/*background-color:#717171;*/
+	color: white;
+	cursor: pointer;
+}
+.pagination {
+	margin: 5px 0;
+}
+
+/* surcharge bootstrap */
+.container {
+  margin-right: 0px;
+  margin-left: 0px;
+  *zoom: 1;
+}

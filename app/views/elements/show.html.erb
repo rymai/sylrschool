@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @element.name %>
+</p>
+
+<p>
+  <strong>For what:</strong>
+  <%= @element.for_what %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @element.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @element.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_element_path(@element) %> |
+<%= link_to 'Back', elements_path %>
+</div>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @notebook.name %>
+</p>
+
+<p>
+  <strong>Notebooktext:</strong>
+  <%= @notebook.notebooktext %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @notebook.student.name unless @notebook.student.nil? %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @notebook.description %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @notebook.custo %>
+</p>
+<div class="datagrid-actions">
+<%= link_to 'Edit', edit_notebook_path(@notebook) %> |
+<%= link_to 'Back', notebooks_path %>
+</div>

@@ -1,0 +1,68 @@
+<p id="notice">
+	<%= notice %>
+</p>
+<%= form_for(@teaching) do |f| %>
+<% if @teaching.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@teaching.errors.count, "error") %> prohibited this teaching from being saved:</h2>
+
+	<ul>
+		<% @teaching.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="field">
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_class_school %>
+	<%= f.collection_select(:teaching_class_school_id, ClassSchool.get_all, :id, :name) %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_teacher %>
+	<%= f.collection_select(:teaching_teacher_id, Teacher.get_all, :id, :name) %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_matter %>
+	<%= f.collection_select(:teaching_matter_id, Matter.get_all, :id, :name) %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_domain %>
+	<%= f.collection_select(:teaching_domain_id, Teaching.teaching_domains, :id, :name) %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_start_time %>
+	<%= f.datetime_select :teaching_start_time %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_duration %>
+	<%= f.number_field :teaching_duration %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_repetition %>
+	<%= f.select(:teaching_repetition, SYLR::C_ALL_TEACHING_REPETITION.map {|r| [r.humanize, r]}) %>
+</div>
+<div class="field">
+	<%= f.label :label_teaching_repetition_number %>
+	<%= f.number_field :teaching_repetition_number %>
+</div>
+<div class="field">
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+</div>
+
+<div class="field">
+	<%= f.label :custo %>
+	<%= f.text_field :custo %>
+</div>
+<div class="actions">
+	<div class="datagrid-actions">
+		<%= f.submit %>
+	</div>
+	<% end %>

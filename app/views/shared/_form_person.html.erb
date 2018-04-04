@@ -1,0 +1,69 @@
+
+
+<div class="field">
+	<%= f.label :name %>
+	
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :email %>
+	
+	<%= f.text_field :email %>
+</div>
+<div class="field">
+	<%= f.label :person_status %>
+	
+	<%= f.select(:person_status, status) %>
+</div>
+<div class="field">
+	<%= f.label :phone1 %>
+	
+	<%= f.text_field :phone1 %>
+</div>
+<div class="field">
+	<%= f.label :phone2 %>
+	
+	<%= f.text_field :phone2 %>
+</div>
+<div class="field">
+	<%= f.label :firstname %>
+	
+	<%= f.text_field :firstname %>
+</div>
+<div class="field">
+	<%= f.label :lastname %>
+	
+	<%= f.text_field :lastname %>
+</div>
+<div class="field">
+	<%= f.label :adress %>
+	
+	<%= f.text_field :adress %>
+</div>
+<div class="field">
+	<%= f.label :postalcode %>
+	
+	<%= f.text_field :postalcode %>
+</div>
+<div class="field">
+	<%= f.label :town %>
+	
+	<%= f.text_field :town %>
+</div>
+<div class="field">
+	<%= f.label :birthday %>
+	
+	<%= f.datetime_select :birthday,:start_year=>1930,:end_year=>Date.today.year %>
+</div>
+<div class="field">
+	<%= f.label :description %>
+	
+	<%= f.text_area :description %>
+</div>
+
+<div class="field">
+	<%= f.label :custo %>
+	
+	<%= f.text_field :custo %>
+</div>
+

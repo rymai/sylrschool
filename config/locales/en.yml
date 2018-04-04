@@ -1,0 +1,126 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  # common des common
+  submit_validate: Validate
+  #select_inout
+  label_student_responsibles: Responsibles
+  label_student_responsible_ids_out: Responsibles choosen
+  label_student_responsible_ids_in: Other responsibles
+  label_responsible_students: Students
+  label_responsible_student_ids_out: Students choosen
+  label_responsible_student_ids_in: Other students
+  #
+  label_teacher_matters: Matters
+  label_teacher_matter_ids_out: Matters choosen
+  label_teacher_matter_ids_in: Other matters
+  label_matter_teachers: Teachers
+  label_matter_teacher_ids_out: Teachers choosen
+  label_matter_teacher_ids_in: Other teachers
+  #
+  label_notebook_teachers: Teachers
+  label_notebook_teacher_ids_out: Teachers choosen
+  label_notebook_teacher_ids_in: Other teachers
+  label_teacher_notebooks: Teachers
+  label_teacher_notebook_ids_out: Notebooks choosen
+  label_teacher_notebook_ids_in: Other notebooks
+  button_add: Add
+  button_remove: Remove 
+  # common top
+  label_filter_id: "Id (,)"
+  label_name: Name
+  label_description: Description
+  # common bottom
+  label_custo: "Custo"
+  label_created_at: Created at  
+  label_updated_at: Updated at
+  # common body 
+  label_extra_columns: Extra Columns
+  # class_school
+  label_nb_max_student: Number max of students
+  label_default_location: Default location
+  # element
+  label_for_what: For what
+  # grade_context
+  label_goal: Goal
+  label_min_value: Min. value
+  label_max_value: Max. value
+  # grade
+  label_grade_student: "Student (id)"
+  label_grade_grade_context: "Grade Context (id)"
+  label_grade_matter: "Matter (id)"
+  label_grade_date: "Date"
+  label_grade_value: "Value"
+  label_grade_description: "Appreciation"
+  # location
+  label_usage: "Usage (id)"
+  # main tools
+  title_tools: Tools
+  legend_preferences: Preferences
+  label_language: Language
+  label_theme: Theme
+  # matter
+  label_matter_duration_level: "Level (id)"
+  label_matter_duration_value: Value
+  label_matter_duration: Matter duration
+  label_matter_type: Matter type
+  # notebook
+  label_notebook_text: Notebook text
+  label_notebook_student: Student
+  # person
+  label_email: Email
+  label_filter_email: "Email (,)"
+  label_person_status: Status
+  label_phone1: "Phone 1"
+  label_phone2: "Phone 2"
+  label_firstname: "First Name"
+  label_lastname: "Last Name"
+  label_filter_lastname: "Last Name (,)"
+  label_postalcode: "Postal Code"
+  label_filter_postalcode: "Postal Code (,)"
+  label_town: Town
+  label_filter_town: "Town (,)" 
+  label_birthday: "Birth Day"
+  # responsible
+  label_responsible_type: "Responsible Type (id)"
+  # present
+  label_student: "Student (id)"
+  label_schedule: "Schedule (id)"
+  label_teaching: "Teachingv(id)"
+  label_present_type: "Present Type"
+  # schedule
+  label_schedule_type: Type
+  label_start_time: Start time
+  label_all_of_day: All of day
+  label_schedule_duration: Duration
+  label_schedule_schedule_father: Schedule father
+  label_schedule_schedule_teaching: Teaching
+  # teaching
+  label_teaching_class_school: "Class school (id)"
+  label_teaching_teacher: "Teacher (id)"
+  label_teaching_matter: "Matter (id)"
+  label_teaching_domain: "Domain (id)"
+  label_teaching_start_time: Start time
+  label_teaching_repetition: Repetition
+  label_teaching_repetition_number: "Repetition number"
+  label_teaching_duration: Duration
+ 

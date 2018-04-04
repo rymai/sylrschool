@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  start_time: 2018-03-29 18:17:33
+  duration_integer: MyString
+  custo: MyString
+
+two:
+  type: 
+  start_time: 2018-03-29 18:17:33
+  duration_integer: MyString
+  custo: MyString

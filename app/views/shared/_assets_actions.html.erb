@@ -1,0 +1,3 @@
+<%= link_to 'Show', {:controller=>controller,:action=>"show",:id=>object.id} %>
+<td><%= link_to 'Edit', {:controller=>controller,:action=>"edit",:id=>object.id}  %></td>
+<td><%= link_to 'Destroy', {:controller=>controller,:action=>"destroy",:id=>object.id} , method: :delete, data: { confirm: 'Are you sure?' } %></td>
