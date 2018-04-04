@@ -14,31 +14,25 @@
 <% end %>
 
 <div class="field">
-	<%= f.label :name %>
-	
+	<%= h_form_label(f,:label_name)%>
+
 	<%= f.text_field :name %>
 </div>
 <div class="field">
-	<%= f.label :nb_max_student %>
-	
+	<%= h_form_label(f,:label_name)%>
+
 	<%= f.number_field :nb_max_student %>
 </div>
 <div class="field">
-	<%= f.label :default_location %>
-	
+	<%= h_form_label(f,:label_name)%>
+
 	<%= f.collection_select(:default_location_id, Location.get_all, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :description %>
-	
+	<%= h_form_label(f,:label_description)%>
+
 	<%= f.text_area :description %>
 </div>
-<div class="field">
-	<%= f.label :custo %>
-	
-	<%= f.text_field :custo %>
-</div>
-<div class="actions">
-	<%= f.submit %>
-</div>
+
+<%= h_form_bottom(f) %>
 <% end %>

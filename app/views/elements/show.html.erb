@@ -1,25 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_top(@element)%>
 
 <p>
-  <strong>Name:</strong>
-  <%= @element.name %>
-</p>
-
-<p>
-  <strong>For what:</strong>
+  <%= h_show_label("label_for_what")%>
   <%= @element.for_what %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <%= h_show_label("label_description")%>
   <%= @element.description %>
 </p>
 
-<p>
-  <strong>Custo:</strong>
-  <%= @element.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_element_path(@element) %> |
-<%= link_to 'Back', elements_path %>
-</div>
+
+<%= h_show_bottom(@element)%>
+<%= h_show_menus_bottom(@element)%>
+

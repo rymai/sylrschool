@@ -1,67 +1,17 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @teacher.name %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @teacher.email %>
-</p>
-<p>
-  <strong>Person status</strong>
-  <%= @teacher.person_status %>
-</p>
+<%= h_show_notice%>
+
+<%= render :partial=>"shared/show_person",
+:locals=>{:object=> @teacher} %>
 
 <p>
-  <strong>Firstname:</strong>
-  <%= @teacher.firstname %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @teacher.lastname %>
-</p>
-
-<p>
-  <strong>Adress:</strong>
-  <%= @teacher.adress %>
-</p>
-
-<p>
-  <strong>Postalcode:</strong>
-  <%= @teacher.postalcode %>
-</p>
-
-<p>
-  <strong>Town:</strong>
-  <%= @teacher.town %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @teacher.birthday %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @teacher.description %>
-</p>
-
-<p>
-  <strong>Custo:</strong>
-  <%= @teacher.custo %>
-</p>
-
-<p>
-  <strong>Defmatter:</strong>
+  <%= h_show_label("label_teacher_matter")%>
   <%= @teacher.defmatter_id %>
 </p>
 
 <p>
-  <strong>Defgradecontext:</strong>
+  <%= h_show_label("label_teacher_grade_context")%>
   <%= @teacher.defgradecontext_id %>
 </p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
-</div>
+<%= h_show_bottom(@teacher)%>
+<%= h_show_menus_bottom(@teacher)%>
+

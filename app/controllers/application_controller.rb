@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     elsif session[:theme]
       theme = session[:theme]
     else
-      theme = SYLR::C_DEFAULT_THEME
+      theme = SYLR::V_DEFAULT_THEME
     end
     session[:theme] = theme
   end

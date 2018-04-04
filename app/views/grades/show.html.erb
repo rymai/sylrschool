@@ -1,40 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_topiddescription(@grade)%>
 
 <p>
-  <strong>Grade grade context:</strong>
+  <%= h_show_label(:label_grade_grade_context)%>
   <%= @grade.grade_grade_context_id %>
 </p>
 
 <p>
-  <strong>Grade matter:</strong>
-  <%= @grade.grade_matter_id %>
+  <%= h_show_label(:label_grade_matter)%>
+  <%= @grade.grade_matter.ident %>
 </p>
 
 <p>
-  <strong>Grade student:</strong>
-  <%= @grade.grade_student_id %>
+  <%= h_show_label(:label_grade_student)%>
+  <%= @grade.grade_student.ident %>
 </p>
 
 <p>
-  <strong>Grade date:</strong>
+  <%= h_show_label(:label_grade_date)%>
   <%= @grade.grade_date %>
 </p>
 
 <p>
-  <strong>Value:</strong>
+  <%= h_show_label(:label_grade_value)%>
   <%= @grade.value %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @grade.description %>
-</p>
+<%= h_show_bottom(@grade)%>
+<%= h_show_menus_bottom(@grade)%>
 
-<p>
-  <strong>Custo:</strong>
-  <%= @grade.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>
-</div>

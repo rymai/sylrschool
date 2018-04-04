@@ -1,35 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_topiddescription(@grade_context)%>
 
 <p>
-  <strong>Name:</strong>
-  <%= @grade_context.name %>
-</p>
-
-<p>
-  <strong>Goal:</strong>
+  <%= h_show_label(:label_goal)%>
   <%= @grade_context.goal %>
 </p>
 
 <p>
-  <strong>Min value:</strong>
+  <%= h_show_label(:label_min_value)%>
   <%= @grade_context.min_value %>
 </p>
 
 <p>
-  <strong>Max value:</strong>
+  <%= h_show_label(:label_max_value)%>
   <%= @grade_context.max_value %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @grade_context.description %>
-</p>
 
-<p>
-  <strong>Custo:</strong>
-  <%= @grade_context.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_grade_context_path(@grade_context) %> |
-<%= link_to 'Back', grade_contexts_path %>
-</div>
+<%= h_show_bottom(@grade_context)%>
+<%= h_show_menus_bottom(@grade_context)%>
+

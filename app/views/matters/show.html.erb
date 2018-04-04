@@ -1,35 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_top(@matter)%>
 
 <p>
-  <strong>Name:</strong>
-  <%= @matter.name %>
+	<%= h_show_label(:label_matter_type)%>
+	<%= @matter.matter_type.ident %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @matter.matter_type.name %>
+	<%= h_show_label(:label_matter_duration)%>
+	<%= @matter.matter_duration.ident %>
 </p>
 
 <p>
-  <strong>Duration:</strong>
-  <%= @matter.matter_duration.name %>
+	<%= h_show_label(:label_matter_nb_max_student)%>
+	<%= @matter.matter_nb_max_student %>
 </p>
 
-<p>
-  <strong>Nbmaxstudent:</strong>
-  <%= @matter.matter_nb_max_student %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @matter.description %>
-</p>
-
-<p>
-  <strong>Custo:</strong>
-  <%= @matter.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_matter_path(@matter) %> |
-<%= link_to 'Back', matters_path %>
-</div>
+<%= h_show_bottom(@matter)%>
+<%= h_show_menus_bottom(@matter)%>

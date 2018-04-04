@@ -1,57 +1,42 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<%= h_show_notice%>
+
+<%= h_show_top(@teaching)%>
 
 <p>
-	<strong>Name:</strong>
-	<%= @teaching.name %>
-</p>
-
-<p>
-	<strong>Teaching class school:</strong>
+	<%= h_show_label(:label_teaching_class_school)%>
 	<%= @teaching.teaching_class_school.name %>
 </p>
 
 <p>
-	<strong>Teaching teacher:</strong>
+	<%= h_show_label(:label_teaching_teacher)%>
 	<%= @teaching.teaching_teacher.name %>
 </p>
 
 <p>
-	<strong>Teaching matter:</strong>
+	<%= h_show_label(:label_teaching_matter)%>
 	<%= @teaching.teaching_matter.name %>
 </p>
 <p>
-	<strong>Teaching start_time:</strong>
+	<%= h_show_label(:label_teaching_start_time)%>
 	<%= @teaching.teaching_start_time %>
 </p>
 <p>
-	<strong>Teaching duration:</strong>
+	<%= h_show_label(:label_teaching_duration)%>
 	<%= @teaching.teaching_duration %>
 </p>
 <p>
-	
-	<strong>Teaching repetition:</strong>
+
+	<%= h_show_label(:label_teaching_repetition)%>
 	<%= @teaching.teaching_repetition %>
 </p>
 <p>
-	<strong>Teaching repetition_number:</strong>
+	<%= h_show_label(:label_teaching_repetition_number)%>
 	<%= @teaching.teaching_repetition_number %>
 </p>
 
-<p>
-	<strong>Description:</strong>
-	<%= @teaching.description %>
-</p>
+<%= h_show_bottom(@teaching)%>
+<%= h_show_menus_bottom(@teaching)%>
 
-<p>
-	<strong>Custo:</strong>
-	<%= @teaching.custo %>
-</p>
-<div class="datagrid-actions">
-	<%= link_to 'Edit', edit_teaching_path(@teaching) %> |
-	<%= link_to 'Back', teachings_path %>
-</div>
 <% unless @schedules.nil? %>
 <%= month_calendar  events: @schedules do |date, schedules| %>
 <%= date.day %>

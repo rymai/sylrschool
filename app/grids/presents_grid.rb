@@ -14,12 +14,16 @@ class PresentsGrid < BaseGrid
 
   filter(:schedule, :integer, :header => I18n.t(:label_schedule))
   column(:schedule, :html => true, :mandatory => true, :header => I18n.t(:label_schedule))do |asset|
-    link_to asset.schedule.ident, asset.schedule
+    unless asset.schedule.nil?
+      link_to asset.schedule.ident, asset.schedule
+    end
   end
 
   filter(:teaching, :integer, :header => I18n.t(:label_teaching))
   column(:teaching, :html => true, :mandatory => true, :header => I18n.t(:label_teaching))do |asset|
-    link_to asset.teaching.ident, asset.teaching
+    unless asset.teaching.nil?
+      link_to asset.teaching.ident, asset.teaching
+    end
   end
 
   #pour definir un select sur un champ

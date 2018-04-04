@@ -1,62 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= render :partial=>"shared/show_person",
+:locals=>{:object=> @responsible} %>
 
 <p>
-  <strong>Name:</strong>
-  <%= @responsible.name %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @responsible.email %>
-</p>
-<p>
-  <strong>Person status</strong>
-  <%= @responsible.person_status %>
-</p>
-<p>
-  <strong>Firstname:</strong>
-  <%= @responsible.firstname %>
+	<%= h_show_label("label_responsible_type")%>
+	<%= @responsible.type.ident %>
 </p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @responsible.lastname %>
-</p>
+<%= h_show_bottom(@responsible)%>
+<%= h_show_menus_bottom(@responsible)%>
 
-<p>
-  <strong>Adress:</strong>
-  <%= @responsible.adress %>
-</p>
-
-<p>
-  <strong>Postalcode:</strong>
-  <%= @responsible.postalcode %>
-</p>
-
-<p>
-  <strong>Town:</strong>
-  <%= @responsible.town %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @responsible.birthday %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @responsible.description %>
-</p>
-
-<p>
-  <strong>Custo:</strong>
-  <%= @responsible.custo %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @responsible.type_id %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_responsible_path(@responsible) %> |
-<%= link_to 'Back', responsibles_path %>
-</div>

@@ -22,6 +22,10 @@
 en:
   # common des common
   submit_validate: Validate
+  action_edit: Edit
+  action_index: Listing
+  action_new: New
+  action_show: Show
   #select_inout
   label_student_responsibles: Responsibles
   label_student_responsible_ids_out: Responsibles choosen
@@ -47,6 +51,7 @@ en:
   button_remove: Remove 
   # common top
   label_filter_id: "Id (,)"
+  label_id: Id
   label_name: Name
   label_description: Description
   # common bottom
@@ -83,6 +88,7 @@ en:
   label_matter_duration_value: Value
   label_matter_duration: Matter duration
   label_matter_type: Matter type
+  label_matter_nb_max_student: Max number of students
   # notebook
   label_notebook_text: Notebook text
   label_notebook_student: Student
@@ -116,6 +122,9 @@ en:
   label_schedule_schedule_teaching: Teaching
   # students
   label_student_class_school: Class school
+  # teacher
+  label_teacher_matter: Matter
+  label_teacher_grade_context: Grade context
   # teaching
   label_teaching_class_school: "Class school (id)"
   label_teaching_teacher: "Teacher (id)"

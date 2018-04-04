@@ -10,7 +10,9 @@ class NotebooksGrid < BaseGrid
 
   filter(:student, :integer, :header => I18n.t(:label_student))
   column(:student, :html => true, :mandatory => true, :header => I18n.t(:label_notebook_student))do |asset|
-    link_to asset.student.ident, asset.student
+    unless asset.student.nil?
+      link_to asset.student.ident, asset.student
+    end
   end
 
   eval=eval(File.read("#{include_grids()}/bottom_grid.rb"))

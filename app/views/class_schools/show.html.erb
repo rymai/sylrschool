@@ -1,32 +1,17 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<%= h_show_notice%>
+
+<%= h_show_top(@class_school)%>
+
 
 <p>
-	<strong>Name:</strong>
-	<%= @class_school.name %>
-</p>
-
-<p>
-	<strong>Nb max student:</strong>
+	<%= h_show_label(:label_nb_max_student)%>
 	<%= @class_school.nb_max_student %>
 </p>
 
 <p>
-	<strong>Default location:</strong>
-	<%= @class_school.default_location.name %>
+	<%= h_show_label(:label_default_location)%>
+	<%= @class_school.default_location.ident %>
 </p>
 
-<p>
-	<strong>Description:</strong>
-	<%= @class_school.description %>
-</p>
-
-<p>
-	<strong>Custo:</strong>
-	<%= @class_school.custo %>
-</p>
-
-
-<%= link_to 'Edit', edit_class_school_path(@class_school) %> |
-<%= link_to 'Back', class_schools_path %>
+<%= h_show_bottom(@class_school)%>
+<%= h_show_menus_bottom(@class_school)%>

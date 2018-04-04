@@ -19,6 +19,9 @@ class MattersGrid < BaseGrid
     end
   end
 
+  filter(:matter_nb_max_student, :integer, :header => I18n.t( :label_matter_nb_max_student))
+  column(:matter_nb_max_student, :html => true, :mandatory => true, :header => I18n.t(:label_matter_nb_max_student))
+
   eval=eval(File.read("#{include_grids()}/bottom_grid.rb"))
 
   column(:actions, :html => true, :mandatory => true) do |asset|

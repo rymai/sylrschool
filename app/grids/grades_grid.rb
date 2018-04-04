@@ -28,8 +28,6 @@ class GradesGrid < BaseGrid
   filter(:value, :date, :header => I18n.t(:label_grade_value))
   column(:value, :mandatory => true, :header => I18n.t(:label_grade_value))
 
-  column(:description, :mandatory => true, :header => I18n.t(:label_grade_description))
-
   eval=eval(File.read("#{include_grids()}/bottom_grid.rb"))
 
   column(:actions, :html => true, :mandatory => true) do |asset|

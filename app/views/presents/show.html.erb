@@ -1,35 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_topiddescription(@present)%>
 
 <p>
-  <strong>Student:</strong>
-  <%= @present.student.name %>
+  <%= h_show_label(:label_student)%>
+  <%= @present.student.ident %>
 </p>
 
 <p>
-  <strong>Schedule:</strong>
-  <%= @present.schedule.ident %>
+  <%= h_show_label(:label_schedule)%>
+  <%= @present.schedule.ident unless @present.schedule.nil?%>
 </p>
 
 <p>
-  <strong>Teaching:</strong>
-  <%= @present.teaching.name %>
+  <%= h_show_label(:label_teaching)%>
+  <%= @present.teaching.ident unless @present.teaching.nil?%>
 </p>
 
 <p>
-  <strong>Type:</strong>
+  <%= h_show_label(:label_present_type)%>
   <%= @present.present_type %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @present.description %>
-</p>
 
-<p>
-  <strong>Custo:</strong>
-  <%= @present.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_present_path(@present) %> |
-<%= link_to 'Back', presents_path %>
-</div>
+<%= h_show_bottom(@present)%>
+<%= h_show_menus_bottom(@present)%>
+

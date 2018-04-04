@@ -1,30 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
+
+<%= h_show_topid(@matter_duration)%>
 
 <p>
-  <strong>Name:</strong>
-  <%= @matter_duration.name %>
+  <%= h_show_label(:label_matter_duration_level)%>
+  <%= @matter_duration.matter_duration_level.ident %>
 </p>
 
 <p>
-  <strong>Level:</strong>
-  <%= @matter_duration.matter_duration_level_id %>
-</p>
-
-<p>
-  <strong>Value:</strong>
+  <%= h_show_label(:label_matter_duration_value)%>
   <%= @matter_duration.value %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @matter_duration.description %>
-</p>
-
-<p>
-  <strong>Custo:</strong>
-  <%= @matter_duration.custo %>
-</p>
-<div class="datagrid-actions">
-<%= link_to 'Edit', edit_matter_duration_path(@matter_duration) %> |
-<%= link_to 'Back', matter_durations_path %>
-</div>
+<%= h_show_bottom(@matter_duration)%>
+<%= h_show_menus_bottom(@matter_duration)%>
