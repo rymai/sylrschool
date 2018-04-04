@@ -25,7 +25,6 @@
 	
 <div class="field">
 	<%= f.label t("label_responsible_students") %>
-	<br/>
 	<%= select_inout(f, @responsible, Student.get_all, :name) %>
 </div>
 <div class="actions">

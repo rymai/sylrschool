@@ -20,12 +20,10 @@
 
 <div class="field">
 	<%= f.label t("label_teacher_notebooks") %>
-	<br/>
 	<%= select_inout(f, @teacher, Notebook.get_all, :name) %>
 </div>
 <div class="field">
 	<%= f.label t("label_teacher_matters") %>
-	<br/>
 	<%= select_inout(f, @teacher, Matter.get_all, :name) %>
 
 	<div class="actions">

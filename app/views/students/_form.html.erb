@@ -14,9 +14,18 @@
 <% end %>
 <%= render :partial=>"shared/form_person",
 :locals=>{:f=>f,
-:object=> @responsible,
+:object=> @student,
 :status=>Responsible.all_person_status} %>
 
+<div class="field">
+	<%= f.label t("label_student_class_school") %>
+	<%= f.collection_select(:student_class_school, ClassSchool.get_all, :id, :name) %>
+</div>
+
+<div class="field">
+	<%= f.label t("label_student_responsibles") %>
+	<%= select_inout(f, @student, Responsible.get_all, :ident_long) %>
+</div>
 <div class="actions">
 	<div class="datagrid-actions">
 		<%= f.submit %>

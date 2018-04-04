@@ -43,6 +43,11 @@
 </p>
 
 <p>
+  <strong>ClassSchool:</strong>
+  <%= @student.student_class_school.ident unless @student.student_class_school.nil? %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @student.description %>
 </p>

@@ -228,10 +228,11 @@ ActiveRecord::Schema.define(version: 20180402132540) do
     t.string   "phone1"
     t.string   "phone2"
     t.date     "birthday"
+    t.integer  "student_class_school", limit: 8
     t.text     "description"
     t.string   "custo"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "students", ["email"], name: "index_students_on_email", using: :btree

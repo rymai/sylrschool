@@ -13,4 +13,8 @@ class Responsible < ActiveRecord::Base
     responsible_types.map {|r| [r.name, r]}
   end
   
+  def ident_long
+    "#{name}.#{type.name}"
+  end
+  
 end

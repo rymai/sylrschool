@@ -114,6 +114,8 @@ fr:
   label_schedule_duration: Duration
   label_schedule_schedule_father: Schedule father
   label_schedule_schedule_teaching: Enseignement
+  # students
+  label_student_class_school: Classe
   # teaching
   label_teaching_class_school: "Class school (id)"
   label_teaching_teacher: "Teacher (id)"
