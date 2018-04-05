@@ -3,7 +3,7 @@ class CreateMatters < ActiveRecord::Migration
     create_table :matters do |t|
       t.string :name
       t.integer :matter_type_id
-      t.integer :matter_duration_id
+      t.integer :matter_duration
       t.integer :matter_nb_max_student
       t.text :description
       t.string :custo

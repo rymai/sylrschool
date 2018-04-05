@@ -3,7 +3,7 @@ class MatterDuration < ActiveRecord::Base
   before_save :set_custo
   validates_presence_of :name, :matter_duration_level_id, :value
   validates :name, uniqueness: true
-  has_many :matters
+  has_many :matters, :foreign_key=>:matter_duration_id
   belongs_to :element
   belongs_to :matter_duration_level , class_name: 'Element'
   def self.matter_durations_levels

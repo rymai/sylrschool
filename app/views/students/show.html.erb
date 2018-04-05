@@ -1,11 +1,13 @@
 <%= h_show_notice%>
 
+<%= h_show_top(@student)%>
+
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @student} %>
 
 <p>
 	<%= h_show_label("label_student_class_school")%>
-	<%= object.student_class_school.ident unless @student.student_class_school.nil? %>
+	<%= @student.student_class_school.ident unless @student.student_class_school.nil? %>
 </p>
 
 <%= h_show_bottom(@student)%>

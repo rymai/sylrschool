@@ -40,23 +40,12 @@
 					<%= t(:legend_manage) %> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li class="dropdown-submenu" id="personmenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_person)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/students","help_students",t("mnu_students")) %>
-							</li>
-							<li>
-								<%= h_menu("/teachers","help_teachers",t("mnu_teachers")) %>
-							</li>
-							<li>
-								<%= h_menu("/responsibles","help_responsibles",t("mnu_responsibles")) %>
-							</li>
-						</ul>
-					</li>
 					<li class="dropdown-submenu" id="classschoolmenu">
 						<a class='menu' tabindex="-1" href="#"><%= t(:legend_year_preparation)%></a>
 						<ul class="dropdown-menu">
+							<li>
+								<%= h_menu("/teachers","help_teachers",t("mnu_teachers")) %>
+							</li>
 							<li>
 								<%= h_menu("/matters","help_matters",t("mnu_matters")) %>
 							</li>
@@ -65,6 +54,17 @@
 							</li>
 							<li>
 								<%= h_menu("/teachings","help_teachings",t("mnu_teachings")) %>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown-submenu" id="personmenu">
+						<a class='menu' tabindex="-1" href="#"><%= t(:legend_inscriptions)%></a>
+						<ul class="dropdown-menu">
+							<li>
+								<%= h_menu("/responsibles","help_responsibles",t("mnu_responsibles")) %>
+							</li>
+							<li>
+								<%= h_menu("/students","help_students",t("mnu_students")) %>
 							</li>
 						</ul>
 					</li>
@@ -101,7 +101,7 @@
 								<%= h_menu("/grade_contexts","help_grade_contexts",t("mnu_grade_contexts")) %>
 							</li>
 							<li>
-								<%= h_menu("/locations","help_locationss",t("mnu_location")) %>
+								<%= h_menu("/locations","help_locationss",t("mnu_locations")) %>
 							</li>
 							<li>
 								<%= h_menu("/matter_durations","help_matter_durations",t("mnu_matter_durations")) %>

@@ -86,9 +86,10 @@ ActiveRecord::Schema.define(version: 20180402132540) do
     t.string   "name"
     t.string   "usage_id"
     t.text     "description"
+    t.integer  "location_nb_max_person"
     t.string   "custo"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "locations", ["name"], name: "index_locations_on_name", using: :btree
@@ -108,7 +109,7 @@ ActiveRecord::Schema.define(version: 20180402132540) do
   create_table "matters", force: :cascade do |t|
     t.string   "name"
     t.integer  "matter_type_id"
-    t.integer  "matter_duration_id"
+    t.integer  "matter_duration"
     t.integer  "matter_nb_max_student"
     t.text     "description"
     t.string   "custo"
@@ -189,8 +190,6 @@ ActiveRecord::Schema.define(version: 20180402132540) do
   create_table "schedules", force: :cascade do |t|
     t.string   "schedule_type"
     t.datetime "start_time"
-    t.boolean  "all_of_day"
-    t.integer  "duration"
     t.integer  "schedule_father_id",   limit: 8
     t.integer  "schedule_teaching_id", limit: 8
     t.string   "custo"
@@ -228,11 +227,11 @@ ActiveRecord::Schema.define(version: 20180402132540) do
     t.string   "phone1"
     t.string   "phone2"
     t.date     "birthday"
-    t.integer  "student_class_school", limit: 8
+    t.integer  "student_class_school_id", limit: 8
     t.text     "description"
     t.string   "custo"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "students", ["email"], name: "index_students_on_email", using: :btree
@@ -278,7 +277,6 @@ ActiveRecord::Schema.define(version: 20180402132540) do
     t.datetime "teaching_start_time"
     t.string   "teaching_repetition"
     t.integer  "teaching_repetition_number"
-    t.integer  "teaching_duration"
     t.text     "description"
     t.string   "custo"
     t.datetime "created_at",                           null: false

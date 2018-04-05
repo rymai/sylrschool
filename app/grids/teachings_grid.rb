@@ -37,7 +37,13 @@ class TeachingsGrid < BaseGrid
   column(:teaching_start_time, :mandatory => true, :header => I18n.t(:label_teaching_start_time))
 
   filter(:teaching_duration, :integer, :header => I18n.t(:label_teaching_duration))
-  column(:teaching_duration, :mandatory => true, :header => I18n.t(:label_teaching_duration))
+  column(:teaching_duration, :mandatory => true, :header => I18n.t(:label_teaching_duration))do |asset|
+    unless asset.teaching_matter.nil?
+      asset.teaching_matter.matter_duration
+    else
+      ""
+    end
+  end
 
 
   #pour definir un select sur un champ

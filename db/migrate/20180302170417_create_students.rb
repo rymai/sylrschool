@@ -12,7 +12,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :phone1
       t.string :phone2
       t.date :birthday
-      t.bigint :student_class_school
+      t.bigint :student_class_school_id
       t.text :description
       t.string :custo
 

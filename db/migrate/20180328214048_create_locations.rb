@@ -4,6 +4,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :name
       t.string :usage_id
       t.text :description
+      t.integer :location_nb_max_person
       t.string :custo
 
       t.timestamps null: false

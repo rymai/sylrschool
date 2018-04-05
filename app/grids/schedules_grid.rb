@@ -14,12 +14,6 @@ class SchedulesGrid < BaseGrid
   filter(:start_time, :datetime, :header => I18n.t(:label_start_time))
   column(:start_time, :mandatory => true, :header => I18n.t(:label_start_time))
 
-  filter(:all_of_day, :boolean, :header => I18n.t(:label_all_of_day))
-  column(:all_of_day, :mandatory => true, :header => I18n.t(:label_all_of_day))
-
-  filter(:duration, :string, :multiple => ',', :header => I18n.t(:label_schedule_duration))
-  column(:duration, :mandatory => true, :header => I18n.t(:label_schedule_duration))
-
   filter(:schedule_father, :integer, :multiple => ',', :header => I18n.t(:label_schedule_schedule_father))
   column(:schedule_father, :html => true, :mandatory => true, :header => I18n.t(:label_schedule_schedule_father))do |asset|
     unless asset.schedule_father.nil?
@@ -28,7 +22,6 @@ class SchedulesGrid < BaseGrid
       ""
     end
   end
-
   filter(:schedule_teaching, :integer, :multiple => ',', :header => I18n.t(:label_schedule_schedule_teaching))
   column(:schedule_teaching, :html => true, :mandatory => true, :header => I18n.t(:label_schedule_schedule_teaching))do |asset|
     unless asset.schedule_teaching.nil?

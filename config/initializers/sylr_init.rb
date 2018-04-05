@@ -117,7 +117,7 @@ NOLOGS = [
 
 puts "#{fname}: SYLRSCHOOL_DEBUG=#{ENV.fetch('SYLRSCHOOL_DEBUG')}"
 puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
-if ENV.fetch('SYLRSCHOOL_DEBUG', true) == 'true'
+if ENV.fetch('SYLRSCHOOL_DEBUG', false) == 'true'
   LOG.formatter = Classes::AppClasses::LogFormatter.new(NOLOGS)
 end
 

@@ -2,7 +2,7 @@
 MatterDuration_1:
   id: 1
   name: dfsdsdfsf
-  level_id: 5
+  matter_duration_level_id: 5
   value: 60
   description: ''
   custo: scolaire

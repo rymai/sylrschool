@@ -49,7 +49,7 @@ module ApplicationHelper
     html << "</p>"
     html << "<p>"
     html << "<strong>#{t('label_description')}:</strong>"
-    html << object.description
+    html << object.description.to_s
     html << "</p>"
     html.html_safe
   end
@@ -84,7 +84,7 @@ module ApplicationHelper
     html << "</p>"
     html << "<p>"
     html << "<strong>#{t('label_description')}:</strong>"
-    html << object.description
+    html << object.description.to_s
     html << "</p>"
     html.html_safe
   end
@@ -112,9 +112,55 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def h_form_errors(object)
+    html=""
+    if object.errors.any?
+      html << "<div id='error_explanation'>"
+      html << "<h2>#{pluralize(object.errors.count, 'error')} prohibited this #{object.model_name} from being saved:</h2>"
+      html << "<ul>"
+      object.errors.full_messages.each do |message|
+        html << "<li>"
+        html << message
+        html << "</li>"
+      end
+      html << "</ul>"
+      html << "</div>"
+    html.html_safe
+    end
+  end
+
   def h_form_label(form,label)
     html=""
     html << "#{form.label(t(label))}"
+    html.html_safe
+  end
+
+  def h_form_text(form,field,label)
+    html=""
+    html << "<div class='field'>"
+    html << h_form_label(form, label)
+    html << form.text_field(field)
+    html << "</div>"
+    html.html_safe
+  end
+  def h_form_text_area(form,field,label)
+    html=""
+    html << "<div class='field'>"
+    html << h_form_label(form, label)
+    html << form.text_area(field)
+    html << "</div>"
+    html.html_safe
+  end
+
+  def h_form_name(form)
+    html=""
+    html<< h_form_text(form,:name,:label_name)
+    html.html_safe
+  end
+
+  def h_form_description(form)
+    html=""
+    html<< h_form_text_area(form,:description,:label_description)
     html.html_safe
   end
 

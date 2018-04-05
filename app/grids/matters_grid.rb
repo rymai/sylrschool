@@ -11,14 +11,8 @@ class MattersGrid < BaseGrid
   end
 
   filter(:matter_duration, :integer, :header => I18n.t( :label_matter_duration))
-  column(:matter_duration, :html => true, :mandatory => true, :header => I18n.t(:label_matter_duration))do |asset|
-    unless asset.matter_duration_id.nil?
-      link_to asset.matter_duration.ident, asset.matter_duration
-    else
-      ""
-    end
-  end
-
+  column(:matter_duration, :html => true, :mandatory => true, :header => I18n.t(:label_matter_duration))
+ 
   filter(:matter_nb_max_student, :integer, :header => I18n.t( :label_matter_nb_max_student))
   column(:matter_nb_max_student, :html => true, :mandatory => true, :header => I18n.t(:label_matter_nb_max_student))
 

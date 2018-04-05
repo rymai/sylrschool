@@ -1,56 +1,26 @@
 <%= form_for(@matter) do |f| %>
-<% if @matter.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@matter.errors.count, "error") %> prohibited this matter from being saved:</h2>
+<%= h_form_errors(@matter) %>
 
-	<ul>
-		<% @matter.errors.full_messages.each do |message| %>
-		<li>
-			<%= message %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
-
+<%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :name %>
-	
-	<%= f.text_field :name %>
-</div>
-<div class="field">
-	<%= f.label :matter_type %>
-	
+	<%= f.label :label_matter_type %>	
 	<%= f.collection_select(:matter_type_id, Matter.matter_types, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :matter_duration %>
-	
-	<%= f.collection_select(:matter_duration_id, MatterDuration.get_all, :id, :name) %>
+	<%= f.label :label_matter_duration %>
+	<%= f.number_field :matter_duration %>
 </div>
 <div class="field">
-	<%= f.label :matter_nb_max_student %>
-	
+	<%= f.label :label_matter_nb_max_student %>
 	<%= f.number_field :matter_nb_max_student %>
-</div>
-<div class="field">
-	<%= f.label :description %>
-	
-	<%= f.text_area :description %>
-</div>
-<div class="field">
-	<%= f.label t("label_matter_teachers") %>
-	<%= select_inout(f, @matter, Teacher.get_all, :name) %>
 </div>
 
 <div class="field">
-	<%= f.label :custo %>
-	
-	<%= f.text_field :custo %>
+	<%= f.label t(:label_matter_teachers) %>
+	<%= select_inout(f, @matter, Teacher.get_all, :name) %>
 </div>
-<div class="actions">
-	<div class="datagrid-actions">
-	<%= f.submit %>
-	</div>
-</div>
+
+<%= h_form_description(f) %>
+
+<%= h_form_bottom(f) %>
 <% end %>

@@ -1,5 +1,7 @@
 <%= h_show_notice%>
 
+<%= h_show_top(@responsible)%>
+
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @responsible} %>
 

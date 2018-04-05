@@ -1,39 +1,16 @@
 <%= form_for(@matter_duration) do |f| %>
-  <% if @matter_duration.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@matter_duration.errors.count, "error") %> prohibited this matter_duration from being saved:</h2>
+<%= h_form_errors(@matter_duration) %>
 
-      <ul>
-      <% @matter_duration.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= h_form_name(f) %>
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :matter_duration_level %>
+    <%= f.label :label_matter_duration_level %>
     <%= f.collection_select(:matter_duration_level_id, MatterDuration.matter_durations_levels, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :value_in_mn %>
+    <%= f.label :label_matter_duration_value %>
     <%= f.number_field :value %>
   </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :custo %>
-    <%= f.text_field :custo %>
-  </div><div class="actions">
-  	<div class="datagrid-actions">
-    <%= f.submit %>
-    </div>
-   
-  </div>
+<%= h_form_description(f) %>
+
+<%= h_form_bottom(f) %>
 <% end %>

@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @class_school %> |
-<%= link_to 'Back', class_schools_path %>
+<div class="datagrid-actions">
+<%= link_to t('action_show'), @class_school %> |
+<%= link_to t('action_index'), class_schools_path %>
+</div>

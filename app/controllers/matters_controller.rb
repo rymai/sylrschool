@@ -78,6 +78,6 @@ class MattersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def matter_params
-    params.require(:matter).permit(:name, :matter_type_id, :matter_duration_id, :matter_nb_max_student, :description, :custo)
+    params.require(:matter).permit(:name, :matter_type_id, :matter_duration, :matter_nb_max_student, :description, :custo)
   end
 end

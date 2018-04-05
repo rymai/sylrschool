@@ -1,34 +1,17 @@
 <%= form_for(@location) do |f| %>
-  <% if @location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+<%= h_form_errors(@location) %>
 
-      <ul>
-      <% @location.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= h_form_name(f) %>
+<div class="field">
+	<%= f.label :label_usage %>
+	<%= f.collection_select(:usage_id, Location.location_usages, :id, :name) %>
+</div>
+<div class="field">
+	<%= h_form_label(f,:label_location_nb_max_person)%>
+	<%= f.number_field :location_nb_max_person %>
+</div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :usage_id %>
-    <%= f.collection_select(:usage_id, Location.location_usages, :id, :name) %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :custo %>
-    <%= f.text_field :custo %>
-  </div><div class="actions">
-  	<div class="datagrid-actions">
-    <%= f.submit %>
-    </div>
-  </div>
+<%= h_form_description(f) %>
+
+<%= h_form_bottom(f) %>
 <% end %>

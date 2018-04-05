@@ -1,52 +1,24 @@
 <%= form_for(@grade_context) do |f| %>
-<% if @grade_context.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(@grade_context.errors.count, "error") %> prohibited this grade_context from being saved:</h2>
+<%= h_form_errors(@grade_context) %>
 
-    <ul>
-        <% @grade_context.errors.full_messages.each do |message| %>
-        <li>
-            <%= message %>
-        </li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
-
+<%= h_form_name(f) %>
 <div class="field">
-    <%= f.label :name %>
-    
-    <%= f.text_field :name %>
-</div>
-<div class="field">
-    <%= f.label :goal %>
+    <%= f.label :label_goal %>
     
     <%= f.text_field :goal %>
 </div>
 <div class="field">
-    <%= f.label :min_value %>
+    <%= f.label :label_min_value %>
     
     <%= f.text_field :min_value %>
 </div>
 <div class="field">
-    <%= f.label :max_value %>
+    <%= f.label :label_max_value %>
     
     <%= f.text_field :max_value %>
 </div>
-<div class="field">
-    <%= f.label :description %>
-    
-    <%= f.text_area :description %>
-</div>
-<div class="field">
-    <%= f.label :custo %>
-    
-    <%= f.text_field :custo %>
-</div>
-<div class="datagrid-actions">
-<div class="actions">
-	<div class="datagrid-actions">
-    <%= f.submit %>
-    </div>
-</div>
+<%= h_form_description(f) %>
+
+<%= h_form_bottom(f) %>
 <% end %>
+

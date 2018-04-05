@@ -1,17 +1,6 @@
 <%= form_for(@responsible) do |f| %>
-<% if @responsible.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@responsible.errors.count, "error") %> prohibited this responsible from being saved:</h2>
+<%= h_form_errors(@responsible) %>
 
-	<ul>
-		<% @responsible.errors.full_messages.each do |message| %>
-		<li>
-			<%= message %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
 
 <div class="field">
 	<%= f.label :type_id %>
@@ -27,9 +16,6 @@
 	<%= f.label t("label_responsible_students") %>
 	<%= select_inout(f, @responsible, Student.get_all, :name) %>
 </div>
-<div class="actions">
-	<div class="datagrid-actions">
-	<%= f.submit %>
-	</div>
-</div>
+
+<%= h_form_bottom(f) %>
 <% end %>

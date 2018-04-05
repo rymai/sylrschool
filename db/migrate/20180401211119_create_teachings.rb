@@ -9,7 +9,6 @@ class CreateTeachings < ActiveRecord::Migration
       t.datetime :teaching_start_time
       t.string :teaching_repetition
       t.integer :teaching_repetition_number
-      t.integer :teaching_duration
       t.text :description
       t.string :custo
 

@@ -1,15 +1,19 @@
 class Schedule < ActiveRecord::Base
   include Models::CommonModels
   before_save :set_custo
-  validates_presence_of :schedule_type
-  before_save :validity
+  validates_presence_of :schedule_type, :start_time
+  #before_save :validity
   belongs_to :schedule_father, :class_name=>Schedule
   belongs_to :schedule_teaching, :class_name=>Teaching
+
+  has_many :presents, :foreign_key=>:schedule_id
+  has_many :teachings, :foreign_key=>:teaching_schedule_id
+  has_many :schedules, :foreign_key=>:schedule_father_id
   def self. schedule_types
     SYLR::C_ALL_SCHEDULE_TYPES
   end
 
-  # for start_time and rustion depending of all_of_day
+  # for start_time and duration depending of all_of_day
   def validity
     fname = "#{self.class.name}.#{__method__}"
     begin
@@ -45,14 +49,24 @@ class Schedule < ActiveRecord::Base
   def ident
     ret=""
     ret+="#{schedule_teaching.name}." unless schedule_teaching.nil?
-    ret+="#{start_time_hour}.#{duration}.#{all_of_day}"
+    ret+="#{start_time_hour}."
+    unless self.schedule_teaching.nil?
+      ret+="#{self.schedule_teaching.teaching_matter.matter_duration}"
+    else
+      ret+="day"
+    end
   end
 
   # for show view
   def ident_long
     ret=""
     ret+="#{schedule_teaching.name}." unless schedule_teaching.nil?
-    ret+="#{start_time_date}.#{duration}.#{all_of_day}"
+    ret+="#{start_time_date}."
+    unless self.schedule_teaching.nil?
+      ret+="#{self.schedule_teaching.teaching_matter.matter_duration}"
+    else
+      ret+="day"
+    end
   end
 
   #enleve UTC... a la fin
@@ -62,7 +76,7 @@ class Schedule < ActiveRecord::Base
 
   # ne garde que l'heure et les minutes
   def start_time_hour
-    "#{start_time.hour}:#{start_time.hour}"
+    "#{start_time.hour}:#{start_time.min}"
   end
 
   def is_root?

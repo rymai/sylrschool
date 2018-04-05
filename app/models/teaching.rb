@@ -3,7 +3,7 @@ class Teaching < ActiveRecord::Base
   before_save :set_custo
   before_destroy :destroy_schedules_childs
   validates_presence_of :name, :teaching_class_school_id, :teaching_teacher_id, :teaching_matter_id
-  validates_presence_of :teaching_start_time, :teaching_duration, :teaching_repetition
+  validates_presence_of :teaching_start_time, :teaching_repetition
   validates_uniqueness_of :name
   validates_uniqueness_of :teaching_start_time
 
@@ -11,6 +11,9 @@ class Teaching < ActiveRecord::Base
   belongs_to :teaching_teacher,class_name: 'Teacher'
   belongs_to :teaching_matter, class_name: 'Matter'
   belongs_to :teaching_domain, class_name: 'Element'
+
+  has_many :teachings, :foreign_key=>:teaching_teacher_id
+  has_many :presents, :foreign_key=>:teaching_id
   def self.teaching_domains
     Element.all.where("for_what = 'teaching_domain' ").to_a
   end
@@ -126,8 +129,6 @@ class Teaching < ActiveRecord::Base
     schedule_params.delete :teaching_repetition_number
     schedule_params.delete :description
     schedule_params[:schedule_type]=SYLR::C_SCHEDULE_WORKING
-    schedule_params[:all_of_day]=SYLR::C_CHECK_FALSE
-    schedule_params[:duration]=self.teaching_matter.matter_duration.value
     # affectation du teaching
     schedule_params[:schedule_teaching_id]=self.id
     transfert_start_time(teaching_params,schedule_params,:teaching_start_time,:start_time)
@@ -148,8 +149,6 @@ class Teaching < ActiveRecord::Base
     to_params.delete "#{from_param}(3i)"
     to_params.delete "#{from_param}(4i)"
     to_params.delete "#{from_param}(5i)"
-    to_params["duration"]=from_params["teaching_duration"]
-    to_params.delete "teaching_duration"
   end
 
 end

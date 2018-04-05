@@ -1,10 +1,13 @@
 <%= h_show_notice%>
 
 <p>
-  <%= h_show_label(:label_usage)%>
-  <%= @location.usage.name %>
+	<%= h_show_label(:label_usage)%>
+	<%= @location.usage.name %>
 </p>
-
+<p>
+	<%= h_show_label(:location_nb_max_person)%>
+	<%= @location.location_nb_max_person %>
+</p>
 
 <%= h_show_bottom(@location)%>
 <%= h_show_menus_bottom(@location)%>

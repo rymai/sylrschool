@@ -4,7 +4,7 @@ class PresentsGrid < BaseGrid
     Present
   end
 
-  eval=eval(File.read("#{include_grids()}/topid_grid.rb"))
+  eval=eval(File.read("#{include_grids()}/topiddescription_grid.rb"))
 
   #pour definir un lien vers un autre modele
   filter(:student, :integer, :header => I18n.t(:label_student))

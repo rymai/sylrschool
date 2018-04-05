@@ -1,35 +1,14 @@
 <%= form_for(@element) do |f| %>
-  <% if @element.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
+<%= h_form_errors(@element) %>
 
-      <ul>
-      <% @element.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= h_form_name(f) %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :for_what %>
-    <%= f.select :for_what,Element.for_whats %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :custo %>
-    <%= f.text_field :custo %>
-  </div>
-  <div class="actions">
-  	<div class="datagrid-actions">
-    <%= f.submit %>
-    </div>
-  </div>
+<div class="field">
+	<%= f.label :label_for_what %>
+	<%= f.select :for_what,Element.for_whats %>
+</div>
+
+<%= h_form_description(f) %>
+
+<%= h_form_bottom(f) %>
 <% end %>

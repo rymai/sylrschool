@@ -1,17 +1,6 @@
 <%= form_for(@student) do |f| %>
-<% if @student.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+<%= h_form_errors(@student) %>
 
-	<ul>
-		<% @student.errors.full_messages.each do |message| %>
-		<li>
-			<%= message %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
 <%= render :partial=>"shared/form_person",
 :locals=>{:f=>f,
 :object=> @student,
@@ -19,16 +8,12 @@
 
 <div class="field">
 	<%= f.label t("label_student_class_school") %>
-	<%= f.collection_select(:student_class_school, ClassSchool.get_all, :id, :name) %>
+	<%= f.collection_select(:student_class_school_id, ClassSchool.get_all, :id, :name) %>
 </div>
 
 <div class="field">
 	<%= f.label t("label_student_responsibles") %>
 	<%= select_inout(f, @student, Responsible.get_all, :ident_long) %>
 </div>
-<div class="actions">
-	<div class="datagrid-actions">
-		<%= f.submit %>
-	</div>
-</div>
+<%= h_form_bottom(f) %>
 <% end %>

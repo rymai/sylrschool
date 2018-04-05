@@ -26,6 +26,35 @@ en:
   action_index: Listing
   action_new: New
   action_show: Show
+  # menus
+  legend_desktop: Home
+  legend_manage: Manage the school
+  legend_admin: Admin. the school
+  legend_year_preparation: Year preparation
+  legend_inscriptions: Inscriptions
+  legend_following: Following
+  legend_param: Parameters
+  legend_debug: Debugging
+  mnu_main: Desktop
+  mnu_tools: Tools
+  mnu_matters: Matters
+  mnu_class_schools: Class schools
+  mnu_teachings: Teachings
+  mnu_students: Students
+  mnu_teachers: Teachers
+  mnu_responsibles: Responsibles
+  mnu_notebooks: Note books
+  mnu_grades: Grades
+  mnu_presents: Presents
+  mnu_elements: Elements 
+  mnu_grade_contexts: Grade contexts
+  mnu_locations: Locations
+  mnu_matter_durations: Matter durations
+  mnu_users: Users
+  mnu_student_responsibles: Students Responsibles
+  mnu_teacher_matters: Teachers Matters
+  mnu_notebook_teachers: Notebooks Teachers
+  mnu_schedules: Schedules
   #select_inout
   label_student_responsibles: Responsibles
   label_student_responsible_ids_out: Responsibles choosen
@@ -78,6 +107,7 @@ en:
   label_grade_description: "Appreciation"
   # location
   label_usage: "Usage (id)"
+  label_location_nb_max_person: Nb max persons
   # main tools
   title_tools: Tools
   legend_preferences: Preferences
