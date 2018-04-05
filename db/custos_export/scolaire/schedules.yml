@@ -1,0 +1,150 @@
+
+Schedule_1:
+  id: 1
+  schedule_type: working
+  start_time: 2018-04-08 14:00:00.000000000 Z
+  schedule_father_id: 1
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 15:05:14.715969000 Z
+  updated_at: 2018-04-05 15:05:14.720007000 Z
+
+Schedule_2:
+  id: 2
+  schedule_type: working
+  start_time: 2018-04-15 14:00:00.000000000 Z
+  schedule_father_id: 1
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 15:05:14.722987000 Z
+  updated_at: 2018-04-05 15:05:14.722987000 Z
+
+Schedule_3:
+  id: 3
+  schedule_type: working
+  start_time: 2018-04-22 14:00:00.000000000 Z
+  schedule_father_id: 1
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 15:05:14.729003000 Z
+  updated_at: 2018-04-05 15:05:14.729003000 Z
+
+Schedule_4:
+  id: 4
+  schedule_type: working
+  start_time: 2018-04-05 15:00:00.000000000 Z
+  schedule_father_id: 4
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 15:07:32.152104000 Z
+  updated_at: 2018-04-05 15:07:32.153107000 Z
+
+Schedule_5:
+  id: 5
+  schedule_type: working
+  start_time: 2018-04-12 15:00:00.000000000 Z
+  schedule_father_id: 4
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 15:07:32.156114000 Z
+  updated_at: 2018-04-05 15:07:32.156114000 Z
+
+Schedule_6:
+  id: 6
+  schedule_type: working
+  start_time: 2018-04-19 15:00:00.000000000 Z
+  schedule_father_id: 4
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 15:07:32.165173000 Z
+  updated_at: 2018-04-05 15:07:32.165173000 Z
+
+Schedule_7:
+  id: 7
+  schedule_type: working
+  start_time: 2018-04-08 14:00:00.000000000 Z
+  schedule_father_id: 7
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:44:35.360496000 Z
+  updated_at: 2018-04-05 16:44:35.362504000 Z
+
+Schedule_8:
+  id: 8
+  schedule_type: working
+  start_time: 2018-04-15 14:00:00.000000000 Z
+  schedule_father_id: 7
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:44:35.365511000 Z
+  updated_at: 2018-04-05 16:44:35.365511000 Z
+
+Schedule_9:
+  id: 9
+  schedule_type: working
+  start_time: 2018-04-22 14:00:00.000000000 Z
+  schedule_father_id: 7
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:44:35.367515000 Z
+  updated_at: 2018-04-05 16:44:35.367515000 Z
+
+Schedule_10:
+  id: 10
+  schedule_type: working
+  start_time: 2018-04-08 14:00:00.000000000 Z
+  schedule_father_id: 10
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:46:42.448761000 Z
+  updated_at: 2018-04-05 16:46:42.451774000 Z
+
+Schedule_11:
+  id: 11
+  schedule_type: working
+  start_time: 2018-04-15 14:00:00.000000000 Z
+  schedule_father_id: 10
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:46:42.456783000 Z
+  updated_at: 2018-04-05 16:46:42.456783000 Z
+
+Schedule_12:
+  id: 12
+  schedule_type: working
+  start_time: 2018-04-22 14:00:00.000000000 Z
+  schedule_father_id: 10
+  schedule_teaching_id: 4
+  custo: scolaire
+  created_at: 2018-04-05 16:46:42.460820000 Z
+  updated_at: 2018-04-05 16:46:42.460820000 Z
+
+Schedule_13:
+  id: 13
+  schedule_type: working
+  start_time: 2018-04-05 15:00:00.000000000 Z
+  schedule_father_id: 13
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 16:47:10.117081000 Z
+  updated_at: 2018-04-05 16:47:10.121089000 Z
+
+Schedule_14:
+  id: 14
+  schedule_type: working
+  start_time: 2018-04-12 15:00:00.000000000 Z
+  schedule_father_id: 13
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 16:47:10.123094000 Z
+  updated_at: 2018-04-05 16:47:10.123094000 Z
+
+Schedule_15:
+  id: 15
+  schedule_type: working
+  start_time: 2018-04-19 15:00:00.000000000 Z
+  schedule_father_id: 13
+  schedule_teaching_id: 5
+  custo: scolaire
+  created_at: 2018-04-05 16:47:10.125099000 Z
+  updated_at: 2018-04-05 16:47:10.125099000 Z

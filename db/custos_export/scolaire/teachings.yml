@@ -1,0 +1,30 @@
+
+Teaching_4:
+  id: 4
+  name: 2de-1-françaisc
+  teaching_class_school_id: 1
+  teaching_teacher_id: 2
+  teaching_matter_id: 1
+  teaching_domain_id: 
+  teaching_start_time: 2018-04-08 14:00:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 15:05:14.700929000 Z
+  updated_at: 2018-04-05 16:44:35.323420000 Z
+
+Teaching_5:
+  id: 5
+  name: 1ere-1-maths
+  teaching_class_school_id: 2
+  teaching_teacher_id: 3
+  teaching_matter_id: 2
+  teaching_domain_id: 
+  teaching_start_time: 2018-04-05 15:00:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 15:07:32.149096000 Z
+  updated_at: 2018-04-05 16:47:10.058927000 Z
