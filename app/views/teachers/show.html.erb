@@ -5,15 +5,6 @@
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @teacher} %>
 
-<p>
-  <%= h_show_label("label_teacher_matter")%>
-  <%= @teacher.defmatter_id %>
-</p>
-
-<p>
-  <%= h_show_label("label_teacher_grade_context")%>
-  <%= @teacher.defgradecontext_id %>
-</p>
 <%= h_show_bottom(@teacher)%>
 <%= h_show_menus_bottom(@teacher)%>
 

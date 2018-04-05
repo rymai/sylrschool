@@ -1,11 +1,22 @@
 
 Matter_1:
   id: 1
-  name: ccwx
-  matter_type_id: 1
-  matter_duration_id: 1
-  matter_nb_max_student: 4
-  description: "sdsdfsdf\r\nfsddgd\r\ngghjhjghjghjghjg\r\nghjghjghjgh"
+  name: Français
+  matter_type_id: 2
+  matter_duration: 60
+  matter_nb_max_student: 25
+  description: ''
   custo: scolaire
-  created_at: 2018-03-29 19:58:49.993109000 Z
-  updated_at: 2018-03-29 20:13:10.604262000 Z
+  created_at: 2018-04-05 14:10:00.061073000 Z
+  updated_at: 2018-04-05 14:10:00.061073000 Z
+
+Matter_2:
+  id: 2
+  name: Maths-30
+  matter_type_id: 1
+  matter_duration: 30
+  matter_nb_max_student: 25
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 14:10:37.978544000 Z
+  updated_at: 2018-04-05 14:10:37.978544000 Z

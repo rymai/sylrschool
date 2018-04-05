@@ -7,10 +7,5 @@
 :object=> @teacher,
 :status=>Teacher.all_person_status} %>
 
-<div class="field">
-	<%= f.label t("label_teacher_notebooks") %>
-	<%= select_inout(f, @teacher, Notebook.get_all, :name) %>
-</div>
-
 <%= h_form_bottom(f) %>
 <% end %>
