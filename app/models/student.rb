@@ -30,4 +30,14 @@ class Student < ActiveRecord::Base
     valid
   end
 
+  def teachers
+    ret=[]
+    classe=self.student_class_school
+    teachings=classe.teachings.to_a
+    teachings.each do |teaching|
+      ret << teaching.teaching_teacher.ident
+    end
+    ret
+  end
+
 end

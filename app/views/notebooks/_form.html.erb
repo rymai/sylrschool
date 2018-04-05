@@ -11,9 +11,6 @@
 	<%= f.collection_select(:student_id, Student.get_all, :id, :name) %>
 </div>
 
-<%= f.label t("label_notebook_teachers") %>
-<%= select_inout(f, @notebook, Teacher.get_all, :name) %>
-</div>
 <%= h_form_description(f) %>
 
 <%= h_form_bottom(f) %>

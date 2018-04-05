@@ -152,6 +152,7 @@ fr:
   label_schedule_schedule_teaching: Enseignement
   # students
   label_student_class_school: Classe
+  label_student_teachers: Professeurs de cet étudiant
   # teacher
   label_teacher_matter: Matière
   label_teacher_grade_context: Contexte de note

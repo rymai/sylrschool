@@ -152,6 +152,7 @@ en:
   label_schedule_schedule_teaching: Teaching
   # students
   label_student_class_school: Class school
+  label_student_teachers: Teachers of student
   # teacher
   label_teacher_matter: Matter
   label_teacher_grade_context: Grade context

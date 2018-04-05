@@ -69,21 +69,24 @@ class Teaching < ActiveRecord::Base
 
   # si repetition ou repet number change, detruire les scedules et les refaire
   def update_schedules(teaching_params)
-    msg=nil?
+    msg=""
+    ret=true
     if teaching_params["teaching_repetion"]!=self.teaching_repetition ||
     teaching_params["teaching_repetition_number"]!=self.teaching_repetition_number
       if destroy_schedules_childs
         # on recree les schedules
         unless create_schedules(teaching_params)
           msg="Error during schedules repetition update"
+          ret=false
         end
       else
         msg="Error during destroying schedules"
+        ret=false
       end
     end
-    self.errors.add(:base, "Schedule repetition update is bad: #{msg}") unless msg.nil?
+    self.errors.add(:base, "Schedule repetition update is bad: #{msg}") unless ret
     # retour true ou false
-    msg.nil?
+    ret
   end
 
   # return the childs schedules of the current one

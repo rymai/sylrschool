@@ -5,7 +5,7 @@ class Notebook < ActiveRecord::Base
   validates :name, uniqueness: true
   #suivant les relations vers
   belongs_to :student
-  has_and_belongs_to_many :teacher, join_table: :notebook_teachers
+  ####has_and_belongs_to_many :teacher, join_table: :notebook_teachers
 
   has_many :notebook_teacher, :foreign_key=>:teacher_id
 

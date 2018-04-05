@@ -12,7 +12,11 @@ class TeachingsGrid < BaseGrid
   #pour definir un lien vers un autre modele
   filter(:teaching_class_school, :integer, :header => I18n.t(:label_teaching_class_school))
   column(:teaching_class_school, :html => true, :mandatory => true, :header => I18n.t(:label_teaching_class_school))do |asset|
-    link_to asset.teaching_class_school.ident, asset.teaching_class_school
+    unless asset.teaching_class_school.nil?
+      link_to asset.teaching_class_school.ident, asset.teaching_class_school
+    else
+      ""
+    end
   end
 
   filter(:teaching_teacher, :integer, :header => I18n.t(:label_teaching_teacher))

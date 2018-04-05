@@ -10,6 +10,11 @@
 	<%= @student.student_class_school.ident unless @student.student_class_school.nil? %>
 </p>
 
+<p>
+	<%= h_show_label("label_student_teachers")%>
+	<%= @student.teachers %>
+</p>
+
 <%= h_show_bottom(@student)%>
 <%= h_show_menus_bottom(@student)%>
 
