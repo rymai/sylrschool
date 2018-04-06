@@ -34,6 +34,16 @@
 	<%= @teaching.teaching_repetition_number %>
 </p>
 
+<p>
+	<%= h_show_label(:label_teaching_presents)%>
+	<%= h_comma_links @teacher.presents,:ident %>
+</p>
+
+<p>
+	<%= h_show_label(:label_teaching_schedules)%>
+	<%= h_comma_links @teacher.schedules,:ident %>
+</p>
+
 <%= h_show_bottom(@teaching)%>
 <%= h_show_menus_bottom(@teaching)%>
 

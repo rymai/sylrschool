@@ -1,16 +1,21 @@
 class Schedule < ActiveRecord::Base
   include Models::CommonModels
   before_save :set_custo
+  before_destroy :check_destroy
   validates_presence_of :schedule_type, :start_time
   #before_save :validity
   belongs_to :schedule_father, :class_name=>Schedule
   belongs_to :schedule_teaching, :class_name=>Teaching
 
   has_many :presents, :foreign_key=>:schedule_id
-  has_many :teachings, :foreign_key=>:teaching_schedule_id
   has_many :schedules, :foreign_key=>:schedule_father_id
   def self. schedule_types
     SYLR::C_ALL_SCHEDULE_TYPES
+  end
+
+  # renvoi les schedules all day , qui ne sont pas relie a un enseignement
+  def self.get_only_all_day
+    Schedule.all.where("schedule_teaching_id = NULL ")
   end
 
   # for start_time and duration depending of all_of_day
@@ -42,6 +47,22 @@ class Schedule < ActiveRecord::Base
     end
     LOG.debug(fname) { "validity '#{self}' =#{valid} msg=#{msg}" }
 
+    valid
+  end
+
+  # verifie la non presence de references
+  def check_destroy
+    valid=true
+    msg=""
+    if presents.count > 0
+      valid=false
+      msg+=" There are #{presents.count} presents references"
+    end
+    if schedules.count > 0
+      valid=false
+      msg+=" There are #{schedules.count} schedules references"
+    end
+    self.errors.add(:base, "Location can't be destroyed:#{msg}") unless valid
     valid
   end
 

@@ -63,21 +63,28 @@ class ElementsController < ApplicationController
   # DELETE /elements/1
   # DELETE /elements/1.json
   def destroy
-    @element.destroy
-    respond_to do |format|
-      format.html { redirect_to elements_url, notice: 'Element was successfully destroyed.' }
-      format.json { head :no_content }
+    if @element.destroy
+      respond_to do |format|
+        format.html { redirect_to elements_url, notice: 'Element was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to elements_url, notice: 'Element was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_element
-      @element = Element.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def element_params
-      params.require(:element).permit(:name, :for_what, :description, :custo)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_element
+    @element = Element.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def element_params
+    params.require(:element).permit(:name, :for_what, :description, :custo)
+  end
 end

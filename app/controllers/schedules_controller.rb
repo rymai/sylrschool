@@ -63,10 +63,16 @@ class SchedulesController < ApplicationController
   # DELETE /schedules/1
   # DELETE /schedules/1.json
   def destroy
-    @schedule.destroy
-    respond_to do |format|
-      format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }
-      format.json { head :no_content }
+    if @schedule.destroy
+      respond_to do |format|
+        format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to schedules_url, notice: 'Schedule was not destroyed (references it).' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -79,6 +85,7 @@ class SchedulesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def schedule_params
-    params.require(:schedule).permit(:schedule_type, :start_time, :all_of_day, :duration, :schedule_father, :custo)
+    params.require(:schedule).permit(:schedule_type, :start_time, :all_of_day, :duration, 
+    :schedule_father_id, :schedule_teaching_id, :custo)
   end
 end

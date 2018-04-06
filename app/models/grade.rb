@@ -19,12 +19,12 @@ class Grade < ActiveRecord::Base
         valid=false
         msg="The value can't be blank "
       else
-      vmin=self.grade_grade_context.min_value
-      vmax=self.grade_grade_context.max_value
-      if self.value<vmin || value>vmax
-        valid=false
-        msg="Value (#{self.value})is not in grade_context range (#{vmin}..#{vmax})"
-      end
+        vmin=self.grade_grade_context.min_value
+        vmax=self.grade_grade_context.max_value
+        if self.value<vmin || value>vmax
+          valid=false
+          msg="Value (#{self.value})is not in grade_context range (#{vmin}..#{vmax})"
+        end
       end
       errors.add(:base, "Grade is not valid:#{msg}") if valid == false
 
@@ -37,5 +37,9 @@ class Grade < ActiveRecord::Base
     LOG.debug(fname) { "grade '#{self}' =#{valid} msg=#{msg}" }
 
     valid
+  end
+
+  def ident
+    "#{id}.#{value}"
   end
 end

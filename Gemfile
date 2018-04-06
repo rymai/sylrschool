@@ -78,6 +78,9 @@ gem 'coffee-script-source', '1.8.0'
 
 # gestion de la pagination
 gem 'will_paginate'
+
+# traitement de texte dans textarea
+gem 'ckeditor'
 #------------------------
 # syl added end
 #------------------------

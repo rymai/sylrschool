@@ -62,10 +62,16 @@ class GradeContextsController < ApplicationController
   # DELETE /grade_contexts/1
   # DELETE /grade_contexts/1.json
   def destroy
-    @grade_context.destroy
-    respond_to do |format|
-      format.html { redirect_to grade_contexts_url, notice: 'Grade context was successfully destroyed.' }
-      format.json { head :no_content }
+    if @grade_context.destroy
+      respond_to do |format|
+        format.html { redirect_to grade_contexts_url, notice: 'Grade context was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to grade_contexts_url, notice: 'Grade context was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
     end
   end
 

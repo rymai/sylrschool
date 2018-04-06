@@ -1,6 +1,7 @@
 class Responsible < ActiveRecord::Base
   include Models::CommonModels
   before_save :set_custo
+  before_destroy :check_destroy
   validates_presence_of :name, :type_id,:person_status,  :firstname, :lastname, :email
   validates :name, uniqueness: true
   
@@ -16,8 +17,21 @@ class Responsible < ActiveRecord::Base
     responsible_types.map {|r| [r.name, r]}
   end
   
+    # verifie la non presence de references
+  def check_destroy
+    valid=true
+    msg=""
+    if student_responsibles.count > 0
+      valid=false
+      msg+=" There are #{student_responsibles.count} student_responsibles references"
+    end
+    self.errors.add(:base, "Responsible can't be destroyed:#{msg}") unless valid
+    valid
+  end
+
   def ident_long
     "#{name}.#{type.name}"
   end
+  
   
 end

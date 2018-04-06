@@ -62,10 +62,16 @@ class ResponsiblesController < ApplicationController
   # DELETE /responsibles/1
   # DELETE /responsibles/1.json
   def destroy
-    @responsible.destroy
-    respond_to do |format|
-      format.html { redirect_to responsibles_url, notice: 'Responsible was successfully destroyed.' }
-      format.json { head :no_content }
+    if @responsible.destroy
+      respond_to do |format|
+        format.html { redirect_to responsibles_url, notice: 'Responsible was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to responsibles_url, notice: 'Responsible was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
     end
   end
 

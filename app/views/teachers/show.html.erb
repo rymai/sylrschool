@@ -5,6 +5,11 @@
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @teacher} %>
 
+<p>
+	<%= h_show_label(:label_teacher_teachings)%>
+	<%= h_comma_links @teacher.teachings,:ident %>
+</p>
+
 <%= h_show_bottom(@teacher)%>
 <%= h_show_menus_bottom(@teacher)%>
 

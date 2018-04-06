@@ -1,7 +1,7 @@
 class SchedulesGrid < BaseGrid
 
   scope do
-    Schedule
+    Schedule.select("*").where("schedule_teaching_id = -1")
   end
 
   eval=eval(File.read("#{include_grids()}/topid_grid.rb"))
@@ -22,12 +22,14 @@ class SchedulesGrid < BaseGrid
       ""
     end
   end
-  filter(:schedule_teaching, :integer, :multiple => ',', :header => I18n.t(:label_schedule_schedule_teaching))
-  column(:schedule_teaching, :html => true, :mandatory => true, :header => I18n.t(:label_schedule_schedule_teaching))do |asset|
-    unless asset.schedule_teaching.nil?
-      link_to asset.schedule_teaching.ident, asset.schedule_teaching
-    else
-      ""
+  if true
+    filter(:schedule_teaching, :integer, :multiple => ',', :header => I18n.t(:label_schedule_schedule_teaching))
+    column(:schedule_teaching, :html => true, :mandatory => true, :header => I18n.t(:label_schedule_schedule_teaching))do |asset|
+      unless asset.schedule_teaching.nil?
+        link_to asset.schedule_teaching.ident, asset.schedule_teaching
+      else
+        ""
+      end
     end
   end
 

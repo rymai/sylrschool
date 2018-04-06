@@ -11,20 +11,22 @@
 </p>
 
 <p>
-  <strong>All of day</strong>
-  <%= @schedule.all_of_day %>
-</p>
-<p>
-  <strong>Duration:</strong>
-  <%= @schedule.duration %>
-</p>
-<p>
   <strong>Schedule Father:</strong>
   <%= @schedule.schedule_father.ident unless @schedule.schedule_father.nil? %>
 </p>
 <p>
   <strong>Teaching:</strong>
   <%= @schedule.schedule_teaching.ident unless @schedule.schedule_teaching.nil? %>
+</p>
+
+<p>
+	<%= h_show_label(:label_schedule_presents)%>
+	<%= h_comma_links @schedule.presents,:ident %>
+</p>
+
+<p>
+	<%= h_show_label(:label_schedule_schedules)%>
+	<%= h_comma_links @schedule.schedules,:ident %>
 </p>
 
 <p>

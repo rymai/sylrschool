@@ -17,5 +17,14 @@
 	<%= @matter.matter_nb_max_student %>
 </p>
 
+<p>
+	<%= h_show_label(:label_matter_grades)%>
+	<%= h_comma_links @matter.grades,:ident %>
+</p>
+<p>
+	<%= h_show_label(:label_matter_teachers)%>
+	<%= h_comma_links @matter.teachers,:ident %>
+</p>
+
 <%= h_show_bottom(@matter)%>
 <%= h_show_menus_bottom(@matter)%>

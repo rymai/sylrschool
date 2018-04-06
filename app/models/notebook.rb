@@ -7,6 +7,6 @@ class Notebook < ActiveRecord::Base
   belongs_to :student
   ####has_and_belongs_to_many :teacher, join_table: :notebook_teachers
 
-  has_many :notebook_teacher, :foreign_key=>:teacher_id
+  ####has_many :notebook_teacher, :foreign_key=>:teacher_id
 
 end

@@ -1,6 +1,7 @@
 class Teaching < ActiveRecord::Base
   include Models::CommonModels
   before_save :set_custo
+  before_destroy :check_destroy
   before_destroy :destroy_schedules_childs
   validates_presence_of :name, :teaching_class_school_id, :teaching_teacher_id, :teaching_matter_id
   validates_presence_of :teaching_start_time, :teaching_repetition
@@ -12,8 +13,8 @@ class Teaching < ActiveRecord::Base
   belongs_to :teaching_matter, class_name: 'Matter'
   belongs_to :teaching_domain, class_name: 'Element'
 
-  has_many :teachings, :foreign_key=>:teaching_teacher_id
   has_many :presents, :foreign_key=>:teaching_id
+  has_many :schedules, :foreign_key=>:schedule_teaching_id
   def self.teaching_domains
     Element.all.where("for_what = 'teaching_domain' ").to_a
   end
@@ -21,7 +22,21 @@ class Teaching < ActiveRecord::Base
   def self.teaching_domains_names
     teaching_domains.map {|r| [r.name, r]}
   end
-
+ # verifie la non presence de references
+  def check_destroy
+    valid=true
+    msg=""
+    if presents.count > 0
+      valid=false
+      msg+=" There are #{presents.count} presents references"
+    end
+    if schedules.count > 0
+      valid=false
+      msg+=" There are #{schedules.count} schedules references"
+    end
+    self.errors.add(:base, "Teaching can't be destroyed:#{msg}") unless valid
+    valid
+  end
   def create_schedules(teaching_params)
     msg=nil
     schedule_father = create_schedule_father(teaching_params)

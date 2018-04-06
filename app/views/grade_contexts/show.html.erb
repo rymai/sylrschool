@@ -3,20 +3,24 @@
 <%= h_show_topiddescription(@grade_context)%>
 
 <p>
-  <%= h_show_label(:label_goal)%>
-  <%= @grade_context.goal %>
+	<%= h_show_label(:label_goal)%>
+	<%= @grade_context.goal %>
 </p>
 
 <p>
-  <%= h_show_label(:label_min_value)%>
-  <%= @grade_context.min_value %>
+	<%= h_show_label(:label_min_value)%>
+	<%= @grade_context.min_value %>
 </p>
 
 <p>
-  <%= h_show_label(:label_max_value)%>
-  <%= @grade_context.max_value %>
+	<%= h_show_label(:label_max_value)%>
+	<%= @grade_context.max_value %>
 </p>
 
+<p>
+	<%= h_show_label(:label_grade_context_grades)%>
+	<%= h_comma_links @grade_context.grades,:ident %>
+</p>
 
 <%= h_show_bottom(@grade_context)%>
 <%= h_show_menus_bottom(@grade_context)%>

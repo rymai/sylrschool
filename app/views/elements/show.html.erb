@@ -3,15 +3,24 @@
 <%= h_show_top(@element)%>
 
 <p>
-  <%= h_show_label("label_for_what")%>
-  <%= @element.for_what %>
+	<%= h_show_label("label_for_what")%>
+	<%= @element.for_what %>
 </p>
 
 <p>
-  <%= h_show_label("label_description")%>
-  <%= @element.description %>
+	<%= h_show_label(:label_element_responsibles)%>
+	<%= h_comma_links @element.responsibles,:ident %>
 </p>
 
+<p>
+	<%= h_show_label(:label_element_locations)%>
+	<%= h_comma_links @element.locations,:ident %>
+</p>
+
+<p>
+	<%= h_show_label(:label_element_matters)%>
+	<%= h_comma_links @element.matters,:ident %>
+</p>
 
 <%= h_show_bottom(@element)%>
 <%= h_show_menus_bottom(@element)%>

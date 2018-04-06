@@ -62,10 +62,16 @@ class MattersController < ApplicationController
   # DELETE /matters/1
   # DELETE /matters/1.json
   def destroy
-    @matter.destroy
-    respond_to do |format|
-      format.html { redirect_to matters_url, notice: 'Matter was successfully destroyed.' }
-      format.json { head :no_content }
+    if @matter.destroy
+      respond_to do |format|
+        format.html { redirect_to matters_url, notice: 'Matter was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to matters_url, notice: 'Matter was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
     end
   end
 

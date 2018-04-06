@@ -62,10 +62,17 @@ class LocationsController < ApplicationController
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
-    @location.destroy
-    respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
-      format.json { head :no_content }
+    if @location.destroy
+      respond_to do |format|
+        format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to locations_url, notice: 'Location was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
+
     end
   end
 
@@ -79,5 +86,5 @@ class LocationsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
     params.require(:location).permit(:name, :usage_id, :description, :location_nb_max_person, :custo)
-  end 
+  end
 end

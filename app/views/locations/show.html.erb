@@ -9,6 +9,11 @@
 	<%= @location.location_nb_max_person %>
 </p>
 
+<p>
+	<%= h_show_label(:label_location_class_schools)%>
+	<%= h_comma_links @location.class_schools,:ident %>
+</p>
+
 <%= h_show_bottom(@location)%>
 <%= h_show_menus_bottom(@location)%>
 

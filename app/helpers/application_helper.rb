@@ -160,6 +160,14 @@ module ApplicationHelper
 
   def h_form_description(form)
     html=""
+    html << "<div class='field'>"
+    html << h_form_label(form, :label_description)
+    html<< form.cktext_area(:description, id: 'description_id')
+    html << "</div>"
+    html.html_safe
+  end
+  def h_form_description_old(form)
+    html=""
     html<< h_form_text_area(form,:description,:label_description)
     html.html_safe
   end
@@ -177,4 +185,21 @@ module ApplicationHelper
     html << "</div>"
     html.html_safe
   end
+  
+  # build a set of links separated by a comma
+  # the label of each link is composed of the accessor (attribute of the object) applicated on the object r
+  def h_comma_links(objects, accessor = :ident)
+    objects.collect do |o|
+      name = o.send(accessor)
+      path = send "#{o.class.to_s.underscore}_path", o
+      link_to(h(name), path)
+    end.join(', ').html_safe
+  end
+  
+  def h_truncate_words(text, len = 5, end_string = " ...")
+    return if text.blank?
+    words = text.split()
+    words[0..(len-1)].join(' ') + (words.length > len ? end_string : '')
+  end
+
 end

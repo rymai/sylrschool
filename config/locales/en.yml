@@ -92,12 +92,18 @@ en:
   # class_school
   label_nb_max_student: Number max of students
   label_default_location: Default location
+  label_class_school_students: Students referencing it
+  label_class_school_teachings: Teachings referencing it
   # element
   label_for_what: For what
+  label_element_responsibles: Responsibles referencing it
+  label_element_locations: Locations referencing it
+  label_element_matters: Matters referencing it
   # grade_context
   label_goal: Goal
   label_min_value: Min. value
   label_max_value: Max. value
+  label_grade_context_grades: Grades referencing it
   # grade
   label_grade_student: "Student (id)"
   label_grade_grade_context: "Grade Context (id)"
@@ -108,6 +114,7 @@ en:
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max persons
+  label_location_class_schools: Class schools referencing it
   # main tools
   title_tools: Tools
   legend_preferences: Preferences
@@ -119,6 +126,8 @@ en:
   label_matter_duration: Matter duration
   label_matter_type: Matter type
   label_matter_nb_max_student: Max number of students
+  label_matter_grades: Grades referencing it
+  label_matter_teachers: Teachers referencing it
   # notebook
   label_notebook_text: Notebook text
   label_notebook_student: Student
@@ -150,12 +159,19 @@ en:
   label_schedule_duration: Duration
   label_schedule_schedule_father: Schedule father
   label_schedule_schedule_teaching: Teaching
+  label_schedule_presents: Presents referencing it
+  label_schedule_teachings: Teachings referencing it
+  label_schedule_schedules: Schedules referencing it
   # students
   label_student_class_school: Class school
   label_student_teachers: Teachers of student
+  label_student_presents: Presents referencing it
+  label_student_grades: Grades referencing it
+  label_student_notebooks: Notebooks referencing it
   # teacher
   label_teacher_matter: Matter
   label_teacher_grade_context: Grade context
+  label_teacher_teachings: Teachings referencing it
   # teaching
   label_teaching_class_school: "Class school (id)"
   label_teaching_teacher: "Teacher (id)"
