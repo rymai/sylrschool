@@ -1,0 +1,12 @@
+
+Grade_1:
+  id: 1
+  grade_grade_context_id: 2
+  grade_matter_id: 1
+  grade_student_id: 2
+  grade_date: 2018-04-06
+  value: B
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-06 11:02:25.474177000 Z
+  updated_at: 2018-04-06 11:02:25.474177000 Z

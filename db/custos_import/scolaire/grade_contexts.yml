@@ -1,0 +1,11 @@
+
+GradeContext_2:
+  id: 2
+  name: int. orale
+  goal: interro orale
+  min_value: A
+  max_value: D
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 12:33:02.279699000 Z
+  updated_at: 2018-04-05 12:33:02.279699000 Z
