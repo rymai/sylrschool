@@ -50,6 +50,99 @@ class Schedule < ActiveRecord::Base
     valid
   end
 
+  # cree les we de l'annee si le type est weekend C_SCHEDULE_WEEKEND
+  def create_calendar(schedule_params)
+    ret=true
+    if schedule_params[:schedule_type]==SYLR::C_SCHEDULE_WEEKEND
+      if destroy_weekends
+        # on cherche les dates de debut et fin de l'annee
+        msg=""
+        datet_debut=Element.get_calendar_begin
+        if datet_debut.blank?
+          msg+=" Pas de date debut ou mal formattée dans Element"
+        ret=false
+        end
+        datet_fin=Element.get_calendar_end
+        if datet_fin.blank?
+          msg+=" Pas de date fin ou mal formattée dans Element"
+        ret=false
+        end
+        puts "****************************** ret=#{ret}, msg=#{msg} "
+        if ret
+          #on cherche le 1er samedi apres la date de debut de l'annee
+          # 0=dimanche 1 = lundi, samedi=6 ***
+          num=datet_debut.wday
+          datet_samedi_debut=datet_debut + (6-num).day
+
+          #on cherche le dernier samedi avant la date de fin de l'annee
+          num=datet_fin.wday
+          if(num==6)
+          datet_samedi_fin=datet_fin
+          else
+          datet_samedi_fin=datet_fin-(num+1).day
+          end
+          # on cree les samedi et dimanche entre les deux dates
+          datet_current=datet_samedi_debut
+          puts "****************************** datet_current=#{datet_current}"
+          puts "****************************** datet_samedi_fin=#{datet_samedi_fin}"
+          while ret && datet_current<datet_samedi_fin
+            # creation samedi
+            params=schedule_params
+            params["start_time(1i)"]="#{datet_current.year}"
+            params["start_time(2i)"]="#{datet_current.month}"
+            params["start_time(3i)"]="#{datet_current.day}"
+            puts "****************************** params sam=#{params}"
+            schedule_sam=Schedule.new(params)
+
+            unless schedule_sam.save
+              msg="Saturday Schedule can't be saved"
+            ret=false
+            end
+            # creation dimanche
+            datet=datet_current+1.day
+            params["start_time(1i)"]="#{datet.year}"
+            params["start_time(2i)"]="#{datet.month}"
+            params["start_time(3i)"]="#{datet.day}"
+            puts "****************************** params dim=#{params}"
+            schedule_dim=Schedule.new(params)
+            unless schedule_dim.save
+              msg="Sunday Schedule can't be saved"
+            ret=false
+            end
+            datet_current+=7.day
+          end
+
+        end
+      else
+        ret=false
+        msg="Pb. during destroying schedules"
+      end
+      unless ret
+        self.errors.add(:base, "ScheduleS could not been destroyed :#{msg}")
+      end
+    else
+    # save du schedule autre que we
+    self.save
+    end
+    ret
+  end
+
+  # detruit
+  def destroy_weekends
+    ret=true
+    msg=""
+    Schedule.all.where("schedule_type='#{SYLR::C_SCHEDULE_WEEKEND}'").each do |schedule|
+      unless schedule.destroy
+        msg+=" Schedule #{schedule.ident_long} can't be detroyed"
+      ret=false
+      end
+    end
+    unless ret
+      self.errors.add(:base, "ScheduleS could not been destroyed :#{msg}")
+    end
+    ret
+  end
+
   # verifie la non presence de references
   def check_destroy
     valid=true

@@ -48,16 +48,18 @@ module SYLR
   # objects names / nom de certains objets
   #
   # Elements for_whats
-  C_FOR_WHAT_MATTER_DURATION_LEVEL="matter_duration_level"
   C_FOR_WHAT_RESPONSIBLE_TYPE="responsible_type"
   C_FOR_WHAT_TEACHING_DOMAIN="teaching_domain"
   C_FOR_WHAT_LOCATION_USAGE="location_usage"
   C_FOR_WHAT_MATTER_TYPE="matter_type"
-  C_ALL_ELEMENT_FOR_WHATS=[C_FOR_WHAT_MATTER_DURATION_LEVEL,
-    C_FOR_WHAT_RESPONSIBLE_TYPE,
+  C_FOR_WHAT_CALENDAR_BEGIN="calendar_begin"
+  C_FOR_WHAT_CALENDAR_END="calendar_end"
+  C_ALL_ELEMENT_FOR_WHATS=[C_FOR_WHAT_RESPONSIBLE_TYPE,
     C_FOR_WHAT_TEACHING_DOMAIN,
     C_FOR_WHAT_LOCATION_USAGE,
     C_FOR_WHAT_MATTER_TYPE,
+    C_FOR_WHAT_CALENDAR_BEGIN,
+    C_FOR_WHAT_CALENDAR_END
   ]
 
   #Roles

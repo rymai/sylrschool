@@ -67,15 +67,15 @@ class StudentsController < ApplicationController
   # DELETE /students/1.json
   def destroy
     if @student.destroy
-    respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     else
-    respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was not destroyed (references ?).' }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        format.html { redirect_to students_url, notice: 'Student was not destroyed (references ?).' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -88,7 +88,7 @@ class StudentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def student_params
-    params.require(:student).permit(:name,:email,:person_status,:firstname, 
+    params.require(:student).permit(:name,:email, :phone1, :phone2,:person_status,:firstname ,
     :lastname, :adress, :postalcode, :town, :birthday, :description, :custo, :responsible_ids, :student_class_school_id)
   end
 end

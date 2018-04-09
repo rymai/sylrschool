@@ -36,7 +36,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
 
     respond_to do |format|
-      if @schedule.save
+      if @schedule.create_calendar(schedule_params)
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
         format.json { render :show, status: :created, location: @schedule }
       else

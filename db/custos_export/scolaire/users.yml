@@ -6,8 +6,8 @@ User_2:
   reset_password_token: 
   reset_password_sent_at: 
   remember_created_at: 
-  sign_in_count: 1
-  current_sign_in_at: 2018-04-05 12:30:18.700449000 Z
+  sign_in_count: 2
+  current_sign_in_at: 2018-04-09 09:10:58.004897000 Z
   last_sign_in_at: 2018-04-05 12:30:18.700449000 Z
   current_sign_in_ip: !ruby/object:IPAddr
     family: 23
@@ -18,4 +18,4 @@ User_2:
     addr: 1
     mask_addr: 340282366920938463463374607431768211455
   created_at: 2018-04-05 12:30:18.690421000 Z
-  updated_at: 2018-04-05 12:30:18.702453000 Z
+  updated_at: 2018-04-09 09:10:58.006900000 Z

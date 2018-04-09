@@ -8,7 +8,7 @@ class Responsible < ActiveRecord::Base
   has_and_belongs_to_many :students, join_table: :student_responsibles
   belongs_to :type , class_name: 'Element'
     
-  has_many :student_responsibles, :foreign_key=>:responsible_id
+  ### has_many :student_responsibles, :foreign_key=>:responsible_id
 
   def self.responsible_types
     Element.all.where("for_what = 'responsible_type' ").to_a

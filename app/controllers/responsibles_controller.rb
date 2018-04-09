@@ -84,6 +84,7 @@ class ResponsiblesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def responsible_params
-    params.require(:responsible).permit(:name,:email,:person_status,:firstname, :lastname, :adress, :postalcode, :town, :birthday, :description, :custo, :type_id)
+    params.require(:responsible).permit(:name,:email, :phone1, :phone2,:person_status,:firstname, 
+    :lastname, :adress, :postalcode, :town, :birthday, :description, :custo, :type_id, :student_ids)
   end
 end
