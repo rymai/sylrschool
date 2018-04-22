@@ -57,6 +57,7 @@ fr:
   mnu_teacher_matters: Professeurs Matieres
   mnu_notebook_teachers: Cahiers Professeurs
   mnu_schedules: Horaires
+  mnu_index_actions: Actions by controller and roles
   #select_inout
   label_student_responsibles: Responsables
   label_student_responsible_ids_out: Responsables choisis

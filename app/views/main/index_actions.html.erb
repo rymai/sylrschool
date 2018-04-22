@@ -1,0 +1,16 @@
+<H1><%= t(:title_index_actions)%></H1>
+
+<table>
+	<tr>
+		<th> <%= t(:index_controller)%></th>
+		<th> <%= t(:index_action)%></th>
+	</tr>
+	<% @actions.each do |item|
+	fields=item.split(".")
+	%>
+	<tr class='<%= cycle("even", "odd") %>'>
+		<td> <%= fields[0] %></td>
+		<td> <%= fields[1] %></td>
+	</tr>
+	<% end %>
+</table>

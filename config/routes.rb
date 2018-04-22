@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   # controller :main
     collection do
       get :tools
-     get :check_action_for_role
+      get :index_actions
     end
   end
 # The priority is based upon order of creation: first created -> highest priority.
