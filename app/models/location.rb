@@ -5,7 +5,7 @@ class Location < ActiveRecord::Base
   validates_presence_of :name, :usage_id
   validates :name, uniqueness: true
   belongs_to :usage , class_name: 'Element'
-  has_many :class_schools, :foreign_key=>:default_location_id
+  has_one :class_school, :foreign_key=>:default_location_id
   def self.location_usages
     Element.all.where("for_what = 'location_usage' ").to_a
   end
@@ -18,9 +18,9 @@ class Location < ActiveRecord::Base
   def check_destroy
     valid=true
     msg=""
-    if class_schools.count > 0
+    unless class_school.nil?
       valid=false
-      msg+=" There are #{class_schools.count} class schools references"
+      msg+=" There are one class schools references"
     end
     self.errors.add(:base, "Location can't be destroyed:#{msg}") unless valid
     valid

@@ -3,15 +3,15 @@
 
 <div class="field">
 	<%= f.label :student %>
-	<%= f.collection_select(:student_id, Student.get_all, :id, :name) %>
+	<%= f.collection_select(:student_id, Student.get_all, :id, :ident) %>
 </div>
 <div class="field">
 	<%= f.label :schedule %>
-	<%= f.collection_select(:schedule_id, Schedule.get_all, :id, :ident) %>
+	<%= f.collection_select(:schedule_id, Schedule.get_all, :id, :ident_long) %>
 </div>
 <div class="field">
 	<%= f.label :teaching %>
-	<%= f.collection_select(:teaching_id, Teaching.get_all, :id, :name) %>
+	<%= f.collection_select(:teaching_id, Teaching.get_all, :id, :ident) %>
 </div>
 <div class="field">
 	<%= f.label :present_type %>

@@ -19,6 +19,15 @@
 						<br>
 						<span title="Custo"><%= "#{::SYLR::CUSTO}"%></span>
 				</li>
+				<li>
+					<span title="Role"><%= "#{current_user.role}"%></span>
+					<br/>
+					<span title="DisConnect"> <%= link_to t("mnu_sign_out"), destroy_user_session_path %>
+				</li>
+				<% else %>
+				<li>
+					<span title="Connect"> <%= link_to t("mnu_sign_in"), new_user_session_path %>
+				</li>
 				<% end %>
 			</ul><!-- nav nav-tabs -->
 			<div class="btn-group">
@@ -102,9 +111,6 @@
 							</li>
 							<li>
 								<%= h_menu("/locations","help_locationss",t("mnu_locations")) %>
-							</li>
-							<li>
-								<%= h_menu("/matter_durations","help_matter_durations",t("mnu_matter_durations")) %>
 							</li>
 						</ul>
 					</li>

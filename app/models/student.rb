@@ -12,7 +12,7 @@ class Student < ActiveRecord::Base
   has_many :student_responsibles, :foreign_key=>:student_id
   has_many :presents, :foreign_key=>:student_id
   has_many :grades, :foreign_key=>:grade_student_id
-  has_many :notebooks, :foreign_key=>:student_id
+  has_one :notebook, :foreign_key=>:student_id
   # verifier le nombre d'eleves de la classe avant d'y inscrire l'etudiant
   def validity
     msg=""
@@ -22,10 +22,7 @@ class Student < ActiveRecord::Base
       if nb_in_class >= self.student_class_school.nb_max_student
         msg="La classe est pleine !!"
       valid=false
-      else
       end
-    else
-
     end
     self.errors.add(:base, "Student is not valid:#{msg}") unless valid
     valid
@@ -57,9 +54,9 @@ class Student < ActiveRecord::Base
       valid=false
       msg+=" There are #{grades.count} grades references"
     end
-    if notebooks.count > 0
+    unless notebook.nil?
       valid=false
-      msg+=" There are #{notebooks.count} notebooks references"
+      msg+=" There are one notebooks references"
     end
  
     self.errors.add(:base, "Student can't be destroyed:#{msg}") unless valid

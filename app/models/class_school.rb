@@ -14,12 +14,16 @@ class ClassSchool < ActiveRecord::Base
     msg=""
     valid=true
     unless self.default_location.nil?
-      if self.nb_max_student > self.default_location.location_nb_max_person
-        msg="La salle est trop petite (#{self.default_location.location_nb_max_person}) !!"
+      # test si la salle est deja allouee a une classe
+      unless self.default_location.class_school.nil?
+        msg="La salle est déja occupée (#{self.default_location.class_school.ident}) !!"
       valid=false
       else
+        if self.nb_max_student > self.default_location.location_nb_max_person
+          msg="La salle est trop petite (#{self.default_location.location_nb_max_person}) !!"
+        valid=false
+        end
       end
-    else
     end
     self.errors.add(:base, "Class school is not valid:#{msg}") unless valid
     valid
@@ -29,28 +33,28 @@ class ClassSchool < ActiveRecord::Base
   def check_destroy
     valid=true
     msg=""
-      puts "******************* students.count=#{students.count}"
+    puts "******************* students.count=#{students.count}"
     if students.count > 0
       valid=false
       msg+=" There are #{students.count} students references"
     end
-      puts "******************* teachings.count=#{teachings.count}"
+    puts "******************* teachings.count=#{teachings.count}"
     if teachings.count > 0
       valid=false
       msg+=" There are #{teachings.count} teachings references"
     end
-      puts "******************* valid=#{valid}"
-     puts "******************* msg=#{msg}"
+    puts "******************* valid=#{valid}"
+    puts "******************* msg=#{msg}"
     self.errors.add(:base, "Class school can't be destroyed:#{msg}") unless valid
     valid
   end
-  
-   # verifie la non presence de references
+
+  # verifie la non presence de references
   def check_destroy
     valid=true
     msg=""
     if students.count > 0
-      valid=false
+    valid=false
     end
     if teachings.count > 0
       valid=false

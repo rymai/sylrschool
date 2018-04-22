@@ -289,6 +289,8 @@ ActiveRecord::Schema.define(version: 20180402132540) do
   add_index "teachings", ["teaching_teacher_id"], name: "index_teachings_on_teaching_teacher_id", using: :btree
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "role"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

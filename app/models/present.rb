@@ -7,4 +7,8 @@ class Present < ActiveRecord::Base
   belongs_to :student
   belongs_to :schedule
   belongs_to :teaching
+  
+  def ident
+    "#{id}"
+  end
 end

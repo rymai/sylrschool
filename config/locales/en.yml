@@ -35,6 +35,8 @@ en:
   legend_following: Following
   legend_param: Parameters
   legend_debug: Debugging
+  mnu_sign_in: Sign in
+  mnu_sign_out: Sign out
   mnu_main: Desktop
   mnu_tools: Tools
   mnu_matters: Matters
@@ -70,12 +72,6 @@ en:
   label_matter_teacher_ids_out: Teachers choosen
   label_matter_teacher_ids_in: Other teachers
   #
-  label_notebook_teachers: Teachers
-  label_notebook_teacher_ids_out: Teachers choosen
-  label_notebook_teacher_ids_in: Other teachers
-  label_teacher_notebooks: Teachers
-  label_teacher_notebook_ids_out: Notebooks choosen
-  label_teacher_notebook_ids_in: Other notebooks
   button_add: Add
   button_remove: Remove 
   # common top

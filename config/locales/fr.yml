@@ -21,7 +21,7 @@
 
 fr:
   # common des common
-  submit_validate: Validate
+  submit_validate: Valider
   action_edit: Editer
   action_index: Liste
   action_new: Nouvel objet
@@ -35,6 +35,8 @@ fr:
   legend_following: Suivi
   legend_param: Paramétrage
   legend_debug: Debug
+  mnu_sign_in: Connexion
+  mnu_sign_out: Déconnexion
   mnu_main: Bureau
   mnu_tools: Outils
   mnu_matters: Matières
@@ -56,123 +58,124 @@ fr:
   mnu_notebook_teachers: Cahiers Professeurs
   mnu_schedules: Horaires
   #select_inout
-  label_student_responsibles: Responsibles
-  label_student_responsible_ids_out: Responsibles choosen
-  label_student_responsible_ids_in: Other responsibles
-  label_responsible_students: Students
-  label_responsible_student_ids_out: Students choosen
-  label_responsible_student_ids_in: Other students
+  label_student_responsibles: Responsables
+  label_student_responsible_ids_out: Responsables choisis
+  label_student_responsible_ids_in: Autres responsables
+  label_responsible_students: Etudiants
+  label_responsible_student_ids_out: Etudiants choisis
+  label_responsible_student_ids_in: Autres étudiants
   #
-  label_teacher_matters: Matters
-  label_teacher_matter_ids_out: Matters choosen
-  label_teacher_matter_ids_in: Other matters
-  label_matter_teachers: Teachers
-  label_matter_teacher_ids_out: Teachers choosen
-  label_matter_teacher_ids_in: Other teachers
+  label_teacher_matters: Matières
+  label_teacher_matter_ids_out: Matières choisies
+  label_teacher_matter_ids_in: Autres matières
+  label_matter_teachers: Professeurs
+  label_matter_teacher_ids_out: Professeurs choisis
+  label_matter_teacher_ids_in: Autres professeurs
   #
-  label_notebook_teachers: Teachers
-  label_notebook_teacher_ids_out: Teachers choosen
-  label_notebook_teacher_ids_in: Other teachers
-  label_teacher_notebooks: Teachers
-  label_teacher_notebook_ids_out: Notebooks choosen
-  label_teacher_notebook_ids_in: Other notebooks
-  button_add: Add
-  button_remove: Remove 
+  button_add: Ajouter
+  button_remove: Enlever 
   # common top
   label_filter_id: "Id (,)"
   label_id: Id
-  label_name: Name
+  label_name: Nom
   label_description: Description
   # common bottom
   label_custo: "Custo"
-  label_created_at: Created at  
-  label_updated_at: Updated at
+  label_created_at: Créer le
+  label_updated_at: M.A.J. le
   # common body 
   label_extra_columns: Extra Columns
   # class_school
-  label_nb_max_student: Number max of students
-  label_default_location: Default location
-  label_class_school_students: Students referencing it
-  label_class_school_teachings: Teachings referencing it
+  label_nb_max_student: Nombre maxi d'étudiants
+  label_default_location: Emplacement
+  label_class_school_students: Etudiants le référençant
+  label_class_school_teachings: Enseignements le référençant
   # element
-  label_for_what: For what
-  label_element_responsibles: Responsibles referencing it
-  label_element_locations: Locations referencing it
-  label_element_matters: Matters referencing it
+  label_for_what: Pour quoi
+  label_element_responsibles: Responsables le référençant
+  label_element_locations: Emplacements le référençant
+  label_element_matters: Matières le référençant
   # grade_context
-  label_goal: Goal
-  label_min_value: Min. value
-  label_max_value: Max. value
-  label_grade_context_grades: Grades referencing it
+  label_goal: Cible
+  label_min_value: Valeur Min.
+  label_max_value: Valeur Max. 
+  label_grade_context_grades: Notes le référençant
   # grade
-  label_grade_student: "Student (id)"
-  label_grade_grade_context: "Grade Context (id)"
-  label_grade_matter: "Matter (id)"
+  label_grade_student: "Etudiant (id)"
+  label_grade_grade_context: "Contexte de notes (id)"
+  label_grade_matter: "Matière (id)"
   label_grade_date: "Date"
-  label_grade_value: "Value"
-  label_grade_description: "Appreciation"
+  label_grade_value: "Valeur"
+  label_grade_description: "Appréciation"
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max personnes
-  label_location_class_schools: Class schools referencing it
+  label_location_class_schools: Classe le référençant
   # main/tools
-  title_tools: Tools
-  legend_preferences: Preferences
-  label_language: Language
-  label_theme: Theme
+  title_tools: Outils
+  legend_preferences: Préférences
+  label_language: Langue
+  label_theme: Thème
   # matter
-  label_matter_duration_level: "Level (id)"
-  label_matter_duration_value: Value
-  label_matter_duration: "Matter duration"
-  label_matter_type: "Matter type"
-  label_matter_nb_max_student: "Maxi d'étudiants'"
-  label_matter_grades: Grades referencing it
-  label_matter_teachers: Teachers referencing it
+  label_matter_duration_level: "Niveau (id)"
+  label_matter_duration_value: Valeur
+  label_matter_duration: Durée matière
+  label_matter_type: "Type matière"
+  label_matter_nb_max_student: "Nb. max. étudiants"
+  label_matter_grades: Notes la référançant
+  label_matter_teachers: Professeurss la référençant
   # notebook
-  label_notebook_text: Notebook text
-  label_notebook_student: Student
+  label_notebook_text: Texte du cahier
+  label_notebook_student: Etudiant
   # person
   label_email: Email
   label_filter_email: "Email (,)"
-  label_person_status: Status
-  label_phone1: "Phone 1"
-  label_phone2: "Phone 2"
-  label_firstname: "First Name"
-  label_lastname: "Last Name"
-  label_filter_lastname: "Last Name (,)"
-  label_postalcode: "Postal Code"
-  label_filter_postalcode: "Postal Code (,)"
-  label_town: Town
-  label_filter_town: "Town (,)" 
-  label_birthday: "Birth Day"
+  label_person_status: Statut
+  label_phone1: "Tel. 1"
+  label_phone2: "Tel. 2"
+  label_firstname: "Prénom"
+  label_lastname: "Nom"
+  label_filter_lastname: "Nom (,)"
+  label_postalcode: "Code postal"
+  label_filter_postalcode: "Code postal (,)"
+  label_town: Ville
+  label_filter_town: "Ville (,)" 
+  label_birthday: "Naissance"
   # responsible
-  label_responsible_type: "Responsible Type (id)"
+  label_responsible_type: "Type responsible (id)"
   # present
-  label_student: "Student (id)"
-  label_schedule: "Schedule (id)"
-  label_teaching: "Teachingv(id)"
-  label_present_type: "Present Type"
+  label_student: "Etudiant (id)"
+  label_schedule: "Horaire (id)"
+  label_teaching: "Enseignement (id)"
+  label_present_type: "Type de présence"
   # schedule
   label_schedule_type: Type
-  label_start_time: Start time
-  label_all_of_day: All of day
-  label_schedule_duration: Duration
-  label_schedule_schedule_father: Schedule father
-  label_schedule_schedule_teaching: Enseignement
-  # students
+  label_start_time: Temps début
+  label_all_of_day: Jour entier
+  label_schedule_duration: Durée
+  label_schedule_schedule_father: Origine horaire
+  label_schedule_schedule_teaching: le référençant
+  label_schedule_presents: Présences le référençant
+  label_schedule_teachings: Enseignements 
+  label_schedule_schedules: Horaires le référençant
+  # studentsle référençant
   label_student_class_school: Classe
   label_student_teachers: Professeurs de cet étudiant
+  label_student_presents: Présences le référençant
+  label_student_grades: Notes le référençant
+  label_student_notebooks: Cahiers de texte le référençant
   # teacher
   label_teacher_matter: Matière
   label_teacher_grade_context: Contexte de note
+  label_teacher_teachings: Enseignements le référençant  
   # teaching
-  label_teaching_class_school: "Class school (id)"
-  label_teaching_teacher: "Teacher (id)"
-  label_teaching_matter: "Matter (id)"
-  label_teaching_domain: "Domain (id)"
-  label_teaching_start_time: Start time
-  label_teaching_repetition: Repetition
-  label_teaching_repetition_number: "Repetition number"
+  label_teaching_class_school: "Classe (id)"
+  label_teaching_teacher: "Profeseur (id)"
+  label_teaching_matter: "Matière (id)"
+  label_teaching_domain: "Domaine (id)"
+  label_teaching_start_time: Temps début
+  label_teaching_repetition: Répétition
+  label_teaching_repetition_number: "Nombre de répétition"
   label_teaching_duration: Durée
   
   

@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   resources :presents
   resources :schedules
 
-  resources :matter_durations
-
   resources :locations
 
   resources :grade_contexts
@@ -36,21 +34,19 @@ Rails.application.routes.draw do
   resources :notebooks
   resources :student_responsibles
   resources :teacher_matters
-  resources :notebook_teachers
   resources :student_responsibles
-  
+
   match 'users', to: 'users#index', via: [:get]
   match 'users/:id', to: 'users#destroy', via: [:delete]
 
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions',registrations: "users/registrations"
       }
 
   resources :grade_contexts
   resources :teachers
   resources :students
   resources :responsibles
-  resources :matter_durations
   resources :matters
   resources :elements
   resources :schedules
@@ -59,11 +55,12 @@ Rails.application.routes.draw do
 
   # config/routes.rb
   root :to => 'main#index'
-  
+
   resources :main do
-    # controller :main
+  # controller :main
     collection do
       get :tools
+     get :check_action_for_role
     end
   end
 # The priority is based upon order of creation: first created -> highest priority.

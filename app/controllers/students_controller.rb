@@ -19,14 +19,19 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @schedules=[]
+    @student.student_class_school.teachings.to_a.each do |teaching|
+      teaching.schedules.each do |schedule|
+        @schedules << schedule
+      end
+    end
   end
 
   # GET /students/new
   def new
     fname = "#{self.class.name}.#{__method__}"
     @student = Student.new
-    LOG.debug(fname){"**********************************************@student=#{@student}"}
-    puts "**********************************************@student=#{@student}"
+    LOG.debug(fname){"@student=#{@student.inspect}"}
   end
 
   # GET /students/1/edit
@@ -36,8 +41,9 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+    fname = "#{self.class.name}.#{__method__}"
     @student = Student.new(student_params)
-
+    LOG.debug(fname){"@student=#{@student.inspect}"}
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -89,6 +95,7 @@ class StudentsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def student_params
     params.require(:student).permit(:name,:email, :phone1, :phone2,:person_status,:firstname ,
-    :lastname, :adress, :postalcode, :town, :birthday, :description, :custo, :responsible_ids, :student_class_school_id)
+    :lastname, :adress, :postalcode, :town, :birthday, :description, :custo,
+    {:responsible_ids=>[]}, :student_class_school_id)
   end
 end

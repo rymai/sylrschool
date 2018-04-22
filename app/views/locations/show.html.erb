@@ -11,7 +11,7 @@
 
 <p>
 	<%= h_show_label(:label_location_class_schools)%>
-	<%= h_comma_links @location.class_schools,:ident %>
+	<%= @location.class_school.ident unless @location.class_school.nil? %>
 </p>
 
 <%= h_show_bottom(@location)%>
