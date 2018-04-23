@@ -3,7 +3,7 @@ class ClassSchool < ActiveRecord::Base
   before_save :set_custo
   before_save :validity
   before_destroy :check_destroy
-  validates_presence_of :name, :default_location_id, :nb_max_student
+  validates_presence_of :name, :nb_max_student
   validates_uniqueness_of :name
   belongs_to :default_location , class_name: 'Location'
   belongs_to :matter_duration
@@ -15,7 +15,7 @@ class ClassSchool < ActiveRecord::Base
     valid=true
     unless self.default_location.nil?
       # test si la salle est deja allouee a une classe
-      unless self.default_location.class_school.nil?
+      unless self.default_location.class_school.nil? || self.default_location.class_school==self
         msg="La salle est déja occupée (#{self.default_location.class_school.ident}) !!"
       valid=false
       else

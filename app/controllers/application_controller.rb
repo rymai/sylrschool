@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :check_action_for_role
   before_filter :set_locale, :set_theme
+  before_action :set_time_zone
+
   helper_method :current_user,:logged_in?
   # redirection vers l'action index du main si besoin
   def redirect_to_main(uri = nil, msg = nil)
@@ -38,7 +40,6 @@ class ApplicationController < ActionController::Base
     end
     session[:theme] = theme
   end
-
 
   # user devient UserController, class_school devient ClassSchoolController
   def controller_class_from_name(name)
@@ -73,11 +74,11 @@ class ApplicationController < ActionController::Base
 
   def check_action controller, action
     fname = "#{self.class.name}.#{__method__}"
-    LOG.info(fname){"controller=#{controller} action=#{action}"}
+    #LOG.debug(fname){"1controller='#{controller}' action='#{action}' role='#{current_user.role}'"}
     ok=true
     if SYLR::C_CTRL_CLASS_USER.include? controller
       # controllers users
-      LOG.info(fname){"controller=#{controller} is user}"}
+      #LOG.debug(fname){"2controller=#{controller} is user}"}
       # tout pour le support
       if is_support?
       ok=true
@@ -160,5 +161,31 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def set_country_inutilisee
+    puts"========================== subdomains=#{request.subdomains}"
+    if request.subdomains.empty? || request.subdomains.first == 'www'
+      redirect_to(:subdomain => "fr")
+    else
+      @country ||= request.subdomains.first.upcase
+    end
+    @country ||= "IT"
+    puts"========================== country=#{@country}"
+  end
+
+  def set_time_zone
+    language=session[:language]
+    case language
+    when 'fr'
+      Time.zone = 'Paris'
+    when 'it'
+      Time.zone = 'Rome'
+    when 'us'
+      Time.zone = 'Central Time (US & Canada)'
+    when 'en'
+      Time.zone = 'London'
+    end
+  #puts"========================== language=#{language} zone=#{Time.zone}"
+  end
 
 end

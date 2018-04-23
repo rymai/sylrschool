@@ -1,16 +1,24 @@
 <H1><%= t(:title_index_actions)%></H1>
-
+<% if logged_in?%>
+<H2>Role=<%= current_user.role%></H2>
 <table>
 	<tr>
 		<th> <%= t(:index_controller)%></th>
 		<th> <%= t(:index_action)%></th>
+		<th> <%= t(:index_authorized)%></th>
 	</tr>
-	<% @actions.each do |item|
+	<% @actions.sort.each do |items|
+	items.each do |item|
 	fields=item.split(".")
+	if fields[2] == "true"
 	%>
 	<tr class='<%= cycle("even", "odd") %>'>
 		<td> <%= fields[0] %></td>
 		<td> <%= fields[1] %></td>
+		<td> <%= fields[2] %></td>
 	</tr>
 	<% end %>
+	<% end %>
+	<% end %>
 </table>
+<% end %>

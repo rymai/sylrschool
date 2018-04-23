@@ -10,9 +10,10 @@
 </p>
 
 <p>
-	<%= h_show_label(:label_location_class_schools)%>
-	<%= @location.class_school.ident unless @location.class_school.nil? %>
+	<%= h_show_label(:label_location_teachings)%>
+	<%= h_comma_links @location.teachings,:ident %>
 </p>
+
 
 <%= h_show_bottom(@location)%>
 <%= h_show_menus_bottom(@location)%>

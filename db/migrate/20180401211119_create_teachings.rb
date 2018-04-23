@@ -11,6 +11,7 @@ class CreateTeachings < ActiveRecord::Migration
       t.integer :teaching_repetition_number
       t.text :description
       t.string :custo
+      t.bigint :teaching_location_id
 
       t.timestamps null: false
     end

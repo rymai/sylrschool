@@ -57,7 +57,7 @@ fr:
   mnu_teacher_matters: Professeurs Matieres
   mnu_notebook_teachers: Cahiers Professeurs
   mnu_schedules: Horaires
-  mnu_index_actions: Actions by controller and roles
+  mnu_index_actions: Actions by controller and role
   #select_inout
   label_student_responsibles: Responsables
   label_student_responsible_ids_out: Responsables choisis
@@ -112,6 +112,7 @@ fr:
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max personnes
   label_location_class_schools: Classe le référençant
+  label_location_teachings: Enseignements le référençant
   # main/tools
   title_tools: Outils
   legend_preferences: Préférences
@@ -178,5 +179,6 @@ fr:
   label_teaching_repetition: Répétition
   label_teaching_repetition_number: "Nombre de répétition"
   label_teaching_duration: Durée
+  label_teaching_location: Location
   
   

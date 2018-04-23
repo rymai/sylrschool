@@ -1,7 +1,8 @@
 class SchedulesGrid < BaseGrid
 
   scope do
-    Schedule.select("*").where("schedule_teaching_id = -1")
+    #Schedule.select("*").where("schedule_teaching_id = -1")
+    Schedule.select("*")
   end
 
   eval=eval(File.read("#{include_grids()}/topid_grid.rb"))

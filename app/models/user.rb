@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   def self.roles
     SYLR::C_ALL_ROLES
   end
+  
 end

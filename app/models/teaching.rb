@@ -4,7 +4,7 @@ class Teaching < ActiveRecord::Base
   before_destroy :check_destroy
   before_destroy :destroy_schedules_childs
   validates_presence_of :name, :teaching_class_school_id, :teaching_teacher_id, :teaching_matter_id
-  validates_presence_of :teaching_start_time, :teaching_repetition
+  validates_presence_of :teaching_location_id, :teaching_start_time, :teaching_repetition
   validates_uniqueness_of :name
   validates_uniqueness_of :teaching_start_time
 
@@ -12,6 +12,7 @@ class Teaching < ActiveRecord::Base
   belongs_to :teaching_teacher,class_name: 'Teacher'
   belongs_to :teaching_matter, class_name: 'Matter'
   belongs_to :teaching_domain, class_name: 'Element'
+  belongs_to :teaching_location, class_name: 'Location'
 
   has_many :presents, :foreign_key=>:teaching_id
   has_many :schedules, :foreign_key=>:schedule_teaching_id
@@ -144,6 +145,7 @@ class Teaching < ActiveRecord::Base
     schedule_params.delete :teaching_matter_id
     schedule_params.delete :teaching_domain_id
     schedule_params.delete :teaching_repetition
+    schedule_params.delete :teaching_location_id
     schedule_params.delete :teaching_repetition_number
     schedule_params.delete :description
     schedule_params[:schedule_type]=SYLR::C_SCHEDULE_WORKING

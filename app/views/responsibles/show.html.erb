@@ -10,6 +10,11 @@
 	<%= @responsible.type.ident %>
 </p>
 
+<p>
+	<%= h_show_label("label_responsible_students")%>
+	<%= h_comma_links @responsible.students , :ident%>
+</p>
+
 <%= h_show_bottom(@responsible)%>
 <%= h_show_menus_bottom(@responsible)%>
 

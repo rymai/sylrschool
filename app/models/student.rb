@@ -7,9 +7,9 @@ class Student < ActiveRecord::Base
   validates_presence_of :name,:person_status, :firstname, :lastname, :email
   validates :name, uniqueness: true
   belongs_to :student_class_school,:class_name=>"ClassSchool"
-  has_and_belongs_to_many :responsible, join_table: :student_responsibles
+  has_and_belongs_to_many :responsibles, join_table: :student_responsibles
 
-  has_many :student_responsibles, :foreign_key=>:student_id
+  #has_many :student_responsibles, :foreign_key=>:student_id
   has_many :presents, :foreign_key=>:student_id
   has_many :grades, :foreign_key=>:grade_student_id
   has_one :notebook, :foreign_key=>:student_id
@@ -28,7 +28,8 @@ class Student < ActiveRecord::Base
     valid
   end
 
-  def teachers
+  # get the teachers of the student
+  def get_teachers
     ret=[]
     classe=self.student_class_school
     teachings=classe.teachings.to_a
@@ -37,8 +38,19 @@ class Student < ActiveRecord::Base
     end
     ret
   end
-  
-    # verifie la non presence de references
+
+  # get locations used by the student
+  def get_locations
+    ret=[]
+    classe=self.student_class_school
+    teachings=classe.teachings.to_a
+    teachings.each do |teaching|
+      ret << teaching.teaching_location unless ret.include? teaching.teaching_location
+    end
+    ret
+  end
+
+  # verifie la non presence de references
   def check_destroy
     valid=true
     msg=""
@@ -58,10 +70,18 @@ class Student < ActiveRecord::Base
       valid=false
       msg+=" There are one notebooks references"
     end
- 
+
     self.errors.add(:base, "Student can't be destroyed:#{msg}") unless valid
     valid
   end
 
-
+  def get_schedules
+    ret=[]
+    self.student_class_school.teachings.to_a.each do |teaching|
+      teaching.schedules.each do |schedule|
+        ret << schedule
+      end
+    end
+    ret
+  end
 end

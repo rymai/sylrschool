@@ -21,6 +21,10 @@
 	<%= f.collection_select(:teaching_domain_id, Teaching.teaching_domains, :id, :name) %>
 </div>
 <div class="field">
+	<%= h_form_label(f,:label_teaching_location)%>
+	<%= f.collection_select(:teaching_location_id, Location.get_all, :id, :name) %>
+</div>
+<div class="field">
 	<%= f.label :label_teaching_start_time %>
 	<%= f.datetime_select :teaching_start_time %>
 </div>

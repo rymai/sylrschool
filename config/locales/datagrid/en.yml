@@ -23,4 +23,4 @@ en:
           "=~": "&asymp;"
   will_paginate:
     previous_label: Previous page
-    next_label: Previous page
+    next_label: Next page

@@ -12,9 +12,16 @@
 
 <p>
 	<%= h_show_label("label_student_teachers")%>
-	<%= h_comma_links @student.teachers , :ident%>
+	<%= h_comma_links @student.get_teachers , :ident%>
 </p>
-
+<p>
+	<%= h_show_label("label_student_locations")%>
+	<%= h_comma_links @student.get_locations , :ident%>
+</p>
+<p>
+	<%= h_show_label("label_student_responsibles")%>
+	<%= h_comma_links @student.responsibles , :ident%>
+</p>
 <p>
 	<%= h_show_label(:label_student_presents)%>
 	<%= h_comma_links @student.presents,:ident %>

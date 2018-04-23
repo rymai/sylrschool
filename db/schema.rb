@@ -19,11 +19,10 @@ ActiveRecord::Schema.define(version: 20180402132540) do
   create_table "class_schools", force: :cascade do |t|
     t.string   "name"
     t.integer  "nb_max_student"
-    t.integer  "default_location_id", limit: 8
     t.text     "description"
     t.string   "custo"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "class_schools", ["name"], name: "index_class_schools_on_name", using: :btree
@@ -279,6 +278,7 @@ ActiveRecord::Schema.define(version: 20180402132540) do
     t.integer  "teaching_repetition_number"
     t.text     "description"
     t.string   "custo"
+    t.integer  "teaching_location_id",       limit: 8
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

@@ -37,18 +37,23 @@ class TeachingsGrid < BaseGrid
       ""
     end
   end
+
+  filter(:teaching_location, :integer, :header => I18n.t(:label_teaching_location))
+  column(:teaching_location, :html => true, :mandatory => true, :header => I18n.t(:label_teaching_location))do |asset|
+    link_to asset.teaching_location.ident, asset.teaching_location
+  end
+
   filter(:teaching_start_time, :date, :header => I18n.t(:label_teaching_start_time))
   column(:teaching_start_time, :mandatory => true, :header => I18n.t(:label_teaching_start_time))
 
   filter(:teaching_duration, :integer, :header => I18n.t(:label_teaching_duration))
   column(:teaching_duration, :mandatory => true, :header => I18n.t(:label_teaching_duration))do |asset|
     unless asset.teaching_matter.nil?
-      asset.teaching_matter.matter_duration
+    asset.teaching_matter.matter_duration
     else
       ""
     end
   end
-
 
   #pour definir un select sur un champ
   filter(:teaching_repetition, :enum, :header => I18n.t(:label_teaching_repetition),

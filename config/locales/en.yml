@@ -57,7 +57,7 @@ en:
   mnu_teacher_matters: Teachers Matters
   mnu_notebook_teachers: Notebooks Teachers
   mnu_schedules: Schedules
-  mnu_index_actions: Actions by controller and roles
+  mnu_index_actions: Actions by controller and role
   #select_inout
   label_student_responsibles: Responsibles
   label_student_responsible_ids_out: Responsibles choosen
@@ -112,6 +112,7 @@ en:
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max persons
   label_location_class_schools: Class schools referencing it
+  label_location_teachings: Teachings referencing it 
   # main tools
   title_tools: Tools
   legend_preferences: Preferences
@@ -178,4 +179,5 @@ en:
   label_teaching_repetition: Repetition
   label_teaching_repetition_number: "Repetition number"
   label_teaching_duration: Duration
+  label_teaching_location: Location
  

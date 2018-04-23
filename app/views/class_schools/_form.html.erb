@@ -6,10 +6,7 @@
 	<%= h_form_label(f,:label_nb_max_student)%>
 	<%= f.number_field :nb_max_student %>
 </div>
-<div class="field">
-	<%= h_form_label(f,:label_default_location)%>
-	<%= f.collection_select(:default_location_id, Location.get_all, :id, :name) %>
-</div>
+
 <%= h_form_description(f) %>
 
 <%= h_form_bottom(f) %>

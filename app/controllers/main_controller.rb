@@ -18,12 +18,11 @@ class MainController < ApplicationController
 
   def index_actions
     fname = "#{self.class.name}.#{__method__}"
-    LOG.info(fname){"====================================params=#{params}"}
     ret=[]
     get_controllers_classes().each do |controller|
       ret << get_actions_of_controller(controller)
     end
-    LOG.info(fname){"====================================ret=#{ret}"}
+    LOG.info(fname){"ret=#{ret.count}"}
     @actions=ret
   end
   ###########################
@@ -83,9 +82,16 @@ class MainController < ApplicationController
       )
       next
       end
-      ctrlmet="#{controller_class}.#{smet}"
+      # ClassSchoolController devient class_schools_controller
+      sctrl=controller_class.to_s.underscore
+      pos=sctrl.index("_controller")
+      #class_schools_controller devient class_schools
+      sctrl=sctrl[0,pos]
+
+      ok=check_action( sctrl, method)
+      ctrlmet="#{sctrl}.#{method}.#{ok}"
       ret<<ctrlmet
-      LOG.info(fname){"ctrlmet=#{ctrlmet}"}
+    #LOG.info(fname){"ctrlmet=#{ctrlmet}"}
     end
     ret
   end

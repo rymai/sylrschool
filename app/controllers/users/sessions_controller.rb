@@ -15,7 +15,8 @@ class Users::SessionsController < Devise::SessionsController
     pars[:role]=params[:user][:role]
     pars[:name]=params[:user][:name]
     current_user.update(pars)
-    puts "************************ current_user=#{current_user.inspect}"
+     "puts "============================ current_user=#{current_user.inspect}"
+  #@time_zones = get_time_zones(current_user.time_zone)
 
   end
 
@@ -35,5 +36,17 @@ class Users::SessionsController < Devise::SessionsController
   # end
   def  session_params
     params.require(:session).permit(:name,:role,:custo)
+  end
+
+  private
+
+  def get_time_zones_inutilisee(default)
+    # renvoie la liste des time zone
+    lst = Session.time_zones
+    get_html_options(lst, default, false)
+  end
+
+  def show_
+    @the_user = User.find(params[:id])
   end
 end

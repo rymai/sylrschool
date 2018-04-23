@@ -32,4 +32,3 @@ explo/*
 rdoc
 config/database.yml
 Copy *
-.env

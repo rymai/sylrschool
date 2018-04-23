@@ -19,12 +19,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @schedules=[]
-    @student.student_class_school.teachings.to_a.each do |teaching|
-      teaching.schedules.each do |schedule|
-        @schedules << schedule
-      end
-    end
+    @schedules=@student.get_schedules
   end
 
   # GET /students/new
