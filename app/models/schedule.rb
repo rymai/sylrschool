@@ -15,7 +15,21 @@ class Schedule < ActiveRecord::Base
 
   # renvoi les schedules all day , qui ne sont pas relie a un enseignement
   def self.get_only_all_day
-    Schedule.all.where("schedule_teaching_id = NULL ")
+    Schedule.all.where("schedule_teaching_id = -1 ").to_a
+  end
+
+  def self.get_not_all_day
+    Schedule.all.where("schedule_teaching_id <> -1 ").to_a
+
+  end
+
+  # pour la view h_table
+  def schedule_father_ident
+    schedule_father.ident
+  end
+
+  def schedule_teaching_ident
+    schedule_teaching.ident
   end
 
   # for start_time and duration depending of all_of_day

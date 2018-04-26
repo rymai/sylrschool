@@ -7,6 +7,9 @@ class Location < ActiveRecord::Base
   belongs_to :usage , class_name: 'Element'
   #has_one :class_school, :foreign_key=>:default_location_id
   has_many :teachings, :foreign_key=>:teaching_location_id
+  def usage_ident
+    self.usage.ident
+  end
   def self.location_usages
     Element.all.where("for_what = 'location_usage' ").to_a
   end

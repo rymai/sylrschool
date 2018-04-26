@@ -216,7 +216,7 @@ ActiveRecord::Schema.define(version: 20180402132540) do
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
-    t.string   "person_status"
+    t.string   ""
     t.string   "email"
     t.string   "firstname"
     t.string   "lastname"

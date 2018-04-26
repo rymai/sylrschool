@@ -86,6 +86,7 @@ fr:
   label_updated_at: M.A.J. le
   # common body 
   label_extra_columns: Extra Columns
+  label_ident: Identifiant
   # class_school
   label_nb_max_student: Nombre maxi d'étudiants
   label_default_location: Emplacement
@@ -108,11 +109,16 @@ fr:
   label_grade_date: "Date"
   label_grade_value: "Valeur"
   label_grade_description: "Appréciation"
+  label_grade_grade_context_ident:: "Contexte de notes"
+  label_grade_matter_ident: Matière
+  label_grade_student_ident: Etudiant
+  label_value: Valeur 
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max personnes
   label_location_class_schools: Classe le référençant
   label_location_teachings: Enseignements le référençant
+  label_usage_ident: Usage
   # main/tools
   title_tools: Outils
   legend_preferences: Préférences
@@ -126,6 +132,7 @@ fr:
   label_matter_nb_max_student: "Nb. max. étudiants"
   label_matter_grades: Notes la référançant
   label_matter_teachers: Professeurss la référençant
+  label_matter_type_ident: "Type matière"
   # notebook
   label_notebook_text: Texte du cahier
   label_notebook_student: Etudiant
@@ -145,11 +152,13 @@ fr:
   label_birthday: "Naissance"
   # responsible
   label_responsible_type: "Type responsible (id)"
+  label_responsible_type_ident: "Responsible Type"
   # present
   label_student: "Etudiant (id)"
   label_schedule: "Horaire (id)"
   label_teaching: "Enseignement (id)"
   label_present_type: "Type de présence"
+  label_student_ident: Student
   # schedule
   label_schedule_type: Type
   label_start_time: Temps début
@@ -159,7 +168,9 @@ fr:
   label_schedule_schedule_teaching: le référençant
   label_schedule_presents: Présences le référençant
   label_schedule_teachings: Enseignements 
-  label_schedule_schedules: Horaires le référençant
+  label_schedule_schedules: Horaires le référençant  
+  label_schedule_father_ident: Origine horaire
+  label_schedule_teaching_ident: Enseignement
   # studentsle référençant
   label_student_class_school: Classe
   label_student_teachers: Professeurs de cet étudiant
@@ -180,5 +191,10 @@ fr:
   label_teaching_repetition_number: "Nombre de répétition"
   label_teaching_duration: Durée
   label_teaching_location: Location
+  label_teaching_class_school_ident: Class school
+  label_eaching_teacher_ident: "Teacher"
+  label_teaching_matter_ident: Matter
+  label_teaching_domain_ident: Domain
+  label_teaching_location_ident: Location
   
   

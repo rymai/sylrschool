@@ -86,6 +86,7 @@ en:
   label_updated_at: Updated at
   # common body 
   label_extra_columns: Extra Columns
+  label_ident: Ident
   # class_school
   label_nb_max_student: Number max of students
   label_default_location: Default location
@@ -108,11 +109,16 @@ en:
   label_grade_date: "Date"
   label_grade_value: "Value"
   label_grade_description: "Appreciation"
+  label_grade_grade_context_ident: "Grade Context"
+  label_grade_matter_ident: Matter
+  label_grade_student_ident: Student 
+  label_value: Value 
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max persons
   label_location_class_schools: Class schools referencing it
   label_location_teachings: Teachings referencing it 
+  label_usage_ident: Usage
   # main tools
   title_tools: Tools
   legend_preferences: Preferences
@@ -126,6 +132,7 @@ en:
   label_matter_nb_max_student: Max number of students
   label_matter_grades: Grades referencing it
   label_matter_teachers: Teachers referencing it
+  label_matter_type_ident: Matter type
   # notebook
   label_notebook_text: Notebook text
   label_notebook_student: Student
@@ -145,11 +152,13 @@ en:
   label_birthday: "Birth Day"
   # responsible
   label_responsible_type: "Responsible Type (id)"
+  label_responsible_type_ident: "Responsible Type "
   # present
   label_student: "Student (id)"
   label_schedule: "Schedule (id)"
   label_teaching: "Teachingv(id)"
   label_present_type: "Present Type"
+  label_student_ident: Student
   # schedule
   label_schedule_type: Type
   label_start_time: Start time
@@ -160,6 +169,9 @@ en:
   label_schedule_presents: Presents referencing it
   label_schedule_teachings: Teachings referencing it
   label_schedule_schedules: Schedules referencing it
+  label_schedule_father_ident: Schedule father
+  label_schedule_teaching_ident: Teaching
+    
   # students
   label_student_class_school: Class school
   label_student_teachers: Teachers of student
@@ -180,4 +192,9 @@ en:
   label_teaching_repetition_number: "Repetition number"
   label_teaching_duration: Duration
   label_teaching_location: Location
+  label_teaching_class_school_ident: Class school
+  label_teaching_teacher_ident: "Teacher"
+  label_teaching_matter_ident: Matter
+  label_teaching_domain_ident: Domain
+  label_teaching_location_ident: Location
  

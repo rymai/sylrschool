@@ -19,7 +19,7 @@ class TeachingsController < ApplicationController
   # GET /teachings/1
   # GET /teachings/1.json
   def show
-    @schedules=Schedule.get_all
+    @schedules=@teaching.schedules
   end
 
   # GET /teachings/new
@@ -99,6 +99,6 @@ class TeachingsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def teaching_params
     params.require(:teaching).permit(:name, :teaching_class_school_id, :teaching_teacher_id,
-    :teaching_matter_id, :teaching_domain, :teaching_location_id, :teaching_start_time, :teaching_duration, :teaching_repetition, :teaching_repetition_number, :description, :custo)
+    :teaching_matter_id, :teaching_domain_id, :teaching_location_id, :teaching_start_time, :teaching_duration, :teaching_repetition, :teaching_repetition_number, :description, :custo)
   end
 end

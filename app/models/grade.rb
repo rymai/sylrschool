@@ -10,6 +10,18 @@ class Grade < ActiveRecord::Base
   belongs_to :grade_grade_context,:class_name=>"GradeContext"
   belongs_to :grade_matter,:class_name=>"Matter"
   belongs_to :grade_student,:class_name=>"Student"
+  def grade_grade_context_ident
+    self.grade_grade_context.ident
+  end
+
+  def grade_matter_ident
+    self.grade_matter.ident
+  end
+
+  def grade_student_ident
+    self.grade_student.ident
+  end
+
   # check value in range of grade context
   def validity
     fname = "#{self.class.name}.#{__method__}"
@@ -40,6 +52,12 @@ class Grade < ActiveRecord::Base
   end
 
   def ident
-    "#{id}.#{value}"
+    # mode debug, rajout de l'id
+    if LOG.level==0
+      ret="#{id}"
+    else
+      ret=""
+    end
+    ret+="#{grade_grade_context_ident}.#{grade_matter_ident}.#{grade_student_ident}.#{value}"
   end
 end

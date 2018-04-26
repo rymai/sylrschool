@@ -6,27 +6,26 @@
 					<a class="brand" href="#main" data-toggle="tab"> <span title="Application, appui=>retour à l'acceuil"><%= "#{SYLR::APP_NAME}" %></span> </a>
 				</li>
 				<li class="active">
-					<span title="Version de la configuration"><%= "#{SYLR::APP_VERSION}"%></span></br/>
-					<span title="Date de la configuration"><%= "#{SYLR::APP_DATE}"%></span>
+					<%= "#{SYLR::APP_VERSION}"%><br/>
+					<%= "#{SYLR::APP_DATE}"%>
 				</li>
 				<li class="active">
 					&nbsp;
 				</li>
+				<% if current_user %>
 				<li class="active">
-					<% if current_user %>
-				<li>
-					<span title="Connected"><%= "#{current_user.email}"%>
-						<br>
-						<span title="Custo"><%= "#{::SYLR::CUSTO}"%></span>
+					<span title="Connected"><%= "#{current_user.email}"%></span>
+					<br>
+					<span title="Custo"><%= "#{::SYLR::CUSTO}"%></span>
 				</li>
 				<li>
 					<span title="Role"><%= "#{current_user.role}"%></span>
 					<br/>
-					<span title="DisConnect"> <%= link_to t("mnu_sign_out"), destroy_user_session_path %>
+					<span title="DisConnect"> <%= link_to t("mnu_sign_out"), destroy_user_session_path %></span>
 				</li>
 				<% else %>
 				<li>
-					<span title="Connect"> <%= link_to t("mnu_sign_in"), new_user_session_path %>
+					<span title="Connect"> <%= link_to t("mnu_sign_in"), new_user_session_path %></span>
 				</li>
 				<% end %>
 			</ul><!-- nav nav-tabs -->

@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   resources :grades
 
   resources :grades
-  resources :presents
+  resources :presents do
+    collection do
+      get :teaching_selection
+      get :schedule_selection
+    end
+  end
 
   resources :teachings
 

@@ -11,4 +11,7 @@ class Present < ActiveRecord::Base
   def ident
     "#{id}"
   end
+  def student_ident
+    self.student.ident
+  end
 end

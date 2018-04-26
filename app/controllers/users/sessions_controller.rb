@@ -15,8 +15,7 @@ class Users::SessionsController < Devise::SessionsController
     pars[:role]=params[:user][:role]
     pars[:name]=params[:user][:name]
     current_user.update(pars)
-     "puts "============================ current_user=#{current_user.inspect}"
-  #@time_zones = get_time_zones(current_user.time_zone)
+   #@time_zones = get_time_zones(current_user.time_zone)
 
   end
 

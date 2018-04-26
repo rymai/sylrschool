@@ -19,11 +19,12 @@
 
 <p>
 	<%= h_show_label(:label_matter_grades)%>
-	<%= h_comma_links @matter.grades,:ident %>
+	<%= h_table(@matter.grades,[:ident,:id,:grade_grade_context_ident,:grade_matter_ident,
+		:grade_student_ident,:grade_date,:value])%>
 </p>
 <p>
 	<%= h_show_label(:label_matter_teachers)%>
-	<%= h_comma_links @matter.teachers,:ident %>
+	<%= h_table(@matter.teachers,[:name,:id,:email,:person_status])%>
 </p>
 
 <%= h_show_bottom(@matter)%>

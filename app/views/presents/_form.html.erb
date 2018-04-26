@@ -1,18 +1,28 @@
 <%= form_for(@present) do |f| %>
 <%= h_form_errors(@present) %>
 
+<%= hidden_field :present, :id%>
+
 <div class="field">
-	<%= f.label :student %>
-	<%= f.collection_select(:student_id, Student.get_all, :id, :ident) %>
+	<%= label_tag :student %>
+	<div id='student_field'>
+		<%= select_tag "present[student_id]", h_options_from_collection_for_select(Student.get_all, :id, :ident,@present.student)%>
+	</div>
+</div>
+
+<div class="field">
+	<%= label_tag :teaching %>
+	<div id='teaching_field'>
+		<%= render(:partial=>"presents/select_teaching",:locals=>{:present =>@present,:values=>Teaching.get_all})%>
+	</div>
 </div>
 <div class="field">
-	<%= f.label :schedule %>
-	<%= f.collection_select(:schedule_id, Schedule.get_all, :id, :ident_long) %>
+	<%= label_tag :schedule %>
+	<div id='schedule_field'>
+		<%= render(:partial=>"presents/select_schedule",:locals=>{:present =>@present,:values=>Schedule.get_not_all_day})%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :teaching %>
-	<%= f.collection_select(:teaching_id, Teaching.get_all, :id, :ident) %>
-</div>
+
 <div class="field">
 	<%= f.label :present_type %>
 	<%= f.select(:present_type, SYLR::V_ALL_PRESENT_TYPES.map {|r| [r.humanize, r]}) %>
@@ -21,3 +31,31 @@
 
 <%= h_form_bottom(f) %>
 <% end %>
+<script>
+	$('#present_teaching_id').on("change", function() {
+		alert('present_teaching_id');
+		$.ajax({
+			data : {
+				student : $('#present_student_id option:selected').val(),
+				teaching : $('#present_teaching_id option:selected').val(),
+				present_id : $('#present_id').val()
+			},
+			url : "/presents/schedule_selection",
+			type : "GET"
+		});
+	});
+
+	$('#present_student_id').on("change", function() {
+		alert('present_student_id');
+		$.ajax({
+			data : {
+				student : $('#present_student_id option:selected').val(),
+				present_id : $('#present_id').val()
+			},
+			url : "/presents/teaching_selection",
+			type : "GET"
+		});
+	});
+
+</script>
+

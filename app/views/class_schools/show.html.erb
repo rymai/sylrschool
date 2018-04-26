@@ -10,12 +10,14 @@
 
 <p>
 	<%= h_show_label(:label_class_school_students)%>
-	<%= h_comma_links @class_school.students,:ident %>
+	<%= h_table(@class_school.students,[:name,:id,:email])%>
 </p>
 
 <p>
 	<%= h_show_label(:label_class_school_teachings)%>
-	<%= h_comma_links @class_school.teachings,:ident %>
+	<%= h_table(@class_school.teachings,[:name,:id,:teaching_class_school_ident,:teaching_teacher_ident,
+		:teaching_matter_ident,:teaching_domain_ident,:teaching_location_ident,:teaching_start_time,:teaching_repetition,
+		:teaching_repetition_number])%>
 </p>
 <%= h_show_bottom(@class_school)%>
 <%= h_show_menus_bottom(@class_school)%>

@@ -11,7 +11,9 @@
 
 <p>
 	<%= h_show_label(:label_location_teachings)%>
-	<%= h_comma_links @location.teachings,:ident %>
+	<%= h_table(@location.teachings,[:name,:id,:teaching_class_school_ident,:teaching_teacher_ident,
+		:teaching_matter_ident,:teaching_domain_ident,:teaching_location_ident,:teaching_start_time,:teaching_repetition,
+		:teaching_repetition_number])%>
 </p>
 
 

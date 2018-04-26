@@ -12,7 +12,7 @@
 
 <p>
 	<%= h_show_label("label_responsible_students")%>
-	<%= h_comma_links @responsible.students , :ident%>
+	<%= h_table(@responsible.students,[:name,:id,:email])%>
 </p>
 
 <%= h_show_bottom(@responsible)%>

@@ -1,39 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @schedule.schedule_type %>
+<p id="notice">
+	<%= notice %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @schedule.start_time %>
+	<strong>Type:</strong>
+	<%= @schedule.schedule_type %>
 </p>
 
 <p>
-  <strong>Schedule Father:</strong>
-  <%= @schedule.schedule_father.ident unless @schedule.schedule_father.nil? %>
+	<strong>Start time:</strong>
+	<%= @schedule.start_time %>
+</p>
+
+<p>
+	<strong>Schedule Father:</strong>
+	<%= @schedule.schedule_father.ident unless @schedule.schedule_father.nil? %>
 </p>
 <p>
-  <strong>Teaching:</strong>
-  <%= @schedule.schedule_teaching.ident unless @schedule.schedule_teaching.nil? %>
+	<strong>Teaching:</strong>
+	<%= @schedule.schedule_teaching.ident unless @schedule.schedule_teaching.nil? %>
 </p>
 
 <p>
 	<%= h_show_label(:label_schedule_presents)%>
-	<%= h_comma_links @schedule.presents,:ident %>
+	<%= h_table(@schedule.presents,[:present_type,:student_ident])%>
 </p>
 
 <p>
 	<%= h_show_label(:label_schedule_schedules)%>
-	<%= h_comma_links @schedule.schedules,:ident %>
+	<%= h_table(@schedule.schedules,[:schedule_type,:start_time_date,:schedule_father_ident,:schedule_teaching_ident])%>
+
 </p>
 
 <p>
-  <strong>Custo:</strong>
-  <%= @schedule.custo %>
+	<strong>Custo:</strong>
+	<%= @schedule.custo %>
 </p>
 <div class="datagrid-actions">
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+	<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+	<%= link_to 'Back', schedules_path %>
 </div>

@@ -4,10 +4,15 @@
 
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @teacher} %>
-
+<p>
+	<%= h_show_label(:label_teacher_matters)%>
+	<%= h_table(@teacher.matters,[:name,:id,:matter_type_ident,:matter_duration,:matter_nb_max_student])%>
+</p>
 <p>
 	<%= h_show_label(:label_teacher_teachings)%>
-	<%= h_comma_links @teacher.teachings,:ident %>
+	<%= h_table(@teacher.teachings,[:name,:id,:teaching_class_school_ident,:teaching_teacher_ident,
+		:teaching_matter_ident,:teaching_domain_ident,:teaching_location_ident,:teaching_start_time,:teaching_repetition,
+		:teaching_repetition_number])%>
 </p>
 
 <%= h_show_bottom(@teacher)%>

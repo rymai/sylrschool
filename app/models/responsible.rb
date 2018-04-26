@@ -16,7 +16,9 @@ class Responsible < ActiveRecord::Base
    def self.responsible_types_names
     responsible_types.map {|r| [r.name, r]}
   end
-  
+  def responsible_type_ident
+    self.type.ident
+  end
     # verifie la non presence de references
   def check_destroy
     valid=true

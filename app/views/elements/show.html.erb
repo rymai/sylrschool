@@ -9,17 +9,18 @@
 
 <p>
 	<%= h_show_label(:label_element_responsibles)%>
-	<%= h_comma_links @element.responsibles,:ident %>
+	<%= h_table(@element.responsibles,[:name,:id,:email,:responsible_type_ident,:person_status])%>
+</p>
 </p>
 
 <p>
 	<%= h_show_label(:label_element_locations)%>
-	<%= h_comma_links @element.locations,:ident %>
+	<%= h_table(@element.locations,[:name,:id,"usage_ident",:location_nb_max_person])%>
 </p>
 
 <p>
 	<%= h_show_label(:label_element_matters)%>
-	<%= h_comma_links @element.matters,:ident %>
+	<%= h_table(@element.matters,[:name,:id,:matter_type_ident,:matter_duration,:matter_nb_max_student])%>
 </p>
 
 <%= h_show_bottom(@element)%>

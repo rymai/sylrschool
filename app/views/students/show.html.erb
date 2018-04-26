@@ -12,24 +12,23 @@
 
 <p>
 	<%= h_show_label("label_student_teachers")%>
-	<%= h_comma_links @student.get_teachers , :ident%>
+	<%= h_table(@student.get_teachers,[:name,:id,:email,:person_status])%>
 </p>
 <p>
 	<%= h_show_label("label_student_locations")%>
-	<%= h_comma_links @student.get_locations , :ident%>
+	<%= h_table(@student.get_locations,[:name,:id,"usage_ident",:location_nb_max_person])%>
 </p>
 <p>
 	<%= h_show_label("label_student_responsibles")%>
-	<%= h_comma_links @student.responsibles , :ident%>
+	<%= h_table(@student.responsibles,[:name,:id,:email,:responsible_type_ident,:person_status])%>
 </p>
 <p>
 	<%= h_show_label(:label_student_presents)%>
-	<%= h_comma_links @student.presents,:ident %>
+	<%= h_table(@student.presents,[:present_type,"student_ident"])%>
 </p>
 <p>
 	<%= h_show_label(:label_student_grades)%>
-	<%= h_comma_links @student.grades,:ident %>
-</p>
+	<%= h_table(@student.grades,["grade_grade_context_ident",:value])%> </p>
 <p>
 	<%= h_show_label(:label_student_notebooks)%>
 	<%= @student.notebook.ident unless @student.notebook.nil? %>

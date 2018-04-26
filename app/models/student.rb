@@ -84,4 +84,6 @@ class Student < ActiveRecord::Base
     end
     ret
   end
+
+
 end

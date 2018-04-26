@@ -9,16 +9,19 @@ class Matter < ActiveRecord::Base
   validates :name, uniqueness: true
   belongs_to :matter_type , class_name: 'Element'
   ####belongs_to :matter_duration
-  has_and_belongs_to_many :teacher, join_table: :teacher_matters
+  has_and_belongs_to_many :teachers, join_table: :teacher_matters
 
   has_many :grades, :foreign_key=>:grade_matter_id
-  has_many :teachers, :foreign_key=>:defmatter_id
-  has_many :teacher_matters, :foreign_key=>:teacher_id
+  ###has_many :teachers, :foreign_key=>:defmatter_id
+  ###has_many :teacher_matters, :foreign_key=>:teacher_id
   #
   def self.matter_types
     Element.all.where("for_what = 'matter_type' ").to_a
   end
 
+  def matter_type_ident
+    matter_type.ident
+  end
   def get_all
     all.to_a
   end

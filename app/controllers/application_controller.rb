@@ -98,9 +98,9 @@ class ApplicationController < ActionController::Base
           end
         when SYLR::C_ROLE_STUDENT
           if SYLR::C_CTRL_ACTION_GREAD.include? action
-            ok= SYLR::C_CTRL_STUDENT_READ.include? controller
+            ok= SYLR::C_CTRL_STUDENTS_READ.include? controller
           elsif SYLR::C_CTRL_ACTION_GWRITE.include? action
-            ok= SYLR::C_CTRL_STUDENT_WRITE.include? controller
+            ok= SYLR::C_CTRL_STUDENTS_WRITE.include? controller
           end
         when SYLR::C_ROLE_RESPONSIBLE
           if SYLR::C_CTRL_ACTION_GREAD.include? action

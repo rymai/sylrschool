@@ -28,6 +28,8 @@ class PresentsController < ApplicationController
 
   # GET /presents/1/edit
   def edit
+    #@teachings=@present.teachings.to_a
+    #@schedules=@teachings.to_a.first
   end
 
   # POST /presents
@@ -70,14 +72,39 @@ class PresentsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_present
-      @present = Present.find(params[:id])
+  def teaching_selection
+    #puts "============================== params=#{params}"
+    @present = Present.find(params[:present_id])
+    @student = Student.find(params[:student])
+    @teachings = @student.student_class_school.teachings.to_a
+    #puts "============================== student=#{@student.inspect}"
+    #puts "============================== teachings=#{@teachings}"
+    respond_to do |format|
+      format.js {  }
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def present_params
-      params.require(:present).permit(:student_id, :schedule_id, :teaching_id, :present_type, :description, :custo)
+  def schedule_selection
+    #puts "============================== params=#{params}"
+    @present = Present.find(params[:present_id])
+    @student = Student.find(params[:student])
+    @teaching=Teaching.find(params[:teaching])
+    @schedules = @teaching.schedules.to_a
+    #puts "============================== student=#{@student.inspect}"
+    #puts "============================== teachings=#{@teachings}"
+    respond_to do |format|
+      format.js {  }
     end
+  end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_present
+    @present = Present.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def present_params
+    params.require(:present).permit(:student_id, :schedule_id, :teaching_id, :present_type, :description, :custo)
+  end
 end

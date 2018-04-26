@@ -3,6 +3,8 @@ class Teaching < ActiveRecord::Base
   before_save :set_custo
   before_destroy :check_destroy
   before_destroy :destroy_schedules_childs
+  before_save :validity
+  before_update :validity
   validates_presence_of :name, :teaching_class_school_id, :teaching_teacher_id, :teaching_matter_id
   validates_presence_of :teaching_location_id, :teaching_start_time, :teaching_repetition
   validates_uniqueness_of :name
@@ -23,7 +25,44 @@ class Teaching < ActiveRecord::Base
   def self.teaching_domains_names
     teaching_domains.map {|r| [r.name, r]}
   end
- # verifie la non presence de references
+
+  def teaching_class_school_ident
+    teaching_class_school.ident
+  end
+
+  def teaching_teacher_ident
+    teaching_teacher.ident
+  end
+
+  def teaching_matter_ident
+    teaching_matter.ident
+  end
+
+  def teaching_domain_ident
+    teaching_domain.ident unless teaching_domain.nil?
+  end
+
+  def teaching_location_ident
+    teaching_location.ident
+  end
+
+  # verifier le nombre d'eleves de la classe et la salle avant de creer le teaching
+  def validity
+    msg=""
+    valid=true
+    unless self.teaching_class_school.nil?
+      nb_in_class=self.teaching_class_school.nb_max_student
+      nb_in_location=self.teaching_location.location_nb_max_person
+      if nb_in_class > nb_in_location
+        msg="La salle de classe est pleine, choisisser une autre !!"
+      valid=false
+      end
+    end
+    self.errors.add(:base, "Teaching is not valid:#{msg}") unless valid
+    valid
+  end
+
+  # verifie la non presence de references
   def check_destroy
     valid=true
     msg=""
@@ -38,6 +77,7 @@ class Teaching < ActiveRecord::Base
     self.errors.add(:base, "Teaching can't be destroyed:#{msg}") unless valid
     valid
   end
+
   def create_schedules(teaching_params)
     msg=nil
     schedule_father = create_schedule_father(teaching_params)
@@ -93,11 +133,11 @@ class Teaching < ActiveRecord::Base
         # on recree les schedules
         unless create_schedules(teaching_params)
           msg="Error during schedules repetition update"
-          ret=false
+        ret=false
         end
       else
         msg="Error during destroying schedules"
-        ret=false
+      ret=false
       end
     end
     self.errors.add(:base, "Schedule repetition update is bad: #{msg}") unless ret

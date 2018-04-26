@@ -8,7 +8,23 @@ module ApplicationHelper
     link_to title, href, class: 'menu', id: title, name: title
   end
 
-  private
+  def h_options_from_collection_for_select(objects, id, name,defo=nil)
+    ###puts "========== h_options_from_collection_for_select : objects=#{objects.count}"
+    ###puts "========== h_options_from_collection_for_select : id=#{id}, name=#{name},defo=#{defo}"
+    ret=""
+    objects.each do |obj|
+      ret<<"\n<option"
+      unless defo.nil?
+        if(defo.send(id)==obj.send(id))
+          ret<<" selected='selected'"
+        end
+      end
+      ret<<" value='#{obj.send(id)}'"
+      ret<<">#{obj.send(name)}</option>"
+    end
+    ###puts "========== h_options_from_collection_for_select:"+ret
+    ret.html_safe unless ret.html_safe?
+  end
 
   def h_img_base(name, title, cls)
     ret = "<img class='#{cls}' src='/images/#{name}.png' title='#{title}'/>"
@@ -200,6 +216,45 @@ module ApplicationHelper
     return if text.blank?
     words = text.split()
     words[0..(len-1)].join(' ') + (words.length > len ? end_string : '')
+  end
+  
+  # construit une table simple
+  # cols=[col1,col2,col3], chacune etant une methode de l'objet'
+  # datas=[data2, data2] , chacun etant un objet a afficher sur une ligne
+  def h_table(datas,cols)
+    datas=datas.to_a
+    ret=""
+    puts "=============== h_table =========== #{datas.size} datas"
+    if datas.size>0
+       ret<< "<table>"
+      ret<< "<tr>"
+      cols.each do |column|
+        label=t("label_#{column}")
+        ret<< "<th>#{label}</th>"
+      end
+      ret<< "</tr>"
+      datas.to_a.each do |data|
+        ret<< "<tr>"
+        cols.count.times do |i|
+          acol=cols[i]
+          ret<< "<td>"
+          val = data.send(acol)
+          if i==0
+            path = send "#{data.class.to_s.underscore}_path", data
+            ret<< link_to(h(val), path)
+          else
+            ret<< "#{val}"
+            ret<< "</td>"
+          end
+        end
+        ret<< "</tr>"
+      end
+      ret<< "</table>"
+      ret << "<br>"
+      ret.html_safe
+    else
+      ret
+    end
   end
 
 end

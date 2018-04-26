@@ -35,7 +35,12 @@ module Models
     end
 
     def ident
-      "#{id}.#{name}"
+      # mode debug, rajout de l'id
+      if LOG.level==0
+        "#{id}.#{name}"
+      else
+        "#{name}"
+      end
     end
   # return the model name in lower case with underscore
   # UserAppli becomes user_appli

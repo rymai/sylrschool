@@ -37,12 +37,12 @@
 
 <p>
 	<%= h_show_label(:label_teaching_presents)%>
-	<%= h_comma_links @teaching.presents,:ident %>
-</p>
+	<%= h_table(@teaching.presents,[:present_type,:student_ident])%>
 
 <p>
 	<%= h_show_label(:label_teaching_schedules)%>
-	<%= h_comma_links @teaching.schedules,:ident %>
+	<%= h_table(@teaching.schedules,[:schedule_type,:start_time_date,:schedule_father_ident,:schedule_teaching_ident])%>
+	
 </p>
 
 <%= h_show_bottom(@teaching)%>

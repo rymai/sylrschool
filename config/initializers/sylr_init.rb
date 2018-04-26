@@ -7,9 +7,9 @@ module SYLR
   V_PRESENT_TYPE_PRESENT="present"
   V_PRESENT_TYPE_ABSENT="absent"
   V_PRESENT_TYPE_EXCUSE="excuse"
-  V_ALL_PRESENT_TYPES=[V_PRESENT_TYPE_PRESENT,
-    V_PRESENT_TYPE_ABSENT,
-    V_PRESENT_TYPE_EXCUSE]
+  V_ALL_PRESENT_TYPES=[V_PRESENT_TYPE_ABSENT,
+    V_PRESENT_TYPE_EXCUSE,
+    V_PRESENT_TYPE_PRESENT]
   C_THEME_WHITE="white"
   C_THEME_BLUE="blue"
   C_THEME_GREEN="green"
@@ -176,6 +176,7 @@ end
 
 # DEBUG INFO WARN ERROR FATAL
 LOG.level = Logger.const_get(ENV.fetch('SYLRSCHOOL_LOG_LEVEL', 'error').upcase)
+puts "#{fname}: LOG.level=#{LOG.level}"
 LOG.info(fname) { 'Lancement SYLRSCHOOL' }
 LOG.info(fname) { 'Constantes du module SYLR' }
 SYLR.constants.sort.each do |c|
