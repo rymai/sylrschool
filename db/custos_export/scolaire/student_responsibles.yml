@@ -1,0 +1,48 @@
+
+StudentResponsible_1:
+  id: 1
+  student_id: 1
+  responsible_id: 1
+  custo: scolaire
+  created_at: 2018-04-22 13:33:27.595475000 Z
+  updated_at: 2018-04-26 15:56:29.125414000 Z
+
+StudentResponsible_2:
+  id: 2
+  student_id: 2
+  responsible_id: 2
+  custo: scolaire
+  created_at: 2018-04-22 13:59:36.759445000 Z
+  updated_at: 2018-04-26 15:56:52.338754000 Z
+
+StudentResponsible_61:
+  id: 61
+  student_id: 2
+  responsible_id: 3
+  custo: scolaire
+  created_at: 2018-04-26 20:42:45.721248000 Z
+  updated_at: 2018-04-26 20:42:45.721248000 Z
+
+StudentResponsible_67:
+  id: 67
+  student_id: 3
+  responsible_id: 1
+  custo: scolaire
+  created_at: 2018-04-26 20:53:24.617167000 Z
+  updated_at: 2018-04-26 20:53:24.617167000 Z
+
+StudentResponsible_68:
+  id: 68
+  student_id: 3
+  responsible_id: 2
+  custo: scolaire
+  created_at: 2018-04-26 20:53:24.623656000 Z
+  updated_at: 2018-04-26 20:53:24.623656000 Z
+
+StudentResponsible_69:
+  id: 69
+  student_id: 3
+  responsible_id: 3
+  custo: scolaire
+  created_at: 2018-04-26 20:53:24.634690000 Z
+  updated_at: 2018-04-26 20:53:24.634690000 Z
