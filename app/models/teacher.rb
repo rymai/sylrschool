@@ -27,15 +27,47 @@ class Teacher < ActiveRecord::Base
     self.errors.add(:base, "Teacher can't be destroyed:#{msg}") unless valid
     valid
   end
-
+# renvoie les horaires d'un professeur
   def get_schedules
     ret=[]
-    puts "==============teachings=#{self.teachings.to_a}"
+    #puts "==============teachings=#{self.teachings.to_a}"
     self.teachings.to_a.each do |teaching|
       teaching.schedules.each do |schedule|
         ret << schedule
       end
     end
     ret
+  end
+  #renvoie les classes d'un professeur
+  def get_class_schools
+    ret=[]
+    self.teachings.to_a.each do |teaching|
+      ret<< teaching.teaching_class_school
+    end
+    puts "========================== teacher.get_class_schools: #{ret.count}"
+    ret
+  end
+  # renvoie les etudiants d'un professeur
+  def get_students
+    ret=[]
+    self.get_class_schools.each do |classe|
+      ret.concat classe.students
+    end
+    puts "========================== teacher.get_students: #{ret.count}"
+   ret
+  end
+    # update the custo field of the relational object teacher_matter after save or update
+  # appelle par le controleur teacher
+  def update_custo_in_teacher_matter(ids)
+    #puts "=============ids=#{ids}"
+    unless ids.nil?
+    ids.each do |id|
+        unless id.blank?
+          objrel=TeacherMatter.where("matter_id=#{id} and teacher_id=#{self.id}").to_a[0]
+          objrel.destroy!
+          objrel=TeacherMatter.create!({matter_id: id, teacher_id: self.id, custo: SYLR::CUSTO})  
+       end
+      end
+    end
   end
 end

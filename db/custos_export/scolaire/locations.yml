@@ -1,0 +1,50 @@
+
+Location_1:
+  id: 1
+  name: salle 123
+  usage_id: '16'
+  description: ''
+  location_nb_max_person: 10
+  custo: scolaire
+  created_at: 2018-04-05 16:06:18.200376000 Z
+  updated_at: 2018-04-23 13:07:47.992741000 Z
+
+Location_2:
+  id: 2
+  name: salle 234
+  usage_id: '16'
+  description: ''
+  location_nb_max_person: 5
+  custo: scolaire
+  created_at: 2018-04-05 16:06:30.725134000 Z
+  updated_at: 2018-04-23 13:08:02.414908000 Z
+
+Location_7:
+  id: 7
+  name: sport
+  usage_id: '18'
+  description: ''
+  location_nb_max_person: 30
+  custo: scolaire
+  created_at: 2018-04-23 13:23:47.088678000 Z
+  updated_at: 2018-04-23 16:41:18.991896000 Z
+
+Location_6:
+  id: 6
+  name: salle 235
+  usage_id: '16'
+  description: ''
+  location_nb_max_person: 20
+  custo: scolaire
+  created_at: 2018-04-23 13:08:30.613155000 Z
+  updated_at: 2018-04-24 13:36:19.955010000 Z
+
+Location_5:
+  id: 5
+  name: salle 124
+  usage_id: '16'
+  description: ''
+  location_nb_max_person: 10
+  custo: scolaire
+  created_at: 2018-04-22 13:45:35.821302000 Z
+  updated_at: 2018-04-24 13:37:41.099864000 Z

@@ -2,16 +2,21 @@
 
 <%= h_show_top(@notebook)%>
 
-<p>
-  <%= h_show_label(:label_notebook_text)%>
-  <%= @notebook.notebooktext %>
-</p>
+
 
 <p>
   <%= h_show_label(:label_student)%>
   <%= @notebook.student.ident unless @notebook.student.nil? %>
+  <%= h_table([@notebook.student],[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk,:person_status])%>
 </p>
-
+<p>
+  <%= h_show_label(:label_notebook_teachers)%>
+  <%= h_table(@notebook.get_teachers,[:name,:id,:email,:firstname,:lastname,:person_status])%>
+</p>
+<p>
+  <%= h_show_label(:label_notebook_text)%>
+  <%= @notebook.notebooktext.html_safe %>
+</p>
 
 <%= h_show_bottom(@notebook)%>
 <%= h_show_menus_bottom(@notebook)%>

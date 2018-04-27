@@ -4,8 +4,7 @@
 			<ul class="nav nav-tabs">
 				<li class="active">
 					<a class="brand" href="#main" data-toggle="tab"> <span title="Application, appui=>retour à l'acceuil"><%= "#{SYLR::APP_NAME}" %></span> </a>
-				</li>
-				 Essai 
+				</li> 
 				<li class="active">
 					<%= "#{SYLR::APP_VERSION}"%><br/>
 					<%= "#{SYLR::APP_DATE}"%>
@@ -13,7 +12,7 @@
 				<li class="active">
 					&nbsp;
 				</li>
-				<% if current_user %>
+				<% if logged_in? %>
 				<li class="active">
 					<span title="Connected"><%= "#{current_user.email}"%></span>
 					<br>
@@ -126,9 +125,6 @@
 							</li>
 							<li>
 								<%= h_menu("/teacher_matters", "help_teacher_matters",t("mnu_teacher_matters")) %>
-							</li>
-							<li>
-								<%= h_menu("/notebook_teachers", "help_student_responsibles",t("mnu_notebook_teachers")) %>
 							</li>
 							<li>
 								<%= h_menu("/schedules","help_schedules",t("mnu_schedules")) %>

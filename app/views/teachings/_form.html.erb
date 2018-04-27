@@ -5,16 +5,16 @@
 
 <%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :label_teaching_class_school %>
-	<%= f.collection_select(:teaching_class_school_id, ClassSchool.get_all, :id, :name) %>
+	<%= f.label :label_teaching_matter %>
+	<%= f.collection_select(:teaching_matter_id, Matter.get_all, :id, :name) %>
 </div>
 <div class="field">
 	<%= f.label :label_teaching_teacher %>
 	<%= f.collection_select(:teaching_teacher_id, Teacher.get_all, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_matter %>
-	<%= f.collection_select(:teaching_matter_id, Matter.get_all, :id, :name) %>
+	<%= f.label :label_teaching_class_school %>
+	<%= f.collection_select(:teaching_class_school_id, ClassSchool.get_all, :id, :name) %>
 </div>
 <div class="field">
 	<%= f.label :label_teaching_domain %>

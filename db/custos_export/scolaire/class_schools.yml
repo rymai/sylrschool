@@ -1,0 +1,36 @@
+
+ClassSchool_1:
+  id: 1
+  name: 2de 1
+  nb_max_student: 5
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-23 13:57:47.212064000 Z
+  updated_at: 2018-04-23 13:57:47.212064000 Z
+
+ClassSchool_2:
+  id: 2
+  name: 1ere 1
+  nb_max_student: 5
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-23 13:59:31.416372000 Z
+  updated_at: 2018-04-23 13:59:31.416372000 Z
+
+ClassSchool_3:
+  id: 3
+  name: 2de 2
+  nb_max_student: 5
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-23 13:59:52.057826000 Z
+  updated_at: 2018-04-23 13:59:52.057826000 Z
+
+ClassSchool_4:
+  id: 4
+  name: 1ere 2
+  nb_max_student: 10
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-23 14:00:08.256770000 Z
+  updated_at: 2018-04-23 14:00:08.256770000 Z

@@ -1,23 +1,4 @@
 
-Student_1:
-  id: 1
-  name: Didier-Dupont
-  person_status: enrolled
-  email: d p
-  firstname: Didier
-  lastname: Dupont
-  adress: ''
-  postalcode: ''
-  town: ''
-  phone1: 
-  phone2: 
-  birthday: 2018-04-05
-  student_class_school_id: 2
-  description: ''
-  custo: scolaire
-  created_at: 2018-04-05 15:39:45.544277000 Z
-  updated_at: 2018-04-05 16:07:57.979704000 Z
-
 Student_2:
   id: 2
   name: Jerome-Durand
@@ -36,3 +17,41 @@ Student_2:
   custo: scolaire
   created_at: 2018-04-05 15:40:16.812978000 Z
   updated_at: 2018-04-07 10:17:17.017745000 Z
+
+Student_1:
+  id: 1
+  name: Didier-Dupont
+  person_status: enrolled
+  email: d@p.net
+  firstname: Didier
+  lastname: Dupont
+  adress: ''
+  postalcode: ''
+  town: ''
+  phone1: ''
+  phone2: ''
+  birthday: 2018-04-05
+  student_class_school_id: 2
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 15:39:45.544277000 Z
+  updated_at: 2018-04-23 15:27:11.330781000 Z
+
+Student_3:
+  id: 3
+  name: dfdgg
+  person_status: enrolled
+  email: dgdd@toto.com
+  firstname: dfg
+  lastname: dgd
+  adress: ''
+  postalcode: ''
+  town: ''
+  phone1: ''
+  phone2: ''
+  birthday: 2018-04-22
+  student_class_school_id: 2
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-22 13:47:39.063489000 Z
+  updated_at: 2018-04-26 20:10:50.567641000 Z

@@ -3,14 +3,13 @@
 <%= h_show_top(@element)%>
 
 <p>
-	<%= h_show_label("label_for_what")%>
+	<%= h_show_label(:label_for_what)%>
 	<%= @element.for_what %>
 </p>
 
 <p>
 	<%= h_show_label(:label_element_responsibles)%>
-	<%= h_table(@element.responsibles,[:name,:id,:email,:responsible_type_ident,:person_status])%>
-</p>
+	<%= h_table(@element.responsibles,[:name,:id,:email,:responsible_type__lnk,:firstname,:lastname,:person_status])%>
 </p>
 
 <p>
@@ -20,7 +19,7 @@
 
 <p>
 	<%= h_show_label(:label_element_matters)%>
-	<%= h_table(@element.matters,[:name,:id,:matter_type_ident,:matter_duration,:matter_nb_max_student])%>
+	<%= h_table(@element.matters,[:name,:id,:matter_type__lnk,:matter_duration,:matter_nb_max_student])%>
 </p>
 
 <%= h_show_bottom(@element)%>

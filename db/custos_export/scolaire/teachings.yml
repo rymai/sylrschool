@@ -1,30 +1,192 @@
 
-Teaching_4:
-  id: 4
-  name: 2de-1-françaisc
+Teaching_1:
+  id: 1
+  name: 2de-1-francais
   teaching_class_school_id: 1
   teaching_teacher_id: 2
   teaching_matter_id: 1
-  teaching_domain_id: 
-  teaching_start_time: 2018-04-08 14:00:00.000000000 Z
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:14:00.000000000 Z
   teaching_repetition: week
   teaching_repetition_number: 3
   description: ''
   custo: scolaire
-  created_at: 2018-04-05 15:05:14.700929000 Z
-  updated_at: 2018-04-05 16:44:35.323420000 Z
+  teaching_location_id: 1
+  created_at: 2018-04-23 14:16:09.490844000 Z
+  updated_at: 2018-04-24 13:33:52.912365000 Z
+
+Teaching_12:
+  id: 12
+  name: 1ere 2 sport
+  teaching_class_school_id: 4
+  teaching_teacher_id: 5
+  teaching_matter_id: 3
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:52:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 7
+  created_at: 2018-04-23 14:52:58.736919000 Z
+  updated_at: 2018-04-24 13:34:13.549365000 Z
+
+Teaching_11:
+  id: 11
+  name: 1ere 1 sport
+  teaching_class_school_id: 2
+  teaching_teacher_id: 5
+  teaching_matter_id: 3
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-14 14:49:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 7
+  created_at: 2018-04-23 14:50:24.037753000 Z
+  updated_at: 2018-04-24 13:34:31.750322000 Z
+
+Teaching_10:
+  id: 10
+  name: 2de 2 sport
+  teaching_class_school_id: 3
+  teaching_teacher_id: 5
+  teaching_matter_id: 3
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-11 14:48:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 7
+  created_at: 2018-04-23 14:49:35.878585000 Z
+  updated_at: 2018-04-24 13:35:04.134596000 Z
+
+Teaching_9:
+  id: 9
+  name: 2de 1 sport
+  teaching_class_school_id: 1
+  teaching_teacher_id: 5
+  teaching_matter_id: 3
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:48:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 7
+  created_at: 2018-04-23 14:48:53.166555000 Z
+  updated_at: 2018-04-24 13:35:19.040784000 Z
+
+Teaching_8:
+  id: 8
+  name: 1ere 2 maths
+  teaching_class_school_id: 4
+  teaching_teacher_id: 3
+  teaching_matter_id: 2
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-06 14:46:00.000000000 Z
+  teaching_repetition: day
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 6
+  created_at: 2018-04-23 14:48:06.791397000 Z
+  updated_at: 2018-04-24 13:36:41.187336000 Z
+
+Teaching_7:
+  id: 7
+  name: 1ere 2 francais
+  teaching_class_school_id: 4
+  teaching_teacher_id: 3
+  teaching_matter_id: 1
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-08 14:45:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 6
+  created_at: 2018-04-23 14:45:48.574555000 Z
+  updated_at: 2018-04-24 13:37:01.459003000 Z
+
+Teaching_6:
+  id: 6
+  name: 2de 2 francais
+  teaching_class_school_id: 3
+  teaching_teacher_id: 2
+  teaching_matter_id: 1
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:44:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 5
+  created_at: 2018-04-23 14:44:43.641362000 Z
+  updated_at: 2018-04-24 13:37:52.881193000 Z
 
 Teaching_5:
   id: 5
-  name: 1ere-1-maths
-  teaching_class_school_id: 2
+  name: 2de 2 maths
+  teaching_class_school_id: 3
   teaching_teacher_id: 3
   teaching_matter_id: 2
-  teaching_domain_id: 
-  teaching_start_time: 2018-04-05 15:00:00.000000000 Z
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:43:00.000000000 Z
   teaching_repetition: week
   teaching_repetition_number: 3
   description: ''
   custo: scolaire
-  created_at: 2018-04-05 15:07:32.149096000 Z
-  updated_at: 2018-04-05 16:47:10.058927000 Z
+  teaching_location_id: 5
+  created_at: 2018-04-23 14:43:56.127407000 Z
+  updated_at: 2018-04-24 13:38:13.069660000 Z
+
+Teaching_4:
+  id: 4
+  name: 1ere 1 francais
+  teaching_class_school_id: 2
+  teaching_teacher_id: 2
+  teaching_matter_id: 1
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-10 14:40:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 2
+  created_at: 2018-04-23 14:42:28.874959000 Z
+  updated_at: 2018-04-24 13:38:28.005341000 Z
+
+Teaching_3:
+  id: 3
+  name: 2de 1 maths
+  teaching_class_school_id: 1
+  teaching_teacher_id: 3
+  teaching_matter_id: 2
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-23 14:36:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 1
+  created_at: 2018-04-23 14:37:12.461549000 Z
+  updated_at: 2018-04-24 13:38:41.953519000 Z
+
+Teaching_2:
+  id: 2
+  name: 1ere 1 maths
+  teaching_class_school_id: 2
+  teaching_teacher_id: 3
+  teaching_matter_id: 2
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-20 14:35:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 2
+  description: ''
+  custo: scolaire
+  teaching_location_id: 2
+  created_at: 2018-04-23 14:36:43.751188000 Z
+  updated_at: 2018-04-24 13:39:01.481534000 Z

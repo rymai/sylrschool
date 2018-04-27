@@ -3,13 +3,15 @@
 
 <%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :notebooktext %>
-	<%= f.text_area :notebooktext %>
-</div>
-<div class="field">
 	<%= f.label :student_id %>
 	<%= f.collection_select(:student_id, Student.get_all, :id, :name) %>
 </div>
+<div class="field">
+	<%= f.label :notebooktext %>
+	<%= f.cktext_area(:notebooktext, id: 'notebooktext_id') %>
+	
+</div>
+
 
 <%= h_form_description(f) %>
 

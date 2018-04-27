@@ -38,9 +38,9 @@ class StudentsController < ApplicationController
   def create
     fname = "#{self.class.name}.#{__method__}"
     @student = Student.new(student_params)
-    LOG.debug(fname){"@student=#{@student.inspect}"}
     respond_to do |format|
-      if @student.save
+      if @student.save!
+        @student.update_custo_in_student_responsible(student_params[:responsible_ids])
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
@@ -55,6 +55,7 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
+        @student.update_custo_in_student_responsible(student_params[:responsible_ids])
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else

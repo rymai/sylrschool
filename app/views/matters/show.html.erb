@@ -19,12 +19,12 @@
 
 <p>
 	<%= h_show_label(:label_matter_grades)%>
-	<%= h_table(@matter.grades,[:ident,:id,:grade_grade_context_ident,:grade_matter_ident,
-		:grade_student_ident,:grade_date,:value])%>
+	<%= h_table(@matter.grades,[:ident,:id,:grade_grade_context__lnk,:grade_matter__lnk,
+		:grade_student__lnk,:grade_date,:value])%>
 </p>
 <p>
 	<%= h_show_label(:label_matter_teachers)%>
-	<%= h_table(@matter.teachers,[:name,:id,:email,:person_status])%>
+	<%= h_table(@matter.teachers,[:name,:id,:email,:first_name,:lastname,:person_status])%>
 </p>
 
 <%= h_show_bottom(@matter)%>

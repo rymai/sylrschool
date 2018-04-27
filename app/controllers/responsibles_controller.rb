@@ -33,9 +33,9 @@ class ResponsiblesController < ApplicationController
   # POST /responsibles.json
   def create
     @responsible = Responsible.new(responsible_params)
-
     respond_to do |format|
-      if @responsible.save
+      if @responsible.save!
+        @responsible.update_custo_in_student_responsible(responsible_params[:student_ids])
         format.html { redirect_to @responsible, notice: 'Responsible was successfully created.' }
         format.json { render :show, status: :created, location: @responsible }
       else
@@ -50,6 +50,7 @@ class ResponsiblesController < ApplicationController
   def update
     respond_to do |format|
       if @responsible.update(responsible_params)
+        @responsible.update_custo_in_student_responsible(responsible_params[:student_ids])
         format.html { redirect_to @responsible, notice: 'Responsible was successfully updated.' }
         format.json { render :show, status: :ok, location: @responsible }
       else
@@ -84,8 +85,8 @@ class ResponsiblesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def responsible_params
-    params.require(:responsible).permit(:name,:email, :phone1, :phone2,:person_status,:firstname, 
-    :lastname, :adress, :postalcode, :town, :birthday, :description, :custo, 
+    params.require(:responsible).permit(:name,:email, :phone1, :phone2,:person_status,:firstname,
+    :lastname, :adress, :postalcode, :town, :birthday, :description, :custo,
     :type_id, {:student_ids=>[]})
   end
 end

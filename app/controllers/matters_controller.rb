@@ -36,6 +36,7 @@ class MattersController < ApplicationController
 
     respond_to do |format|
       if @matter.save
+        @student.update_custo_in_teacher_matter(matter_params[:teacher_ids])
         format.html { redirect_to @matter, notice: 'Matter was successfully created.' }
         format.json { render :show, status: :created, location: @matter }
       else
@@ -50,6 +51,7 @@ class MattersController < ApplicationController
   def update
     respond_to do |format|
       if @matter.update(matter_params)
+        @matter.update_custo_in_teacher_matter(matter_params[:teacher_ids])
         format.html { redirect_to @matter, notice: 'Matter was successfully updated.' }
         format.json { render :show, status: :ok, location: @matter }
       else

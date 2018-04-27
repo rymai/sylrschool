@@ -90,18 +90,18 @@ fr:
   # class_school
   label_nb_max_student: Nombre maxi d'étudiants
   label_default_location: Emplacement
-  label_class_school_students: Etudiants le référençant
-  label_class_school_teachings: Enseignements le référençant
+  label_class_school_students: Etudiants 
+  label_class_school_teachings: Enseignements 
   # element
   label_for_what: Pour quoi
-  label_element_responsibles: Responsables le référençant
-  label_element_locations: Emplacements le référençant
-  label_element_matters: Matières le référençant
+  label_element_responsibles: Responsables 
+  label_element_locations: Emplacements 
+  label_element_matters: Matières 
   # grade_context
   label_goal: Cible
   label_min_value: Valeur Min.
   label_max_value: Valeur Max. 
-  label_grade_context_grades: Notes le référençant
+  label_grade_context_grades: Notes 
   # grade
   label_grade_student: "Etudiant (id)"
   label_grade_grade_context: "Contexte de notes (id)"
@@ -116,8 +116,8 @@ fr:
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max personnes
-  label_location_class_schools: Classe le référençant
-  label_location_teachings: Enseignements le référençant
+  label_location_class_schools: Classe 
+  label_location_teachings: Enseignements 
   label_usage_ident: Usage
   # main/tools
   title_tools: Outils
@@ -136,6 +136,7 @@ fr:
   # notebook
   label_notebook_text: Texte du cahier
   label_notebook_student: Etudiant
+  label_notebook_teachers: Professeurs
   # person
   label_email: Email
   label_filter_email: "Email (,)"
@@ -165,22 +166,24 @@ fr:
   label_all_of_day: Jour entier
   label_schedule_duration: Durée
   label_schedule_schedule_father: Origine horaire
-  label_schedule_schedule_teaching: le référençant
-  label_schedule_presents: Présences le référençant
+  label_schedule_schedule_teaching: 
+  label_schedule_presents: Présences 
   label_schedule_teachings: Enseignements 
-  label_schedule_schedules: Horaires le référençant  
+  label_schedule_schedules: Horaires   
   label_schedule_father_ident: Origine horaire
   label_schedule_teaching_ident: Enseignement
-  # studentsle référençant
+  # students
   label_student_class_school: Classe
   label_student_teachers: Professeurs de cet étudiant
-  label_student_presents: Présences le référençant
-  label_student_grades: Notes le référençant
-  label_student_notebooks: Cahiers de texte le référençant
+  label_student_presents: Présences 
+  label_student_grades: Notes 
+  label_student_notebooks: Cahiers de texte 
   # teacher
   label_teacher_matter: Matière
   label_teacher_grade_context: Contexte de note
-  label_teacher_teachings: Enseignements le référençant  
+  label_teacher_teachings: Enseignements 
+  label_teacher_class_schools: Classes
+  label_teacher_students: Etudiant
   # teaching
   label_teaching_class_school: "Classe (id)"
   label_teaching_teacher: "Profeseur (id)"

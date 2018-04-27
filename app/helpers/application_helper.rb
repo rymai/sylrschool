@@ -182,11 +182,6 @@ module ApplicationHelper
     html << "</div>"
     html.html_safe
   end
-  def h_form_description_old(form)
-    html=""
-    html<< h_form_text_area(form,:description,:label_description)
-    html.html_safe
-  end
 
   def h_form_bottom(form)
     html=""
@@ -221,29 +216,48 @@ module ApplicationHelper
   # construit une table simple
   # cols=[col1,col2,col3], chacune etant une methode de l'objet'
   # datas=[data2, data2] , chacun etant un objet a afficher sur une ligne
+  # la 1erer colonne contient toujours un lien vers l'objet
+  # une colonne se terminant par __lnk contient un lien vers l'objet de cette colonne
+  # exemple: h_table(@class_school.students,[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk])
+  # la derniere colonne sera un lien vers la classe du student
   def h_table(datas,cols)
     datas=datas.to_a
     ret=""
-    puts "=============== h_table =========== #{datas.size} datas"
+    ##puts "=============== h_table =========== #{datas.size} datas"
     if datas.size>0
        ret<< "<table>"
       ret<< "<tr>"
       cols.each do |column|
-        label=t("label_#{column}")
+        fields=column.to_s.split("__")
+        label=t("label_#{fields[0]}")
         ret<< "<th>#{label}</th>"
       end
       ret<< "</tr>"
       datas.to_a.each do |data|
         ret<< "<tr>"
         cols.count.times do |i|
-          acol=cols[i]
+          colfields=cols[i].to_s.split("__")
+          acol=colfields[0]
           ret<< "<td>"
           val = data.send(acol)
           if i==0
+            # lien vers l'objet représenté sur la ligne
             path = send "#{data.class.to_s.underscore}_path", data
             ret<< link_to(h(val), path)
           else
-            ret<< "#{val}"
+            if colfields.size==1
+              ret<< "#{val}"
+            else
+              if colfields[1]=="lnk"
+                #__lnk => on met le lien
+                # lien vers l'objet de la colonne
+                path= send "#{val.class.to_s.underscore}_path", val
+                ret<< link_to(h(val.send("ident")), path)
+              else
+                #__titi, titi non reconnu=> valeur normale
+                ret<< "#{val}"
+              end
+            end
             ret<< "</td>"
           end
         end

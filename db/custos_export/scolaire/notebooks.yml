@@ -1,0 +1,21 @@
+
+Notebook_2:
+  id: 2
+  name: D. Dupont
+  notebooktext: ''
+  student_id: 1
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 16:29:26.785167000 Z
+  updated_at: 2018-04-05 16:29:26.785167000 Z
+
+Notebook_1:
+  id: 1
+  name: J Durand
+  notebooktext: "<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"height:79px;
+    width:836px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n"
+  student_id: 2
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 16:29:09.612319000 Z
+  updated_at: 2018-04-26 14:35:49.709936000 Z

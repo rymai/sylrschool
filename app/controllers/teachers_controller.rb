@@ -37,6 +37,7 @@ class TeachersController < ApplicationController
 
     respond_to do |format|
       if @teacher.save
+        @teacher.update_custo_in_teacher_matter(teacher_params[:matter_ids])
         format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
         format.json { render :show, status: :created, location: @teacher }
       else
@@ -51,6 +52,7 @@ class TeachersController < ApplicationController
   def update
     respond_to do |format|
       if @teacher.update(teacher_params)
+        @teacher.update_custo_in_teacher_matter(teacher_params[:matter_ids])
         format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
         format.json { render :show, status: :ok, location: @teacher }
       else

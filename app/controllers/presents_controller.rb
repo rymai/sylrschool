@@ -28,8 +28,6 @@ class PresentsController < ApplicationController
 
   # GET /presents/1/edit
   def edit
-    #@teachings=@present.teachings.to_a
-    #@schedules=@teachings.to_a.first
   end
 
   # POST /presents
@@ -87,11 +85,12 @@ class PresentsController < ApplicationController
   def schedule_selection
     #puts "============================== params=#{params}"
     @present = Present.find(params[:present_id])
-    @student = Student.find(params[:student])
+    ###@student = Student.find(params[:student])
     @teaching=Teaching.find(params[:teaching])
     @schedules = @teaching.schedules.to_a
     #puts "============================== student=#{@student.inspect}"
     #puts "============================== teachings=#{@teachings}"
+    puts "============================== teaching=#{@teaching}"
     respond_to do |format|
       format.js {  }
     end

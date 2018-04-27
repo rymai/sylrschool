@@ -1,0 +1,33 @@
+
+Matter_1:
+  id: 1
+  name: Français
+  matter_type_id: 2
+  matter_duration: 60
+  matter_nb_max_student: 25
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 14:10:00.061073000 Z
+  updated_at: 2018-04-05 14:10:00.061073000 Z
+
+Matter_2:
+  id: 2
+  name: Maths
+  matter_type_id: 1
+  matter_duration: 30
+  matter_nb_max_student: 25
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-05 14:10:37.978544000 Z
+  updated_at: 2018-04-23 13:21:36.201720000 Z
+
+Matter_3:
+  id: 3
+  name: Sport
+  matter_type_id: 3
+  matter_duration: 60
+  matter_nb_max_student: 30
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-23 13:22:16.665607000 Z
+  updated_at: 2018-04-23 13:22:16.665607000 Z

@@ -2,6 +2,7 @@
 <%= h_form_errors(@present) %>
 
 <%= hidden_field :present, :id%>
+<%= hidden_field :teaching, :id%>
 
 <div class="field">
 	<%= label_tag :student %>
@@ -13,13 +14,14 @@
 <div class="field">
 	<%= label_tag :teaching %>
 	<div id='teaching_field'>
-		<%= render(:partial=>"presents/select_teaching",:locals=>{:present =>@present,:values=>Teaching.get_all})%>
+		<%= render(:partial=>"presents/select_teaching",:locals=>{:present =>@present,:teachings=>[]})%>
 	</div>
 </div>
+
 <div class="field">
 	<%= label_tag :schedule %>
 	<div id='schedule_field'>
-		<%= render(:partial=>"presents/select_schedule",:locals=>{:present =>@present,:values=>Schedule.get_not_all_day})%>
+		<%= render(:partial=>"presents/select_schedule",:locals=>{:present =>@present,:schedules=>[]})%>
 	</div>
 </div>
 
@@ -31,20 +33,7 @@
 
 <%= h_form_bottom(f) %>
 <% end %>
-<script type="text/javascript">
-	$('#present_teaching_id').on("change", function() {
-		alert('present_teaching_id');
-		$.ajax({
-			data : {
-				student : $('#present_student_id option:selected').val(),
-				teaching : $('#present_teaching_id option:selected').val(),
-				present_id : $('#present_id').val()
-			},
-			url : "/presents/schedule_selection",
-			type : "GET"
-		});
-	});
-
+<script>
 	$('#present_student_id').on("change", function() {
 		alert('present_student_id');
 		$.ajax({
@@ -58,4 +47,5 @@
 	});
 
 </script>
+
 

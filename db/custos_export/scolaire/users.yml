@@ -1,14 +1,16 @@
 
-User_2:
-  id: 2
+User_17:
+  id: 17
+  name: 
+  role: support
   email: sylvere.coutable@laposte.net
-  encrypted_password: "$2a$11$FYAXhpmCdBMrdxsM8xi9eeBMeaoNROwRM30O8GMWREwFf/bCgNnMa"
+  encrypted_password: "$2a$11$OMi20D82z3DO1L/D4KLT/.m7NyD7KYfnuWiAMwqRl5dTFH7ECzMSS"
   reset_password_token: 
   reset_password_sent_at: 
   remember_created_at: 
-  sign_in_count: 3
-  current_sign_in_at: 2018-04-10 06:06:13.759541000 Z
-  last_sign_in_at: 2018-04-09 09:10:58.004897000 Z
+  sign_in_count: 27
+  current_sign_in_at: 2018-04-26 09:09:09.926271000 Z
+  last_sign_in_at: 2018-04-26 08:52:12.414841000 Z
   current_sign_in_ip: !ruby/object:IPAddr
     family: 23
     addr: 1
@@ -17,5 +19,28 @@ User_2:
     family: 23
     addr: 1
     mask_addr: 340282366920938463463374607431768211455
-  created_at: 2018-04-05 12:30:18.690421000 Z
-  updated_at: 2018-04-10 06:06:13.763558000 Z
+  created_at: 2018-04-20 17:40:13.723238000 Z
+  updated_at: 2018-04-26 09:09:09.926271000 Z
+
+User_19:
+  id: 19
+  name: fhgf
+  role: student
+  email: syl@syl.fr
+  encrypted_password: "$2a$11$dtITrAyD1RkKDROqK9FPxOyuwxN0PIsgxAyQRsNtUtjAd9l4GBPt2"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 2
+  current_sign_in_at: 2018-04-21 13:08:32.347187000 Z
+  last_sign_in_at: 2018-04-21 13:05:37.524511000 Z
+  current_sign_in_ip: !ruby/object:IPAddr
+    family: 23
+    addr: 1
+    mask_addr: 340282366920938463463374607431768211455
+  last_sign_in_ip: !ruby/object:IPAddr
+    family: 23
+    addr: 1
+    mask_addr: 340282366920938463463374607431768211455
+  created_at: 2018-04-21 13:05:37.514496000 Z
+  updated_at: 2018-04-21 13:08:33.111221000 Z

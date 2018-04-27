@@ -45,4 +45,19 @@ class Matter < ActiveRecord::Base
     self.errors.add(:base, "Matter can't be destroyed:#{msg}") unless valid
     valid
   end
+  
+   # update the custo field of the relational object teacher_matter after save or update
+  # appelle par le controleur matter
+  def update_custo_in_teacher_matter(ids)
+    puts "=============ids=#{ids}"
+    unless ids.nil?
+    ids.each do |id|
+        unless id.blank?
+          objrel=TeacherMatter.where("matter_id=#{self.id} and teacher_id=#{id}").to_a[0]
+          objrel.destroy!
+          objrel=TeacherMatter.create!({matter_id: self.id, teacher_id: id, custo: SYLR::CUSTO})  
+       end
+      end
+    end
+  end
 end

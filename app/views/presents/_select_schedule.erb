@@ -1,2 +1,2 @@
-<%= select_tag "present[schedule_id]", h_options_from_collection_for_select(values, :id, :ident,present.schedule)%>
+<%= select_tag "present[schedule_id]", h_options_from_collection_for_select(schedules, :id, :ident_long,present.schedule)%>
 

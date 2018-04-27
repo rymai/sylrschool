@@ -85,5 +85,26 @@ class Student < ActiveRecord::Base
     ret
   end
 
+  # update the custo field of the relational object student_responsibles after save or update
+  # appelle par le controleur student
+  def update_custo_in_student_responsible(ids)
+    puts "=============ids=#{ids}"
+    unless ids.nil?
+    ids.each do |id|
+        unless id.blank?
+          objrel=StudentResponsible.where("student_id=#{self.id} and responsible_id=#{id}").to_a[0]
+          objrel.destroy!
+          objrel=StudentResponsible.create!({student_id: self.id, responsible_id: id, custo: SYLR::CUSTO})  
+       end
+      end
+    end
+  end
+  
+  # pour h_table student => class_chool
+  def student_class_school_ident
+    student_class_school.ident
+  end
+  
+ 
 
 end

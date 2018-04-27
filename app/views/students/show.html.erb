@@ -16,22 +16,24 @@
 </p>
 <p>
 	<%= h_show_label("label_student_locations")%>
-	<%= h_table(@student.get_locations,[:name,:id,"usage_ident",:location_nb_max_person])%>
+	<%= h_table(@student.get_locations,[:name,:id,:usage_ident,:location_nb_max_person])%>
 </p>
 <p>
 	<%= h_show_label("label_student_responsibles")%>
-	<%= h_table(@student.responsibles,[:name,:id,:email,:responsible_type_ident,:person_status])%>
+	<%= h_table(@student.responsibles,[:name,:id,:email,:responsible_type_ident,:firstname,:lastname,:person_status])%>
 </p>
 <p>
 	<%= h_show_label(:label_student_presents)%>
-	<%= h_table(@student.presents,[:present_type,"student_ident"])%>
+	<%= h_table(@student.presents,[:present_type,:student_ident])%>
 </p>
 <p>
 	<%= h_show_label(:label_student_grades)%>
-	<%= h_table(@student.grades,["grade_grade_context_ident",:value])%> </p>
+	<%= h_table(@student.grades,[:grade_grade_context_ident,:value])%>
+</p>
 <p>
-	<%= h_show_label(:label_student_notebooks)%>
-	<%= @student.notebook.ident unless @student.notebook.nil? %>
+	<%= h_show_label(:label_student_notebook)%>
+	<%= h_table([@student.notebook],[:name,:notebooktext_short,:custo]) unless @student.notebook.nil?%>
+</p>
 </p>
 
 <%= h_show_bottom(@student)%>

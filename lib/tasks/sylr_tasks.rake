@@ -54,6 +54,7 @@ namespace :sylr do
 
   desc 'notify'
   task notify: [:connect, :environment] do |_t, _args|
+    fname = "#{self.class.name}.#{__method__}"
     LOG.debug(fname) { "Notification.notify_all"}
     Notification.notify_all(nil)
   end
@@ -263,6 +264,7 @@ namespace :sylr do
   end
 
   def print_stack e
+    fname = "#{self.class.name}.#{__method__}"
     stack = ''
     e.backtrace.each do |x|
       LOG.debug(fname) { x + "\n"}
@@ -280,19 +282,19 @@ namespace :sylr do
         assocs[r.options[:join_table]] = [] if assocs[r.options[:join_table]].nil?
         trouve = false
         assocs[r.options[:join_table]].each do |arel|
-          if arel[r.association_foreign_key] == obj.id && arel[r.primary_key_name] == ext_id ||
-          arel[r.primary_key_name] == obj.id && arel[r.association_foreign_key] == ext_id
+          if arel[r.association_foreign_key] == obj.id && arel[r.active_record_primary_key] == ext_id ||
+          arel[r.active_record_primary_key] == obj.id && arel[r.association_foreign_key] == ext_id
           trouve = true
           end
         end
         unless trouve
           begin
-            assocs[r.options[:join_table]] << { r.primary_key_name => obj.id, r.association_foreign_key => ext_id, :custo => custo }
+            assocs[r.options[:join_table]] << { r.active_record_primary_key => obj.id, r.association_foreign_key => ext_id, :custo => custo }
           rescue Exception => e
           end
         end
-        rel_yml.write "#{r.primary_key_name}_#{obj.id}_#{r.association_foreign_key}_#{ext_id}:\n"
-        rel_yml.write "  #{r.primary_key_name}: #{obj.id}\n"
+        rel_yml.write "#{r.active_record_primary_key}_#{obj.id}_#{r.association_foreign_key}_#{ext_id}:\n"
+        rel_yml.write "  #{r.active_record_primary_key}: #{obj.id}\n"
         rel_yml.write "  #{r.association_foreign_key}: #{ext_id}\n"
       end
       begin
@@ -328,7 +330,7 @@ namespace :sylr do
         LOG.debug(fname) { "Warning loading model(#{file}):#{e}}" }
       end
     end
-    LOG.debug(fname) { "models=#{models}" }
+    LOG.debug(fname) { "models=#{models.count}" }
     models
   end
 end

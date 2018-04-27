@@ -1,2 +1,2 @@
 console.log("teaching_selection");
-jQuery('#teaching_field').html("<%= escape_javascript(render(:partial=>'presents/select_teaching',:locals=>{:present=>@present,:values=>@teachings}))%>");
+jQuery('#teaching_field').html("<%= j(render(:partial=>'presents/select_teaching',:locals=>{:present=>@present,:teachings=>@teachings}))%>");

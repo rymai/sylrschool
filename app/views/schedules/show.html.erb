@@ -23,12 +23,12 @@
 
 <p>
 	<%= h_show_label(:label_schedule_presents)%>
-	<%= h_table(@schedule.presents,[:present_type,:student_ident])%>
+	<%= h_table(@schedule.presents,[:present_type,:student__lnk])%>
 </p>
 
 <p>
 	<%= h_show_label(:label_schedule_schedules)%>
-	<%= h_table(@schedule.schedules,[:schedule_type,:start_time_date,:schedule_father_ident,:schedule_teaching_ident])%>
+	<%= h_table(@schedule.schedules,[:schedule_type,:start_time_date,:schedule_father__lnk,:schedule_teaching__lnk])%>
 
 </p>
 

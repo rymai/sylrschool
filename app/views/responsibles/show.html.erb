@@ -12,7 +12,7 @@
 
 <p>
 	<%= h_show_label("label_responsible_students")%>
-	<%= h_table(@responsible.students,[:name,:id,:email])%>
+	<%= h_table(@responsible.students,[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk,:person_status])%>
 </p>
 
 <%= h_show_bottom(@responsible)%>
