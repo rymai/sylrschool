@@ -1,0 +1,29 @@
+<% unless @datas.nil? %>
+<table>
+	<tr>
+		<% @datas.each do |domain, values| %> <th> <%= t("legend_#{domain}") %></th>
+		<% end %>
+	</tr>
+	<tr>
+		<% @datas.each do |domain, values| %>
+		<td>
+		<table>
+		    
+			<% @datas[domain].each do |key, value| 
+			controller=key.to_s.pluralize%>
+			<tr class='<%= cycle("even", "odd") %>'>
+				<td> <%= @datas[domain][key] %></td>
+				<td> 
+				<% if SYLR::C_CTRL_CLASS_ALL.include? controller %>
+					<%= link_to t("mnu_#{controller}") ,{:controller=>controller, :action=>"index"} %>
+				<%else%>
+					<%= t("data_#{controller}") %>
+				<%end%>
+			    </td>
+			</tr>
+			<% end %>
+		</table></td>
+		<% end %>
+	</tr>
+</table>
+<% end %>
