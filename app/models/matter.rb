@@ -55,7 +55,7 @@ class Matter < ActiveRecord::Base
         unless id.blank?
           objrel=TeacherMatter.where("matter_id=#{self.id} and teacher_id=#{id}").to_a[0]
           objrel.destroy!
-          objrel=TeacherMatter.create!({matter_id: self.id, teacher_id: id, custo: SYLR::CUSTO})  
+          objrel=TeacherMatter.create!({matter_id: self.id, teacher_id: id, custo: SYLR::V_APP_CUSTO})  
        end
       end
     end

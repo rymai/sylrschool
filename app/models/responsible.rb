@@ -43,7 +43,7 @@ class Responsible < ActiveRecord::Base
         unless student_id.blank?
           objrel=StudentResponsible.where("student_id=#{student_id} and responsible_id=#{self.id}").to_a[0]
           objrel.destroy!
-          objrel=StudentResponsible.create!({student_id: student_id, responsible_id: self.id, custo: SYLR::CUSTO})  
+          objrel=StudentResponsible.create!({student_id: student_id, responsible_id: self.id, custo: SYLR::V_APP_CUSTO})  
        end
       end
     end

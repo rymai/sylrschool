@@ -3,11 +3,11 @@
 		<div class="btn-toolbar" >
 			<ul class="nav nav-tabs">
 				<li class="active">
-					<a class="brand" href="#main" data-toggle="tab"> <span title="Application, appui=>retour à l'acceuil"><%= "#{SYLR::APP_NAME}" %></span> </a>
+					<a class="brand" href="#main" data-toggle="tab"> <span title="Application, appui=>retour à l'acceuil"><%= "#{SYLR::V_APP_NAME}" %></span> </a>
 				</li> 
 				<li class="active">
-					<%= "#{SYLR::APP_VERSION}"%><br/>
-					<%= "#{SYLR::APP_DATE}"%>
+					<%= "#{SYLR::V_APP_VERSION}"%><br/>
+					<%= "#{SYLR::V_APP_DATE}"%>
 				</li>
 				<li class="active">
 					&nbsp;
@@ -16,7 +16,7 @@
 				<li class="active">
 					<span title="Connected"><%= "#{current_user.email}"%></span>
 					<br>
-					<span title="Custo"><%= "#{::SYLR::CUSTO}"%></span>
+					<span title="Custo"><%= "#{SYLR::V_APP_CUSTO}"%></span>
 				</li>
 				<li>
 					<span title="Role"><%= "#{current_user.role}"%></span>
@@ -59,6 +59,9 @@
 							</li>
 							<li>
 								<%= h_menu("/class_schools","help_class_schools",t("mnu_class_schools")) %>
+							</li>
+							<li>
+								<%= h_menu("/schedules","help_schedules",t("mnu_schedules")) %>
 							</li>
 							<li>
 								<%= h_menu("/teachings","help_teachings",t("mnu_teachings")) %>
@@ -125,9 +128,6 @@
 							</li>
 							<li>
 								<%= h_menu("/teacher_matters", "help_teacher_matters",t("mnu_teacher_matters")) %>
-							</li>
-							<li>
-								<%= h_menu("/schedules","help_schedules",t("mnu_schedules")) %>
 							</li>
 							<li>
 								<%= h_menu("/main/index_actions","help_index_actions",t("mnu_index_actions")) %>

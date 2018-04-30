@@ -240,7 +240,8 @@ module ApplicationHelper
           acol=colfields[0]
           ret<< "<td>"
           val = data.send(acol)
-          if i==0
+          puts "=========== i=#{i} h_table col=#{cols[i]} colfields=#{colfields} acol=#{acol} data=#{data} val=#{val}"
+         if i==0
             # lien vers l'objet représenté sur la ligne
             path = send "#{data.class.to_s.underscore}_path", data
             ret<< link_to(h(val), path)
@@ -248,14 +249,18 @@ module ApplicationHelper
             if colfields.size==1
               ret<< "#{val}"
             else
-              if colfields[1]=="lnk"
-                #__lnk => on met le lien
-                # lien vers l'objet de la colonne
-                path= send "#{val.class.to_s.underscore}_path", val
-                ret<< link_to(h(val.send("ident")), path)
+              unless val.nil?
+                if colfields[1]=="lnk"
+                  #__lnk => on met le lien
+                  # lien vers l'objet de la colonne
+                  path= send "#{val.class.to_s.underscore}_path", val
+                  ret<< link_to(h(val.send("ident")), path)
+                else
+                  #__titi, titi non reconnu=> valeur normale
+                  ret<< "#{val}"
+                end
               else
-                #__titi, titi non reconnu=> valeur normale
-                ret<< "#{val}"
+                ret<< " "
               end
             end
             ret<< "</td>"

@@ -1,3 +1,5 @@
-
-<h1>Main:index</h1>
+<h1><%= t(:hello) %></h1>
+<%=raw t(:welcome)%>
+<h1><%= t(:datas_in_database) %></h1>
+<%= render(:partial => "main/show_datas") %>
 

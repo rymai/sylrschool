@@ -4,11 +4,27 @@
 
 <%= datagrid_form_for @grid, :method => :get, :url => schedules_path %>
 
-
+<% unless @grid.assets.nil? %>
 <%= will_paginate(@grid.assets) %>
 <%= datagrid_table @grid %>
 <%= will_paginate(@grid.assets) %>
+<% end %>
 
 <div class="datagrid-actions">
 <%= link_to 'New Schedule', new_schedule_path %>
 </div>
+
+<% unless @schedules.nil? %>
+<%= month_calendar  events: @schedules do |date, schedules| %>
+<%= date.day %>
+<% schedules.each do |schedule| %>
+<div>
+	<%= link_to schedule.ident, schedule %>
+</div>
+<% end %>
+<% end %>
+<% else %>
+<%= month_calendar  do |date| %>
+<%= date.day %>
+<% end %>
+<% end %>

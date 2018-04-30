@@ -71,7 +71,6 @@ class PresentsController < ApplicationController
   end
 
   def teaching_selection
-    #puts "============================== params=#{params}"
     @present = Present.find(params[:present_id])
     @student = Student.find(params[:student])
     @teachings = @student.student_class_school.teachings.to_a
@@ -90,7 +89,7 @@ class PresentsController < ApplicationController
     @schedules = @teaching.schedules.to_a
     #puts "============================== student=#{@student.inspect}"
     #puts "============================== teachings=#{@teachings}"
-    puts "============================== teaching=#{@teaching}"
+    #puts "============================== teaching=#{@teaching}"
     respond_to do |format|
       format.js {  }
     end

@@ -41,7 +41,7 @@
 
 <p>
 	<%= h_show_label(:label_teaching_schedules)%>
-	<%= h_table(@teaching.schedules,[:schedule_type,:start_time_date,:schedule_father__lnk,:schedule_teaching__lnk])%>
+	<%= h_table(@teaching.get_schedules,[:schedule_type,:start_time_date,:schedule_father__lnk,:schedule_teaching__lnk])%>
 	
 </p>
 

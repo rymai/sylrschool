@@ -79,8 +79,8 @@ class ApplicationController < ActionController::Base
     if SYLR::C_CTRL_CLASS_USER.include? controller
       # controllers users
       #LOG.debug(fname){"2controller=#{controller} is user}"}
-      # tout pour le support
-      if is_support?
+      # tout pour le admin et support
+      if is_admin? || is_support?
       ok=true
       else
       #
@@ -117,8 +117,8 @@ class ApplicationController < ActionController::Base
         end
       end
     else
-    # admin menus: tout pour admin et support, rien pour les autres
-      unless is_admin? || is_support?
+    # admin menus: tout pour support, rien pour les autres
+      unless is_support?
       ok=false
       end
     end
@@ -161,17 +161,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def set_country_inutilisee
-    puts"========================== subdomains=#{request.subdomains}"
-    if request.subdomains.empty? || request.subdomains.first == 'www'
-      redirect_to(:subdomain => "fr")
-    else
-      @country ||= request.subdomains.first.upcase
-    end
-    @country ||= "IT"
-    puts"========================== country=#{@country}"
-  end
 
   def set_time_zone
     language=session[:language]

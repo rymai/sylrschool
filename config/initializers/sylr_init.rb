@@ -3,13 +3,23 @@ module SYLR
   ##################################################
   # variables adaptables acceptees par l'application
   ##################################################
-  V_ADMIN_EMAIL="sylvere.coutable@laposte.net"
+  # nom de l'ecole
+  V_APP_NAME   = 'SCHOOL'
+  #V_APP_VERSION   = '1.0.1'
+  #V_APP_DATE  = '2018/02/28'.to_date
+  V_APP_VERSION   = '1.0.2'
+  V_APP_DATE  = '2018/04/01'.to_date
+  V_APP_CUSTO='scolaire'
+
+  # valeurs du type de Presence
   V_PRESENT_TYPE_PRESENT="present"
   V_PRESENT_TYPE_ABSENT="absent"
   V_PRESENT_TYPE_EXCUSE="excuse"
   V_ALL_PRESENT_TYPES=[V_PRESENT_TYPE_ABSENT,
     V_PRESENT_TYPE_EXCUSE,
     V_PRESENT_TYPE_PRESENT]
+
+  # valeurs des themes
   C_THEME_WHITE="white"
   C_THEME_BLUE="blue"
   C_THEME_GREEN="green"
@@ -24,16 +34,8 @@ module SYLR
   ###########################
   # constantes non modiables
   ###########################
-  # version
-  APP_NAME   = 'SCHOOL'
-  #APP_VERSION   = '1.0.1'
-  #APP_DATE  = '2018/02/28'.to_date
-  APP_VERSION   = '1.0.2'
-  APP_DATE  = '2018/04/01'.to_date
-  #
-  CUSTO='scolaire'
-  # repertoires des chargements
-  DIR_FIXTURES = "#{Rails.root}/db/fixtures"
+
+  # les langages implémentés
   C_LANGUAGE_EN="en"
   C_LANGUAGE_FR="fr"
   C_ALL_LANGUAGES=[C_LANGUAGE_EN,
@@ -61,25 +63,30 @@ module SYLR
     C_FOR_WHAT_CALENDAR_BEGIN,
     C_FOR_WHAT_CALENDAR_END
   ]
-
+  # les types d'horaires
   C_SCHEDULE_WORKING="working"
   C_SCHEDULE_HOLIDAY="holiday"
   C_SCHEDULE_PUBLIC_HOLIDAY="public_holiday"
   C_SCHEDULE_WEEKEND="weekend"
   C_SCHEDULE_BRIDGE="bridge"
   C_SCHEDULE_UNWORKING="unworking"
-  C_ALL_SCHEDULE_TYPES=[C_SCHEDULE_WORKING,
+  C_ALL_SCHEDULE_TYPES=[C_SCHEDULE_WEEKEND,
     C_SCHEDULE_HOLIDAY,
     C_SCHEDULE_PUBLIC_HOLIDAY,
-    C_SCHEDULE_WEEKEND,
     C_SCHEDULE_BRIDGE,
-    C_SCHEDULE_UNWORKING]
+    C_SCHEDULE_UNWORKING,
+    C_SCHEDULE_WORKING]
+  
+  C_INDIC_DAY_SCHEDULE=-1
+  C_INDIC_SCHEDULE_FATHER=-2
 
+  # les differents statuts des personnes
   C_PERSON_STATUS_ENROLLED="enrolled"
   C_PERSON_STATUS_WAITING="waiting"
   C_ALL_PERSON_STATUS=[C_PERSON_STATUS_ENROLLED,
     C_PERSON_STATUS_WAITING]
 
+  # les frequences de repetition des enseignements sur le clendrier
   C_TEACHING_DAY="day"
   C_TEACHING_WEEK="week"
   C_TEACHING_NONE="none"
@@ -87,7 +94,7 @@ module SYLR
     C_TEACHING_WEEK,
     C_TEACHING_NONE]
 
-  #Roles
+  #les roles
   C_ROLE_STUDENT= 'student'
   C_ROLE_TEACHER='teacher'
   C_ROLE_RESPONSIBLE='responsible'
@@ -97,9 +104,9 @@ module SYLR
   C_ALL_ROLES=[C_ROLE_STUDENT,
     C_ROLE_TEACHER,
     C_ROLE_RESPONSIBLE,
-    C_ROLE_SUPPORT,
     C_ROLE_VISITOR,
-    C_ROLE_ADMIN]
+    C_ROLE_ADMIN,
+    C_ROLE_SUPPORT]
 
   # pour action controller user fonction du role
   C_CTRL_CLASS_SCHOOLS="class_schools"
@@ -117,6 +124,7 @@ module SYLR
   C_CTRL_CLASS_GRADE_CONTEXTS="grade_contexts"
   C_CTRL_CLASS_LOCATIONS="locations"
 
+  # les objets lies au fonctionnement de l'ecole
   C_CTRL_CLASS_USER=[C_CTRL_CLASS_SCHOOLS,
     C_CTRL_CLASS_GRADES,
     C_CTRL_CLASS_MATTERS,
@@ -127,12 +135,19 @@ module SYLR
     C_CTRL_CLASS_TEACHERS,
     C_CTRL_CLASS_TEACHINGS]
 
+  # les objets lies au parametrege suivant les besoins de l'ecole
   C_CTRL_CLASS_ADMIN=[C_CTRL_CLASS_ELEMENTS,
     C_CTRL_CLASS_GRADE_CONTEXTS,
     C_CTRL_CLASS_LOCATIONS]
+  # l'ensemble des objets
+  C_CTRL_CLASS_ALL=C_CTRL_CLASS_ADMIN.concat(C_CTRL_CLASS_USER)
+
+  # les actions de type ecriture
   C_CTRL_ACTION_GWRITE=["new","create","edit","update","destroy"]
+  # les actions de type lecture
   C_CTRL_ACTION_GREAD=["index","show"]
 
+  #les objets en écriture et lecture pour le professeur
   C_CTRL_TEACHER_WRITE=[C_CTRL_CLASS_SCHOOLS,
     C_CTRL_CLASS_GRADES,
     C_CTRL_CLASS_MATTERS,
@@ -143,13 +158,16 @@ module SYLR
     C_CTRL_CLASS_TEACHINGS]
   C_CTRL_TEACHER_READ=C_CTRL_CLASS_USER
 
+  #les objets en écriture et lecture pour le responsable
   C_CTRL_RESPONSIBLES_WRITE=[C_CTRL_CLASS_RESPONSIBLES]
   C_CTRL_RESPONSIBLES_READ=C_CTRL_CLASS_USER
 
+  # les objets en écriture et lecture pour le professeur
   C_CTRL_STUDENTS_WRITE=[C_CTRL_CLASS_STUDENTS,
     C_CTRL_CLASS_NOTEBOOKS]
   C_CTRL_STUDENTS_READ=[C_CTRL_CLASS_USER]
 
+  # les objets en écriture et lecture pour le visiteur
   C_CTRL_VISITORS_WRITE=[]
   C_CTRL_VISITORS_READ=C_CTRL_CLASS_USER.uniq
 

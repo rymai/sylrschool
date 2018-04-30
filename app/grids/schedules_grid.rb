@@ -1,8 +1,9 @@
 class SchedulesGrid < BaseGrid
 
   scope do
-    #Schedule.select("*").where("schedule_teaching_id = -1")
-    Schedule.select("*")
+    #Schedule.get_only_all_day
+    #Schedule.select("*")
+    Schedule.all.select("*").where("schedule_type <> '#{SYLR::C_SCHEDULE_WORKING}'")
   end
 
   eval=eval(File.read("#{include_grids()}/topid_grid.rb"))
@@ -18,7 +19,11 @@ class SchedulesGrid < BaseGrid
   filter(:schedule_father, :integer, :multiple => ',', :header => I18n.t(:label_schedule_schedule_father))
   column(:schedule_father, :html => true, :mandatory => true, :header => I18n.t(:label_schedule_schedule_father))do |asset|
     unless asset.schedule_father.nil?
-      link_to asset.schedule_father.ident, asset.schedule_father
+      if asset.schedule_father.is_root?
+        "-ROOT-"
+      else
+        link_to asset.schedule_father.ident_long, asset.schedule_father
+      end
     else
       ""
     end

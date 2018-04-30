@@ -35,19 +35,20 @@ fr:
   legend_following: Suivi
   legend_param: Paramétrage
   legend_debug: Debug
+  legend_person: Personnes
   mnu_sign_in: Connexion
   mnu_sign_out: Déconnexion
   mnu_main: Bureau
   mnu_tools: Outils
   mnu_matters: Matières
   mnu_class_schools: Classes
-  mnu_teachings: Enseignement
+  mnu_teachings: Enseignements
   mnu_students: Etudiants
   mnu_teachers: Professeurs
   mnu_responsibles: Responsables
   mnu_notebooks: Cahiers de texte
   mnu_grades: Notes
-  mnu_presents: Présence
+  mnu_presents: Présences
   mnu_elements: Paramètres 
   mnu_grade_contexts: Contextes de note
   mnu_locations: Emplacements
@@ -55,7 +56,6 @@ fr:
   mnu_users: Utilisateurs
   mnu_student_responsibles: Responsables Etudiants
   mnu_teacher_matters: Professeurs Matieres
-  mnu_notebook_teachers: Cahiers Professeurs
   mnu_schedules: Horaires
   mnu_index_actions: Actions by controller and role
   #select_inout
@@ -113,6 +113,7 @@ fr:
   label_grade_matter_ident: Matière
   label_grade_student_ident: Etudiant
   label_value: Valeur 
+  label_grade_grade_context_ident: Contexte de notes 
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max personnes
@@ -137,6 +138,7 @@ fr:
   label_notebook_text: Texte du cahier
   label_notebook_student: Etudiant
   label_notebook_teachers: Professeurs
+  label_notebooktext_short: Début du texte
   # person
   label_email: Email
   label_filter_email: "Email (,)"
@@ -199,5 +201,21 @@ fr:
   label_teaching_matter_ident: Matter
   label_teaching_domain_ident: Domain
   label_teaching_location_ident: Location
+  label_start_time_date: Heure de début
+  label_schedule_father: Horaire père
+  label_schedule_teaching: Enseignement
+  # main/index (a laisser a la fin)
+  hello: Bienvenue dans l'application de gestion d'école 
+  datas_in_database: Données sur l'école
+  data_student_enrolleds: ".Etudiants inscrits"
+  data_student_waitings: ".Etudiants en attente"
+  data_responsible_enrolleds: ".Responsables inscrits"
+  data_responsible_waitings: ".Responsables en attente"
+  data_teacher_enrolleds: ".Professeurs inscrits"
+  data_teacher_waitings: ".Professeurs en attente"
+  data_students_by_classes: Elèves par classe
+  data_ls: " " 
+  welcome: "Cette application permet de gérer les élèves, les responsables des élèves,les professeurs,<br/>
+    les classes, les matières, les enseignements, les horaires, les notes, les présences ou absences et les locaux."
   
   

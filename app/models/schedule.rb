@@ -2,6 +2,7 @@ class Schedule < ActiveRecord::Base
   include Models::CommonModels
   before_save :set_custo
   before_destroy :check_destroy
+  attr_accessor :nb_repetition
   validates_presence_of :schedule_type, :start_time
   #before_save :validity
   belongs_to :schedule_father, :class_name=>Schedule
@@ -15,12 +16,12 @@ class Schedule < ActiveRecord::Base
 
   # renvoi les schedules all day , qui ne sont pas relie a un enseignement
   def self.get_only_all_day
-    Schedule.all.where("schedule_teaching_id = -1 ").to_a
+    ret=Schedule.all.where("schedule_teaching_id = #{SYLR::C_INDIC_DAY_SCHEDULE}").to_a
+    #puts "====================schedule.get_only_all_day=#{ret.count} ret=#{ret}"
   end
 
   def self.get_not_all_day
-    Schedule.all.where("schedule_teaching_id <> -1 ").to_a
-
+    Schedule.all.where("schedule_teaching_id <> #{SYLR::C_INDIC_DAY_SCHEDULE}").to_a
   end
 
   # pour la view h_table
@@ -65,29 +66,24 @@ class Schedule < ActiveRecord::Base
   end
 
   # cree les we de l'annee si le type est weekend C_SCHEDULE_WEEKEND
+  # depuis la valeur de Element:calendar_begin jusqu'a Element:calendar.end
+  # cree les jours de vacance de l'annee si le type est weekend C_SCHEDULE_WEEKEND
   def create_calendar(schedule_params)
     ret=true
+    puts "create_calendar params#{schedule_params}"
     if schedule_params[:schedule_type]==SYLR::C_SCHEDULE_WEEKEND
       if destroy_weekends
         # on cherche les dates de debut et fin de l'annee
         msg=""
-        datet_debut=Element.get_calendar_begin
-        if datet_debut.blank?
-          msg+=" Pas de date debut ou mal formattée dans Element"
-        ret=false
-        end
-        datet_fin=Element.get_calendar_end
-        if datet_fin.blank?
-          msg+=" Pas de date fin ou mal formattée dans Element"
-        ret=false
-        end
-        puts "****************************** ret=#{ret}, msg=#{msg} "
+        datet_debut=self.start_time
+        datet_fin=datet_debut+(self.nb_repetition.to_i.week)
+        #puts "****************************** datet_debut=#{datet_debut}, nb_repetition=#{nb_repetition}, datet_fin=#{datet_fin} "
+        #puts "****************************** ret=#{ret}, msg=#{msg} "
         if ret
           #on cherche le 1er samedi apres la date de debut de l'annee
           # 0=dimanche 1 = lundi, samedi=6 ***
           num=datet_debut.wday
           datet_samedi_debut=datet_debut + (6-num).day
-
           #on cherche le dernier samedi avant la date de fin de l'annee
           num=datet_fin.wday
           if(num==6)
@@ -97,17 +93,17 @@ class Schedule < ActiveRecord::Base
           end
           # on cree les samedi et dimanche entre les deux dates
           datet_current=datet_samedi_debut
-          puts "****************************** datet_current=#{datet_current}"
-          puts "****************************** datet_samedi_fin=#{datet_samedi_fin}"
-          while ret && datet_current<datet_samedi_fin
+          #puts "****************************** datet_current=#{datet_current}"
+          #puts "****************************** datet_samedi_fin=#{datet_samedi_fin}"
+          while ret && datet_current<=datet_samedi_fin
             # creation samedi
             params=schedule_params
             params["start_time(1i)"]="#{datet_current.year}"
             params["start_time(2i)"]="#{datet_current.month}"
             params["start_time(3i)"]="#{datet_current.day}"
+            params["schedule_teaching_id"]=SYLR::C_INDIC_DAY_SCHEDULE
             puts "****************************** params sam=#{params}"
             schedule_sam=Schedule.new(params)
-
             unless schedule_sam.save
               msg="Saturday Schedule can't be saved"
             ret=false
@@ -117,6 +113,7 @@ class Schedule < ActiveRecord::Base
             params["start_time(1i)"]="#{datet.year}"
             params["start_time(2i)"]="#{datet.month}"
             params["start_time(3i)"]="#{datet.day}"
+            params["schedule_teaching_id"]=SYLR::C_INDIC_DAY_SCHEDULE
             puts "****************************** params dim=#{params}"
             schedule_dim=Schedule.new(params)
             unless schedule_dim.save
@@ -134,21 +131,73 @@ class Schedule < ActiveRecord::Base
       unless ret
         self.errors.add(:base, "ScheduleS could not been destroyed :#{msg}")
       end
+    elsif schedule_params[:schedule_type]==SYLR::C_SCHEDULE_HOLIDAY
+      #creation des jours de vacances, le user les cree periode par periode, on s'occupe ici d'une periode de vacances
+      # a partir du start_time , repete nb_repetition fois en sautant les we deja crees
+      # limite, les modifs a faire seront manuelles si on modifie ensuite les we
+      #
+      ind=0
+      datet_current=self.start_time
+      father=nil
+      #puts "****************************** debut de #{self.nb_repetition} repetitions"
+      while ind < self.nb_repetition.to_i && ret
+        wday=datet_current.wday
+        #puts "****************************** ind=#{ind}" wday=#{wday}"
+        # on saute les samedi et dimanche , on peut "surcharger" des jours feries ou pont ou non travailles
+        if wday != 0 && wday != 6
+          params=schedule_params
+          params["start_time(1i)"]="#{datet_current.year}"
+          params["start_time(2i)"]="#{datet_current.month}"
+          params["start_time(3i)"]="#{datet_current.day}"
+          params["schedule_teaching_id"]="SYLR::C_INDIC_DAY_SCHEDULE"
+          # puts "****************************** params=#{params}"
+          schedule=Schedule.new(params)
+          if ind==0
+            father=schedule
+          end
+          schedule.schedule_father=father
+          unless schedule.save
+            msg="Holiday Schedule can't be saved"
+          ret=false
+          end
+        ind+=1
+        end
+        # recherche de la date suivante
+        datet_current+=1.day
+      end
     else
-    # save du schedule autre que we
+    # save du schedule autre que we et holiday
+    self.schedule_teaching_id=SYLR::C_INDIC_DAY_SCHEDULE
     self.save
     end
     ret
   end
 
-  # detruit
+  # destruction d'un ou
+  # plusieurs si il est root et de type holiday, on detruit alors ses fils aussi
+  def destroy_schedule
+    ret=true
+    if self.is_root? &&  self.schedule_type==SYLR::C_SCHEDULE_HOLIDAY
+      self.get_childs.each do |child|
+        ret=child.destroy if ret
+      end
+    ret=self.destroy
+    else
+    ret=self.destroy
+    end
+    ret
+  end
+
+  # detruit tous les week-end
   def destroy_weekends
     ret=true
     msg=""
-    Schedule.all.where("schedule_type='#{SYLR::C_SCHEDULE_WEEKEND}'").each do |schedule|
+    weekends=Schedule.all.where("schedule_type='#{SYLR::C_SCHEDULE_WEEKEND}'").to_a
+    weekends.each do |schedule|
       unless schedule.destroy
-        msg+=" Schedule #{schedule.ident_long} can't be detroyed"
-      ret=false
+       msg+=" Schedule #{schedule.ident_long} can't be destroyed"
+       puts "========================= schedule.destroy_weekends : error:#{msg}\n"
+       ret=false
       end
     end
     unless ret
@@ -157,7 +206,8 @@ class Schedule < ActiveRecord::Base
     ret
   end
 
-  # verifie la non presence de references
+  # verifie la non presence de references: sur les presences et sur les horaires (lien vers le root)
+  # on pourra cependant detruire le root malgre qu'il se reference lui meme
   def check_destroy
     valid=true
     msg=""
@@ -165,11 +215,15 @@ class Schedule < ActiveRecord::Base
       valid=false
       msg+=" There are #{presents.count} presents references"
     end
-    if schedules.count > 0
+    if schedules.count > 0 && !self.is_root?
       valid=false
       msg+=" There are #{schedules.count} schedules references"
     end
-    self.errors.add(:base, "Location can't be destroyed:#{msg}") unless valid
+    unless valid
+      errormsg="Schedule can't be destroyed:#{msg}"
+      puts "========= errormsg=#{errormsg}"
+      self.errors.add(:base, errormsg)
+    end
     valid
   end
 
@@ -181,7 +235,7 @@ class Schedule < ActiveRecord::Base
     unless self.schedule_teaching.nil?
       ret+="#{self.schedule_teaching.teaching_matter.matter_duration}"
     else
-      ret+="day"
+      ret="day:#{self.schedule_type}"
     end
   end
 
@@ -220,7 +274,7 @@ class Schedule < ActiveRecord::Base
   # same object and father different meeting (in this case, it is the root itself)
   def get_childs
     ret=[]
-    Schedule.all.where("father_father_id = '#{self.id}'").to_a.each do |schedule|
+    Schedule.all.where("schedule_father_id = '#{self.id}'").to_a.each do |schedule|
       ret << schedule if(schedule!=self)
     end
     ret

@@ -32,11 +32,6 @@
 
 </p>
 
-<p>
-	<strong>Custo:</strong>
-	<%= @schedule.custo %>
-</p>
-<div class="datagrid-actions">
-	<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-	<%= link_to 'Back', schedules_path %>
-</div>
+<<%= h_show_bottom(@schedule)%>
+<%= h_show_menus_bottom(@schedule)%>
+

@@ -4,6 +4,8 @@ class SchedulesController < ApplicationController
     @grid = SchedulesGrid.new(grid_params) do |scope|
       scope.page(params[:page])
     end
+    # seulement les horaires jour entier (pas référencé par un enseignement)
+    @schedules=Schedule.get_only_all_day
   end
 
   def grid_params
@@ -63,7 +65,7 @@ class SchedulesController < ApplicationController
   # DELETE /schedules/1
   # DELETE /schedules/1.json
   def destroy
-    if @schedule.destroy
+    if @schedule.destroy_schedule
       respond_to do |format|
         format.html { redirect_to schedules_url, notice: 'Schedule was successfully destroyed.' }
         format.json { head :no_content }
@@ -86,6 +88,6 @@ class SchedulesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def schedule_params
     params.require(:schedule).permit(:schedule_type, :start_time, :all_of_day, :duration, 
-    :schedule_father_id, :schedule_teaching_id, :custo)
+    :schedule_father_id, :schedule_teaching_id, :custo, :nb_repetition)
   end
 end

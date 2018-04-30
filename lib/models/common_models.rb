@@ -9,6 +9,12 @@ module Models
 
     # methodes of class begin
     module ClassMethods
+      
+      
+      def get_day_schedules
+        Schedule.select("*").where("schedule_teaching_id = -1")
+      end
+
       def get_all
         all.to_a
       end
@@ -33,7 +39,7 @@ module Models
     # methodes of object begin
     def set_custo
       #puts "=============set_custo avant custo: #{self.inspect}"
-      self.custo=SYLR::CUSTO
+      self.custo=SYLR::V_APP_CUSTO
     #puts "=============set_custo apres custo: #{self.inspect}"
     end
 
@@ -53,15 +59,12 @@ module Models
     #  ret = self.class.name.underscore
     #  ret
     #end
-    
-    # tronque une chaine en n mots 
+
+    # tronque une chaine en n mots
     def truncate_text_words(text, len = 25, end_string = " ...")
       return if text.blank?
-      puts "========================= truncate_text len=#{len}, nbc=#{text.size} "
-      puts "========================= truncate_text  text=#{text} "
-      words = text.split()
+       words = text.split()
       ret=words[0..(len-1)].join(' ') + (words.length > len ? end_string : '')
-      puts "========================= truncate_text ret=#{ret}"
       ret
     end
   # methodes of object end

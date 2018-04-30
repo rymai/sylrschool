@@ -9,11 +9,15 @@
 	<%= f.label :label_start_time %>
 	<%= f.datetime_select :start_time,:start_year=>Date.today.year-1,:end_year=>Date.today.year+1 %>
 </div>
+<div class="field">
+	<%= f.label :label_nb_repetition %>
+	<%= f.number_field :nb_repetition%>
+</div>
 
 
 <% if true %>
-<input type="hidden" id="schedule_schedule_father_id" name="schedule[schedule_father_id]" value="-1" />
-<input type="hidden" id="schedule_schedule_teaching_id" name="schedule[schedule_teaching_id]" value="-1" />
+<input type="hidden" id="schedule_schedule_father_id" name="schedule[schedule_father_id]" value="#{SYLR::C_INDIC_SCHEDULE_FATHER}" />
+<input type="hidden" id="schedule_schedule_teaching_id" name="schedule[schedule_teaching_id]" value="#{SYLR::C_INDIC_DAY_SCHEDULE}" />
 <% else %>
 <div class="field">
 	<%= f.label :label_schedule_schedule_father %>

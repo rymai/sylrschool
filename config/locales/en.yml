@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  # common des common
+  # common des common 
   submit_validate: Validate
   action_edit: Edit
   action_index: Listing
@@ -35,6 +35,7 @@ en:
   legend_following: Following
   legend_param: Parameters
   legend_debug: Debugging
+  legend_person: Persons
   mnu_sign_in: Sign in
   mnu_sign_out: Sign out
   mnu_main: Desktop
@@ -55,7 +56,6 @@ en:
   mnu_users: Users
   mnu_student_responsibles: Students Responsibles
   mnu_teacher_matters: Teachers Matters
-  mnu_notebook_teachers: Notebooks Teachers
   mnu_schedules: Schedules
   mnu_index_actions: Actions by controller and role
   #select_inout
@@ -112,7 +112,8 @@ en:
   label_grade_grade_context_ident: "Grade Context"
   label_grade_matter_ident: Matter
   label_grade_student_ident: Student 
-  label_value: Value 
+  label_value: Value
+  label_grade_grade_context_ident: Grade context 
   # location
   label_usage: "Usage (id)"
   label_location_nb_max_person: Nb max persons
@@ -137,6 +138,7 @@ en:
   label_notebook_text: Notebook text
   label_notebook_student: Student
   label_notebook_teachers: Teachers
+  label_notebooktext_short: Partial text
   # person
   label_email: Email
   label_filter_email: "Email (,)"
@@ -177,7 +179,7 @@ en:
   label_student_teachers: Teachers of student
   label_student_presents: Presents 
   label_student_grades: Grades 
-  label_student_notebooks: Notebooks 
+  label_student_notebooks: Notebooks
   # teacher
   label_teacher_matter: Matter
   label_teacher_grade_context: Grade context
@@ -199,4 +201,20 @@ en:
   label_teaching_matter_ident: Matter
   label_teaching_domain_ident: Domain
   label_teaching_location_ident: Location
+  label_start_time_date: Start time
+  label_schedule_father: Schedule father
+  label_schedule_teaching: Teaching 
+  # main/index (a laisser a la fin)
+  hello: Welcome in the school management application
+  datas_in_database: Datas on the school
+  data_student_enrolleds: .Enrolled studients
+  data_student_waitings: .Waiting studients
+  data_responsible_enrolleds: .Enrolled responsibles
+  data_responsible_waitings: .Waiting responsibles
+  data_teacher_enrolleds: .Enrolled teachers
+  data_teacher_waitings: .Waiting teachers
+  data_students_by_classes: Student in class school
+  data_ls: " " 
+  welcome: This application manage 
+    all parts of a school management.
  

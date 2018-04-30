@@ -19,7 +19,8 @@ class TeachingsController < ApplicationController
   # GET /teachings/1
   # GET /teachings/1.json
   def show
-    @schedules=@teaching.schedules
+    puts "=========== TeachingsController schedules=#{@teaching.schedules.size} days=#{Schedule.get_day_schedules.size}"
+    @schedules=@teaching.get_schedules
   end
 
   # GET /teachings/new
@@ -35,7 +36,6 @@ class TeachingsController < ApplicationController
   # POST /teachings.json
   def create
     @teaching = Teaching.new(teaching_params)
-
     respond_to do |format|
       if @teaching.save
         # creation des schedules correspondants

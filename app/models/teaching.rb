@@ -167,7 +167,7 @@ class Teaching < ActiveRecord::Base
         unless child.destroy
           msg="Pb. on #{child.ident_long}"
         end
-        puts "*********************** destroy_schedules_childs: after child=#{child.ident_long} msg=#{msg}"
+        #puts "================== destroy_schedules_childs: after child=#{child.ident_long} msg=#{msg}"
       end
     end
     self.errors.add(:base, "A schedule was not destroyed : #{msg}") unless msg==false
@@ -175,6 +175,12 @@ class Teaching < ActiveRecord::Base
     # retour true ou false
     msg==false
   end
+
+  def get_schedules
+    #puts "=========== schedules=#{schedules.size} days=#{Schedule.get_day_schedules.size}"
+    self.schedules.to_a.concat(Schedule.get_only_all_day)
+  end
+  
   protected
 
   def create_schedule_father(teaching_params)

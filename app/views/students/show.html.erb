@@ -31,7 +31,7 @@
 	<%= h_table(@student.grades,[:grade_grade_context_ident,:value])%>
 </p>
 <p>
-	<%= h_show_label(:label_student_notebook)%>
+	<%= h_show_label(:label_student_notebooks)%>
 	<%= h_table([@student.notebook],[:name,:notebooktext_short,:custo]) unless @student.notebook.nil?%>
 </p>
 </p>

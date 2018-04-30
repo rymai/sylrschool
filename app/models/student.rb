@@ -4,8 +4,8 @@ class Student < ActiveRecord::Base
   before_destroy :check_destroy
   before_save :validity
   before_update :validity
-  validates_presence_of :name,:person_status, :firstname, :lastname, :email
-  validates :name, uniqueness: true
+  validates_presence_of :name,:person_status, :firstname, :lastname, :email,:notebook
+  validates_uniqueness_of :name
   belongs_to :student_class_school,:class_name=>"ClassSchool"
   has_and_belongs_to_many :responsibles, join_table: :student_responsibles
 
@@ -94,7 +94,7 @@ class Student < ActiveRecord::Base
         unless id.blank?
           objrel=StudentResponsible.where("student_id=#{self.id} and responsible_id=#{id}").to_a[0]
           objrel.destroy!
-          objrel=StudentResponsible.create!({student_id: self.id, responsible_id: id, custo: SYLR::CUSTO})  
+          objrel=StudentResponsible.create!({student_id: self.id, responsible_id: id, custo: SYLR::V_APP_CUSTO})  
        end
       end
     end

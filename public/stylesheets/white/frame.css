@@ -119,12 +119,12 @@ body {
 }
 
 th, td {
-	padding: 1px;
+	padding: 2px;
+	marging: 0px;
 	line-height: 14px;
 	vertical-align: top;
 	text-align: left;
-}
-th, td {
+	border: 1px solid #333; 
 	max-width: 320px;
 	word-wrap: break-word;
 }

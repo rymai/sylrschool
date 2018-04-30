@@ -6,6 +6,7 @@ class MainController < ApplicationController
   # pour eviter une boucle sur index
   skip_before_action :check_action_for_role
   def index
+    @datas=get_datas_count
   end
 
   def show
@@ -95,5 +96,49 @@ class MainController < ApplicationController
     end
     ret
   end
+  
+
+  # statistiques
+  def get_datas_count
+    ret = {}
+    ret[:year_preparation] = {
+      matter: Matter.count,
+      class_school: ClassSchool.count,
+      students_by_class: Student.count/ClassSchool.count,
+      l: " ",
+      teaching: Teaching.count
+    } 
+    ret[:person] = {
+      student: Student.count,
+      student_enrolled: Student.where(person_status: SYLR::C_PERSON_STATUS_ENROLLED).count,
+      student_waiting: Student.where(person_status: SYLR::C_PERSON_STATUS_WAITING).count,
+      l: " ",
+      responsible: Responsible.count,
+      responsible_enrolled: Responsible.where(person_status: SYLR::C_PERSON_STATUS_ENROLLED).count,
+      responsible_waiting: Responsible.where(person_status: SYLR::C_PERSON_STATUS_WAITING).count,
+      l: " ",
+      teacher: Teacher.count,
+      teacher_enrolled: Teacher.where(person_status: SYLR::C_PERSON_STATUS_ENROLLED).count,
+      teacher_waiting: Teacher.where(person_status: SYLR::C_PERSON_STATUS_WAITING).count,
+      
+    } 
+    ret[:following] = {
+      notebook: Notebook.count,
+      present: Present.count,
+      grade: Grade.count
+    } 
+    ret[:param] = {
+      element: Element.count,
+      grade_context: GradeContext.count,
+      location: Location.count
+    }
+    ret[:debug] = {
+      user: User.count,
+      student_responsible: StudentResponsible.count,
+      teacher_matter: TeacherMatter.count,
+      schedule: Schedule.count
+    }
+    ret
+    end
 
 end
