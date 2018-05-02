@@ -1,20 +1,20 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_teaching)%></h1>
 <%= h_show_top(@teaching)%>
 
 <p>
 	<%= h_show_label(:label_teaching_class_school)%>
-	<%= @teaching.teaching_class_school.name %>
+	<%= h_table_class_school([@teaching.teaching_class_school])%>
 </p>
 
 <p>
 	<%= h_show_label(:label_teaching_teacher)%>
-	<%= @teaching.teaching_teacher.name %>
+	<%= h_table_teacher([@teaching.teaching_teacher]) %>
 </p>
 
 <p>
 	<%= h_show_label(:label_teaching_matter)%>
-	<%= @teaching.teaching_matter.name %>
+	<%= h_table_matter([@teaching.teaching_matter]) %>
 </p>
 
 <p>
@@ -37,12 +37,12 @@
 
 <p>
 	<%= h_show_label(:label_teaching_presents)%>
-	<%= h_table(@teaching.presents,[:present_type,:student__lnk])%>
+	<%= h_table_present(@teaching.presents)%>
 
 <p>
 	<%= h_show_label(:label_teaching_schedules)%>
-	<%= h_table(@teaching.get_schedules,[:schedule_type,:start_time_date,:schedule_father__lnk,:schedule_teaching__lnk])%>
-	
+	<%= h_table_schedule(@teaching.get_schedules)%>
+
 </p>
 
 <%= h_show_bottom(@teaching)%>
@@ -53,7 +53,11 @@
 <%= date.day %>
 <% schedules.each do |schedule| %>
 <div>
+	<% if schedule.schedule_type==SYLR::C_SCHEDULE_WORKING%>
 	<%= link_to schedule.ident, schedule %>
+	<% else %>
+	<%= schedule.ident%>
+	<% end %>
 </div>
 <% end %>
 <% end %>

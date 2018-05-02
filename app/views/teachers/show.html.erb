@@ -1,26 +1,24 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_teacher)%></h1>
 <%= h_show_top(@teacher)%>
 
 <%= render :partial=>"shared/show_person",
 :locals=>{:object=> @teacher} %>
 <p>
 	<%= h_show_label(:label_teacher_matters)%>
-	<%= h_table(@teacher.matters,[:name,:id,:matter_type__lnk,:matter_duration,:matter_nb_max_student,:custo])%>
+	<%= h_table_matter(@teacher.matters)%>
 </p>
 <p>
 	<%= h_show_label(:label_teacher_teachings)%>
-	<%= h_table(@teacher.teachings,[:name,:id,:teaching_class_school__lnk,:teaching_teacher__lnk,
-		:teaching_matter__lnk,:teaching_domain_ident,:teaching_location__lnk,:teaching_start_time,:teaching_repetition,
-		:teaching_repetition_number,:custo])%>
+	<%= h_table_teaching(@teacher.teachings)%>
 </p>
 <p>
 	<%= h_show_label(:label_teacher_class_schools)%>
-	<%= h_table(@teacher.get_class_schools,[:name,:id,:nb_max_student,:custo])%>
+	<%= h_table_class_school(@teacher.get_class_schools)%>
 </p>
 <p>
 	<%= h_show_label(:label_teacher_students)%>
-	<%= h_table(@teacher.get_students,[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk,:custo])%>
+	<%= h_table_student(@teacher.get_students)%>
 </p>
 
 <%= h_show_bottom(@teacher)%>
@@ -31,7 +29,11 @@
 <%= date.day %>
 <% schedules.each do |schedule| %>
 <div>
+	<% if schedule.schedule_type==SYLR::C_SCHEDULE_WORKING%>
 	<%= link_to schedule.ident, schedule %>
+	<% else %>
+	<%= schedule.ident%>
+	<% end %>
 </div>
 <% end %>
 <% end %>

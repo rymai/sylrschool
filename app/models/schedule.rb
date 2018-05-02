@@ -17,7 +17,7 @@ class Schedule < ActiveRecord::Base
   # renvoi les schedules all day , qui ne sont pas relie a un enseignement
   def self.get_only_all_day
     ret=Schedule.all.where("schedule_teaching_id = #{SYLR::C_INDIC_DAY_SCHEDULE}").to_a
-    #puts "====================schedule.get_only_all_day=#{ret.count} ret=#{ret}"
+  #puts "====================schedule.get_only_all_day=#{ret.count} ret=#{ret}"
   end
 
   def self.get_not_all_day
@@ -66,8 +66,11 @@ class Schedule < ActiveRecord::Base
   end
 
   # cree les we de l'annee si le type est weekend C_SCHEDULE_WEEKEND
-  # depuis la valeur de Element:calendar_begin jusqu'a Element:calendar.end
-  # cree les jours de vacance de l'annee si le type est weekend C_SCHEDULE_WEEKEND
+  #   depuis la valeur de debut du teaching , repete le nombre de repetition
+  #
+  # cree les jours de vacance de l'annee si le type est weekend C_SCHEDULE_HOLIDAY
+  #   depuis la valeur de debut du teaching , repete sur tous les jours suivants suivant le nombre de repetition,
+  #   ceci en "sautant" les jours non travailles
   def create_calendar(schedule_params)
     ret=true
     puts "create_calendar params#{schedule_params}"
@@ -153,7 +156,7 @@ class Schedule < ActiveRecord::Base
           # puts "****************************** params=#{params}"
           schedule=Schedule.new(params)
           if ind==0
-            father=schedule
+          father=schedule
           end
           schedule.schedule_father=father
           unless schedule.save
@@ -167,7 +170,7 @@ class Schedule < ActiveRecord::Base
       end
     else
     # save du schedule autre que we et holiday
-    self.schedule_teaching_id=SYLR::C_INDIC_DAY_SCHEDULE
+      self.schedule_teaching_id=SYLR::C_INDIC_DAY_SCHEDULE
     self.save
     end
     ret
@@ -195,9 +198,9 @@ class Schedule < ActiveRecord::Base
     weekends=Schedule.all.where("schedule_type='#{SYLR::C_SCHEDULE_WEEKEND}'").to_a
     weekends.each do |schedule|
       unless schedule.destroy
-       msg+=" Schedule #{schedule.ident_long} can't be destroyed"
-       puts "========================= schedule.destroy_weekends : error:#{msg}\n"
-       ret=false
+        msg+=" Schedule #{schedule.ident_long} can't be destroyed"
+        puts "========================= schedule.destroy_weekends : error:#{msg}\n"
+      ret=false
       end
     end
     unless ret
@@ -261,6 +264,7 @@ class Schedule < ActiveRecord::Base
     "#{start_time.hour}:#{start_time.min}"
   end
 
+  # return true if this meeting is a root one, the first schedule for a teaching
   def is_root?
     self.schedule_father=self
   end
@@ -268,6 +272,28 @@ class Schedule < ActiveRecord::Base
   # return true if this meeting is alone, no childs
   def is_alone?
     self.schedule_father=nil
+  end
+
+  # return true if this meeting is a child
+  def is_child?
+    ret=false unless self.is_root? || self.is_alone?
+  end
+
+  # renvoie true si il existe le meme jour au moins un horaire non travaille (type=WORKING)
+  def exist_unworking?
+    unworking_schedules=Schedule.all.where("schedule_type <> '#{SYLR::C_SCHEDULE_WORKING}'").to_a
+    ret=false
+    mydate=self.start_time.to_date
+    unless unworking_schedules.nil?
+      unworking_schedules.each do |schedule|
+        date=schedule.start_time.to_date
+        if date==mydate
+        ret=true
+        end
+      end
+    end
+    #puts "================= schedule.exist_unworking? : schedule unworking trouve? #{ret} at #{mydate}"
+    ret
   end
 
   # return the childs schedules of the current one
@@ -281,3 +307,4 @@ class Schedule < ActiveRecord::Base
   end
 
 end
+

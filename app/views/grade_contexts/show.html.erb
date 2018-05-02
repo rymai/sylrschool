@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_grade_context)%></h1>
 <%= h_show_topiddescription(@grade_context)%>
 
 <p>
@@ -19,8 +19,7 @@
 
 <p>
 	<%= h_show_label(:label_grade_context_grades)%>
-	<%= h_table(@grade_context.grades,[:ident,:id,:grade_grade_context_ident,:grade_matter__lnk,
-		:grade_student_ident,:grade_date,:value])%>
+	<%= h_table_grade(@grade_context.grades)%>
 </p>
 
 <%= h_show_bottom(@grade_context)%>

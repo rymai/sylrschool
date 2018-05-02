@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_student)%></h1>
 <%= h_show_top(@student)%>
 
 <%= render :partial=>"shared/show_person",
@@ -7,32 +7,32 @@
 
 <p>
 	<%= h_show_label("label_student_class_school")%>
-	<%= @student.student_class_school.ident unless @student.student_class_school.nil? %>
+	<%= h_table_class_school([@student.student_class_school]) %>
 </p>
 
 <p>
 	<%= h_show_label("label_student_teachers")%>
-	<%= h_table(@student.get_teachers,[:name,:id,:email,:person_status])%>
+	<%= h_table_teacher(@student.get_teachers)%>
 </p>
 <p>
 	<%= h_show_label("label_student_locations")%>
-	<%= h_table(@student.get_locations,[:name,:id,:usage_ident,:location_nb_max_person])%>
+	<%= h_table_location(@student.get_locations)%>
 </p>
 <p>
 	<%= h_show_label("label_student_responsibles")%>
-	<%= h_table(@student.responsibles,[:name,:id,:email,:responsible_type_ident,:firstname,:lastname,:person_status])%>
+	<%= h_table_responsible(@student.responsibles)%>
 </p>
 <p>
 	<%= h_show_label(:label_student_presents)%>
-	<%= h_table(@student.presents,[:present_type,:student_ident])%>
+	<%= h_table_present(@student.presents)%>
 </p>
 <p>
 	<%= h_show_label(:label_student_grades)%>
-	<%= h_table(@student.grades,[:grade_grade_context_ident,:value])%>
+	<%= h_table_grade(@student.grades)%>
 </p>
 <p>
 	<%= h_show_label(:label_student_notebooks)%>
-	<%= h_table([@student.notebook],[:name,:notebooktext_short,:custo]) unless @student.notebook.nil?%>
+	<%= h_table_notebook([@student.notebook]) unless @student.notebook.nil?%>
 </p>
 </p>
 
@@ -44,7 +44,11 @@
 <%= date.day %>
 <% schedules.each do |schedule| %>
 <div>
+	<% if schedule.schedule_type==SYLR::C_SCHEDULE_WORKING%>
 	<%= link_to schedule.ident, schedule %>
+	<% else %>
+	<%= schedule.ident%>
+	<% end %>
 </div>
 <% end %>
 <% end %>

@@ -1,6 +1,5 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<%= h_show_notice%>
+<h1><%=t(:title_show_schedule)%></h1>
 
 <p>
 	<strong>Type:</strong>
@@ -14,24 +13,22 @@
 
 <p>
 	<strong>Schedule Father:</strong>
-	<%= @schedule.schedule_father.ident unless @schedule.schedule_father.nil? %>
-</p>
+	<%= h_table_schedule([@schedule.schedule_father]) unless @schedule.schedule_father.nil?%>
 <p>
 	<strong>Teaching:</strong>
-	<%= @schedule.schedule_teaching.ident unless @schedule.schedule_teaching.nil? %>
+	<%=h_table_teaching([@schedule.schedule_teaching]) unless @schedule.schedule_teaching.nil?%>
 </p>
 
 <p>
 	<%= h_show_label(:label_schedule_presents)%>
-	<%= h_table(@schedule.presents,[:present_type,:student__lnk])%>
+	<%= h_table_present(@schedule.presents)%>
 </p>
 
 <p>
 	<%= h_show_label(:label_schedule_schedules)%>
-	<%= h_table(@schedule.schedules,[:schedule_type,:start_time_date,:schedule_father__lnk,:schedule_teaching__lnk])%>
-
+	<%= h_table_schedule(@schedule.schedules)%>
 </p>
 
-<<%= h_show_bottom(@schedule)%>
+<%= h_show_bottom(@schedule)%>
 <%= h_show_menus_bottom(@schedule)%>
 

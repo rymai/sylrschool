@@ -47,6 +47,7 @@ class Teaching < ActiveRecord::Base
   end
 
   # verifier le nombre d'eleves de la classe et la salle avant de creer le teaching
+  # verifier si le professeur enseigne la matiere donnée
   def validity
     msg=""
     valid=true
@@ -54,10 +55,19 @@ class Teaching < ActiveRecord::Base
       nb_in_class=self.teaching_class_school.nb_max_student
       nb_in_location=self.teaching_location.location_nb_max_person
       if nb_in_class > nb_in_location
-        msg="La salle de classe est pleine, choisisser une autre !!"
+        msg+=" La salle de classe est pleine, choisissez en une autre !!"
       valid=false
       end
     end
+    # coherence teacher matter
+    matters=self.teaching_teacher.matters.to_a
+    puts "================teaching.validity: teacher matters=#{matters} ==? #{self.teaching_matter.ident}"
+    
+    unless matters.include? self.teaching_matter
+      msg+=" Le professeur et la matière #{self.teaching_matter} sont incohérents"
+      valid=false
+    end
+
     self.errors.add(:base, "Teaching is not valid:#{msg}") unless valid
     valid
   end
@@ -81,42 +91,53 @@ class Teaching < ActiveRecord::Base
   def create_schedules(teaching_params)
     msg=nil
     schedule_father = create_schedule_father(teaching_params)
-    st=schedule_father.save
-    if st
-      unless  self.teaching_repetition.nil? && self.teaching_repetition == SYLR::C_TEACHING_NONE
-        i = 1
-        while i < self.teaching_repetition_number.to_i  && msg.nil? do
-          i+=1
-          puts "************************schedule #{i} in creation"
-          new_start_time=schedule_father.start_time
-          # values in second
-          day=60*60*24
-          week=day*7
-          case self.teaching_repetition
-          when SYLR::C_TEACHING_DAY
-            new_start_time+=day*(i-1)
-          when SYLR::C_TEACHING_WEEK
-            new_start_time+=week*(i-1)
-          else
-          msg="Bad value (#{teaching_repetition}) for repetition (#{SYLR::C_ALL_TEACHING_REPETITION})"
-          end
-          if msg.nil?
-            # copy du pere !!!
-            schedule_child =schedule_father.dup
-            # traitement de la date
-            schedule_child.start_time=new_start_time
-            # c'est un fils du pere !!
-            schedule_child.schedule_father=schedule_father
-            st=schedule_child.save
-            unless st
-              msg="Schedule_child(#{i}) not saved: #{schedule_child.errors.full_messages}"
+    unless schedule_father.nil?
+      if schedule_father.save
+        unless  self.teaching_repetition.nil? && self.teaching_repetition == SYLR::C_TEACHING_NONE
+          ind = 1
+          i=1
+          while ind < self.teaching_repetition_number.to_i  && msg.nil? do
+            #puts "==================== create_schedules.create_schedules : schedule #{ind} in creation i=#{i}"
+            new_start_time=schedule_father.start_time
+            # values in second
+            day=60*60*24
+            week=day*7
+            case self.teaching_repetition
+            when SYLR::C_TEACHING_DAY
+              new_start_time+=day*(i)
+            when SYLR::C_TEACHING_WEEK
+              new_start_time+=week*(i)
+            else
+            msg="Bad value (#{teaching_repetition}) for repetition (#{SYLR::C_ALL_TEACHING_REPETITION})"
             end
+            if msg.nil?
+              # copy du pere !!!
+              schedule_child =schedule_father.dup
+              # traitement de la date
+              schedule_child.start_time=new_start_time
+              # c'est un fils du pere !!
+              schedule_child.schedule_father=schedule_father
+
+              unless schedule_child.exist_unworking?
+                # si ce n'est pas un jour non travaille, on peut le sauver
+                st=schedule_child.save
+                ind+=1
+                unless st
+                  msg="Schedule_child(#{i}) not saved: #{schedule_child.errors.full_messages}"
+                end
+              end
+            else
+            # on essaie le prochain jour quand meme
+            ind+=1
+            end
+            i+=1
           end
         end
+      else
+        msg="Schedule father not saved #{schedule_father.errors.full_messages}"
       end
     else
-      msg="Schedule father not created: #{schedule_father.errors.full_messages}"
-
+      msg="Schedule father not created "
     end
     self.errors.add(:base, "Schedule repetition is bad:#{msg}") unless msg.nil?
     # retour true ou false
@@ -158,20 +179,14 @@ class Teaching < ActiveRecord::Base
   def destroy_schedules_childs
     msg=nil?
     childs=self.get_schedules_childs
-
-    puts "*********************** destroy_schedules_childs: count=#{childs.count} msg=#{msg}"
-
     childs.each do |child|
-      puts "*********************** destroy_schedules_childs: before child=#{child.ident_long} msg=#{msg}"
       unless msg==false
         unless child.destroy
           msg="Pb. on #{child.ident_long}"
         end
-        #puts "================== destroy_schedules_childs: after child=#{child.ident_long} msg=#{msg}"
       end
     end
     self.errors.add(:base, "A schedule was not destroyed : #{msg}") unless msg==false
-    puts "*********************** destroy_schedules_childs: msg=#{msg}"
     # retour true ou false
     msg==false
   end
@@ -180,7 +195,7 @@ class Teaching < ActiveRecord::Base
     #puts "=========== schedules=#{schedules.size} days=#{Schedule.get_day_schedules.size}"
     self.schedules.to_a.concat(Schedule.get_only_all_day)
   end
-  
+
   protected
 
   def create_schedule_father(teaching_params)

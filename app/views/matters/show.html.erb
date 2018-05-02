@@ -1,4 +1,5 @@
 <%= h_show_notice%>
+<h1><%=t(:title_show_matter)%></h1>
 
 <%= h_show_top(@matter)%>
 
@@ -19,12 +20,11 @@
 
 <p>
 	<%= h_show_label(:label_matter_grades)%>
-	<%= h_table(@matter.grades,[:ident,:id,:grade_grade_context__lnk,:grade_matter__lnk,
-		:grade_student__lnk,:grade_date,:value])%>
+	<%= h_table_grade(@matter.grades)%>
 </p>
 <p>
 	<%= h_show_label(:label_matter_teachers)%>
-	<%= h_table(@matter.teachers,[:name,:id,:email,:first_name,:lastname,:person_status])%>
+	<%= h_table_teacher(@matter.teachers)%>
 </p>
 
 <%= h_show_bottom(@matter)%>

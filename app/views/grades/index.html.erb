@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Grades</h1>
+<h1><%=t(:title_index_grade)%></h1>
 
 <%= datagrid_form_for @grid, :method => :get, :url => grades_path %>
 
@@ -10,5 +10,5 @@
 
 
 <div class="datagrid-actions">
-<%= link_to 'New Grade', new_grade_path %>
+<%= link_to t(:title_new_grade), new_grade_path %>
 </div>

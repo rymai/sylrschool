@@ -19,7 +19,6 @@ class TeachingsController < ApplicationController
   # GET /teachings/1
   # GET /teachings/1.json
   def show
-    puts "=========== TeachingsController schedules=#{@teaching.schedules.size} days=#{Schedule.get_day_schedules.size}"
     @schedules=@teaching.get_schedules
   end
 

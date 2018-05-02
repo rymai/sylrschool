@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  helpers:
+    submit:
+      create: "Créer un %{model}"
+      update: "Maj du %{model}"
+  activerecord:
+    errors:
+      models:
+        teaching:
+          attributes:
+            name: Name
   # common des common
   submit_validate: Valider
   action_edit: Editer
@@ -56,23 +66,77 @@ fr:
   mnu_users: Utilisateurs
   mnu_student_responsibles: Responsables Etudiants
   mnu_teacher_matters: Professeurs Matieres
-  mnu_schedules: Horaires
-  mnu_index_actions: Actions by controller and role
-  #select_inout
+  mnu_schedules: Calendrier
+  mnu_index_actions: Actions par controller role
+  # titres des vues
+  title_index_class_school: Liste des classes
+  title_show_class_school: Fiche de la classe
+  title_new_class_school:  Nouvelle classe
+  title_edit_class_school: Edition de la classe
+  title_index_element: Liste des paramètres
+  title_show_element: Fiche du paramètre
+  title_new_element: Nouveau paramètre
+  title_edit_element: Edition du paramètre
+  title_index_grade_context: Liste des contextes de note
+  title_show_grade_context: Fiche du contexte de note
+  title_new_grade_context: Nouveau contexte de note
+  title_edit_grade_context: Edition du contexte de note
+  title_index_grade: Liste des notes
+  title_show_grade: Fiche de la note
+  title_new_grade: Nouvelle note
+  title_edit_grade: Edition de la note
+  title_index_location: Liste des emplacements
+  title_show_location: Fiche de l' emplacement
+  title_new_location: Nouvel emplacement
+  title_edit_location: Edition de l'emplacement
+  title_index_matter: Liste des matières
+  title_show_matter: Fiche de la matière
+  title_new_matter: Nouvelle matière
+  title_edit_matter: Edition de la matière
+  title_index_notebook: Liste des cahiers
+  title_show_notebook: Fiche du cahier
+  title_new_notebook: Nouveau cahier
+  title_edit_notebook: Edition du cahier
+  title_index_present: Liste des présences
+  title_show_present: Fiche de la présence
+  title_new_present: Nouvelle présence
+  title_edit_present: Edition de la présence
+  title_index_responsible: Liste des responsables
+  title_show_responsible: Fiche du responsable
+  title_new_responsible: Nouveau responsable
+  title_edit_responsible: Edition du responsable
+  title_index_schedule: Liste des horaires
+  title_show_schedule: Fiche de l'horaire
+  title_new_schedule: Nouvel horaire
+  title_edit_schedule: Edition de l'horaire
+  titleindex_student: Liste des étudiants
+  title_show_student: Fiche de l'étudiant
+  title_new_student: Nouvel étudiant
+  title_edit_student: Edition de l'étudiant
+  title_index_teacher: Liste des professeurs
+  title_show_teacher: Fiche du professeur
+  title_new_teacher: Nouveau professeur
+  title_edit_teacher: Edition du professeur
+  title_index_teaching: Liste des enseignements
+  title_show_teaching: Fiche de l'enseignement
+  title_new_teaching: Nouvel enseignement
+  title_edit_teaching: Edition de l'enseignement
+  title_new_session: Fenêtre de connection
+  # select_inout student_responsibles
   label_student_responsibles: Responsables
   label_student_responsible_ids_out: Responsables choisis
   label_student_responsible_ids_in: Autres responsables
   label_responsible_students: Etudiants
   label_responsible_student_ids_out: Etudiants choisis
   label_responsible_student_ids_in: Autres étudiants
-  #
+  # select_inout teacher_matters
   label_teacher_matters: Matières
   label_teacher_matter_ids_out: Matières choisies
   label_teacher_matter_ids_in: Autres matières
   label_matter_teachers: Professeurs
   label_matter_teacher_ids_out: Professeurs choisis
   label_matter_teacher_ids_in: Autres professeurs
-  #
+  # select_inout middle buttons
   button_add: Ajouter
   button_remove: Enlever 
   # common top
@@ -132,7 +196,7 @@ fr:
   label_matter_type: "Type matière"
   label_matter_nb_max_student: "Nb. max. étudiants"
   label_matter_grades: Notes la référançant
-  label_matter_teachers: Professeurss la référençant
+  label_matter_teachers: Professeurs la référençant
   label_matter_type_ident: "Type matière"
   # notebook
   label_notebook_text: Texte du cahier
@@ -174,6 +238,7 @@ fr:
   label_schedule_schedules: Horaires   
   label_schedule_father_ident: Origine horaire
   label_schedule_teaching_ident: Enseignement
+  label_schedule_schedule_teaching: Enseignement
   # students
   label_student_class_school: Classe
   label_student_teachers: Professeurs de cet étudiant
@@ -186,21 +251,22 @@ fr:
   label_teacher_teachings: Enseignements 
   label_teacher_class_schools: Classes
   label_teacher_students: Etudiant
+  label_matters: Matières
   # teaching
   label_teaching_class_school: "Classe (id)"
-  label_teaching_teacher: "Profeseur (id)"
+  label_teaching_teacher: "Professeur (id)"
   label_teaching_matter: "Matière (id)"
   label_teaching_domain: "Domaine (id)"
   label_teaching_start_time: Temps début
   label_teaching_repetition: Répétition
   label_teaching_repetition_number: "Nombre de répétition"
   label_teaching_duration: Durée
-  label_teaching_location: Location
-  label_teaching_class_school_ident: Class school
-  label_eaching_teacher_ident: "Teacher"
-  label_teaching_matter_ident: Matter
-  label_teaching_domain_ident: Domain
-  label_teaching_location_ident: Location
+  label_teaching_location: Emplacement
+  label_teaching_class_school_ident: Classe 
+  label_eaching_teacher_ident: Professeur
+  label_teaching_matter_ident: Matière
+  label_teaching_domain_ident: Domaine
+  label_teaching_location_ident: Emplacement
   label_start_time_date: Heure de début
   label_schedule_father: Horaire père
   label_schedule_teaching: Enseignement
@@ -215,7 +281,7 @@ fr:
   data_teacher_waitings: ".Professeurs en attente"
   data_students_by_classes: Elèves par classe
   data_ls: " " 
-  welcome: "Cette application permet de gérer les élèves, les responsables des élèves,les professeurs,<br/>
-    les classes, les matières, les enseignements, les horaires, les notes, les présences ou absences et les locaux."
+  welcome: "Cette application permet de gérer les élèves, les responsables des élèves, les professeurs,<br/>
+    les classes, les matières, les enseignements, le calendrier, les horaires, les notes, les présences ou absences et les locaux."
   
   

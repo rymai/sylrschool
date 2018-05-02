@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_class_school)%></h1>
 <%= h_show_top(@class_school)%>
 
 
@@ -10,14 +10,12 @@
 
 <p>
 	<%= h_show_label(:label_class_school_students)%>
-	<%= h_table(@class_school.students,[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk])%>
+	<%= h_table_student(@class_school.students)%>
 </p>
 
 <p>
 	<%= h_show_label(:label_class_school_teachings)%>
-	<%= h_table(@class_school.teachings,[:name,:id,:teaching_class_school__lnk,:teaching_teacher__lnk,
-		:teaching_matter__lnk,:teaching_domain_ident,:teaching_location__lnk,:teaching_start_time,:teaching_repetition,
-		:teaching_repetition_number])%>
+	<%= h_table_teaching(@class_school.teachings)%>
 </p>
 <%= h_show_bottom(@class_school)%>
 <%= h_show_menus_bottom(@class_school)%>

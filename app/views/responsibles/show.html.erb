@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_responsible)%></h1>
 <%= h_show_top(@responsible)%>
 
 <%= render :partial=>"shared/show_person",
@@ -7,12 +7,12 @@
 
 <p>
 	<%= h_show_label("label_responsible_type")%>
-	<%= @responsible.type.ident %>
+	<%= h_table_responsable_type([@responsible.type]) %>
 </p>
 
 <p>
 	<%= h_show_label("label_responsible_students")%>
-	<%= h_table(@responsible.students,[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk,:person_status])%>
+	<%= h_table_student(@responsible.students)%>
 </p>
 
 <%= h_show_bottom(@responsible)%>

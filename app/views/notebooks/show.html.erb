@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_notebook)%></h1>
 <%= h_show_top(@notebook)%>
 
 
@@ -7,11 +7,11 @@
 <p>
   <%= h_show_label(:label_student)%>
   <%= @notebook.student.ident unless @notebook.student.nil? %>
-  <%= h_table([@notebook.student],[:name,:id,:email,:firstname,:lastname,:student_class_school__lnk,:person_status])%>
+  <%= h_table_student([@notebook.student])%>
 </p>
 <p>
   <%= h_show_label(:label_notebook_teachers)%>
-  <%= h_table(@notebook.get_teachers,[:name,:id,:email,:firstname,:lastname,:person_status])%>
+  <%= h_table_teacher(@notebook.get_teachers)%>
 </p>
 <p>
   <%= h_show_label(:label_notebook_text)%>

@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%= h_show_notice%>
 
-<h1>Listing Elements</h1>
+<h1><%=t(:title_index_element)%></h1>
 
 <%= datagrid_form_for @grid, :method => :get, :url => elements_path %>
 
@@ -10,5 +10,5 @@
 <%= will_paginate(@grid.assets) %>
 
 <div class="datagrid-actions">
-<%= link_to 'New Element', new_element_path %>
+<%= link_to t(:title_newx_element), new_element_path %>
 </div>

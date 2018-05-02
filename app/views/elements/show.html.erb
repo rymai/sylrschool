@@ -1,5 +1,5 @@
 <%= h_show_notice%>
-
+<h1><%=t(:title_show_element)%></h1>
 <%= h_show_top(@element)%>
 
 <p>
@@ -9,17 +9,17 @@
 
 <p>
 	<%= h_show_label(:label_element_responsibles)%>
-	<%= h_table(@element.responsibles,[:name,:id,:email,:responsible_type__lnk,:firstname,:lastname,:person_status])%>
+	<%= h_table_responsible(@element.responsibles)%>
 </p>
 
 <p>
 	<%= h_show_label(:label_element_locations)%>
-	<%= h_table(@element.locations,[:name,:id,"usage_ident",:location_nb_max_person])%>
+	<%= h_table_location(@element.locations)%>
 </p>
 
 <p>
 	<%= h_show_label(:label_element_matters)%>
-	<%= h_table(@element.matters,[:name,:id,:matter_type__lnk,:matter_duration,:matter_nb_max_student])%>
+	<%= h_table_matter(@element.matters)%>
 </p>
 
 <%= h_show_bottom(@element)%>

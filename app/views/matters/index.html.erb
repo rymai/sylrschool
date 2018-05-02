@@ -1,8 +1,7 @@
 <p id="notice">
 	<%= notice %>
 </p>
-
-<h1>Listing Matters</h1>
+<h1><%=t(:title_index_matter)%></h1>
 
 <%= datagrid_form_for @grid, :method => :get, :url => matters_path %>
 
@@ -11,5 +10,5 @@
 <%= will_paginate(@grid.assets) %>
 
 <div class="datagrid-actions">
-	<%= link_to 'New Matter', new_matter_path %>
+	<%= link_to t(:title_new_matter), new_matter_path %>
 </div>

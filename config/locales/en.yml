@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+  activerecord:
+    errors:
+      models:
+        teaching:
+          attributes:
+            name: Name
   # common des common 
   submit_validate: Validate
   action_edit: Edit
@@ -56,23 +66,77 @@ en:
   mnu_users: Users
   mnu_student_responsibles: Students Responsibles
   mnu_teacher_matters: Teachers Matters
-  mnu_schedules: Schedules
+  mnu_schedules: Calendar
   mnu_index_actions: Actions by controller and role
-  #select_inout
+  #titres des vues
+  title_index_class_school: Classes school listing
+  title_show_class_school: Classes school card
+  title_new_class_school:  New Class school
+  title_edit_class_school: Edit Class school
+  title_index_element: Parameters listing
+  title_show_element: Parameter card
+  title_new_element: New parameter
+  title_edit_element: Edit parameter
+  title_index_grade_context: Grades contexts listing
+  title_show_grade_context: Grade context card
+  title_new_grade_context: New Grade context
+  title_edit_grade_context: Edit Grade context
+  title_index_grade: Grades listing
+  title_show_grade: Grade card
+  title_new_grade: New grade
+  title_edit_grade: Edit grade
+  title_index_location: Locations listing
+  title_show_location: Location card
+  title_new_location: New location
+  title_edit_location: Edit location
+  title_index_matter: Matters listing
+  title_show_matter: MAtter card
+  title_new_matter: New matter
+  title_edit_matter: Edit matter
+  title_index_notebook: Notebooks listing
+  title_show_notebook: Notebook card
+  title_new_notebook: New notebook
+  title_edit_notebook: Edit notebook
+  title_index_present: Presents listing
+  title_show_present: Present card
+  title_new_present: New present
+  title_edit_present: Edit present
+  title_index_responsible: Responsibles listing
+  title_show_responsible: responsible card
+  title_new_responsible: New responsible
+  title_edit_responsible: Edit responsible
+  title_index_schedule: Schedules listing
+  title_show_schedule: Schedule card
+  title_new_schedule: New schedule
+  title_edit_schedule: Edit schedule
+  titleindex_student: Students listing
+  title_show_student: Student card
+  title_new_student: New student
+  title_edit_student: Edit student
+  title_index_teacher: Teacher listing
+  title_show_teacher: Teacher card
+  title_new_teacher: New teacher
+  title_edit_teacher: Edit teacher
+  title_index_teaching: Teachings listing
+  title_show_teaching: Teaching card
+  title_new_teaching: New teaching
+  title_edit_teaching: Edit teaching
+  title_new_session: Connection panel
+  # select_inout student_responsibles
   label_student_responsibles: Responsibles
   label_student_responsible_ids_out: Responsibles choosen
   label_student_responsible_ids_in: Other responsibles
   label_responsible_students: Students
   label_responsible_student_ids_out: Students choosen
   label_responsible_student_ids_in: Other students
-  #
+  # select_inout teacher_matters
   label_teacher_matters: Matters
   label_teacher_matter_ids_out: Matters choosen
   label_teacher_matter_ids_in: Other matters
   label_matter_teachers: Teachers
   label_matter_teacher_ids_out: Teachers choosen
   label_matter_teacher_ids_in: Other teachers
-  #
+  # select_inout middle buttons
   button_add: Add
   button_remove: Remove 
   # common top
@@ -174,6 +238,7 @@ en:
   label_schedule_schedules: Schedules 
   label_schedule_father_ident: Schedule father
   label_schedule_teaching_ident: Teaching
+  label_schedule_schedule_teaching: Teaching
   # students
   label_student_class_school: Class school
   label_student_teachers: Teachers of student
@@ -186,6 +251,7 @@ en:
   label_teacher_teachings: Teachings 
   label_teacher_class_schools: Class schools
   label_teacher_students: Students
+  label_matters: Matters
   # teaching
   label_teaching_class_school: "Class school (id)"
   label_teaching_teacher: "Teacher (id)"

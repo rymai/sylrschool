@@ -31,6 +31,9 @@ module SYLR
   ]
   V_DEFAULT_THEME=C_THEME_WHITE
 
+  # nombre maxi de lignes dans les listes simples affiches dans les fiches (show)
+  V_TABLE_MAXI_LINES=10
+  
   ###########################
   # constantes non modiables
   ###########################

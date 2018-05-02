@@ -2,7 +2,7 @@
     <%= notice %>
 </p>
 
-<h1>Listing Students</h1>
+<h1><%=t(:title_index_student)%></h1>
 
 <%= datagrid_form_for @grid, :method => :get, :url => students_path %>
 
@@ -11,5 +11,5 @@
 <%= will_paginate(@grid.assets) %>
 
 <div class="datagrid-actions">
-<%= link_to 'New Student', new_student_path %>
+<%= link_to t(:title_new_student), new_student_path %>
 </div>
