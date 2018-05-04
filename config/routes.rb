@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :teachings
+  resources :teachings do
+    collection do
+      get :teacher_selection
+    end
+  end
 
   resources :teachings
   resources :presents

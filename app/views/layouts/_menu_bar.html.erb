@@ -1,143 +1,133 @@
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="btn-toolbar" >
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a class="brand" href="#main" data-toggle="tab"> <span title="Application, appui=>retour à l'acceuil"><%= "#{SYLR::V_APP_NAME}" %></span> </a>
-				</li> 
-				<li class="active">
-					<%= "#{SYLR::V_APP_VERSION}"%><br/>
-					<%= "#{SYLR::V_APP_DATE}"%>
-				</li>
-				<li class="active">
-					&nbsp;
-				</li>
-				<% if logged_in? %>
-				<li class="active">
-					<span title="Connected"><%= "#{current_user.email}"%></span>
-					<br>
-					<span title="Custo"><%= "#{SYLR::V_APP_CUSTO}"%></span>
-				</li>
-				<li>
-					<span title="Role"><%= "#{current_user.role}"%></span>
-					<br/>
-					<span title="DisConnect"> <%= link_to t("mnu_sign_out"), destroy_user_session_path %></span>
-				</li>
-				<% else %>
-				<li>
-					<span title="Connect"> <%= link_to t("mnu_sign_in"), new_user_session_path %></span>
-				</li>
-				<% end %>
-			</ul><!-- nav nav-tabs -->
-			<div class="btn-group">
-				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-					<%= t(:legend_desktop)%> <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li>
-						<%= h_menu("/main","help_main",t("mnu_main")) %>
-					</li>
-					<li>
-						<%= h_menu("/main/tools", "help_tools",t("mnu_tools")) %>
-					</li>
 
-				</ul>
-			</div><!-- /btn-group -->
-			<div class="btn-group">
-				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-					<%= t(:legend_manage) %> <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li class="dropdown-submenu" id="classschoolmenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_year_preparation)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/teachers","help_teachers",t("mnu_teachers")) %>
-							</li>
-							<li>
-								<%= h_menu("/matters","help_matters",t("mnu_matters")) %>
-							</li>
-							<li>
-								<%= h_menu("/class_schools","help_class_schools",t("mnu_class_schools")) %>
-							</li>
-							<li>
-								<%= h_menu("/schedules","help_schedules",t("mnu_schedules")) %>
-							</li>
-							<li>
-								<%= h_menu("/teachings","help_teachings",t("mnu_teachings")) %>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown-submenu" id="personmenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_inscriptions)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/responsibles","help_responsibles",t("mnu_responsibles")) %>
-							</li>
-							<li>
-								<%= h_menu("/students","help_students",t("mnu_students")) %>
-							</li>
-						</ul>
-					</li>
+			<div class="nav nav-tabs">
+				<div class="btn-group">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						<%= t(:legend_desktop)%> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<%= h_menu("/main","help_main",t("mnu_main")) %>
+						</li>
+						<li>
+							<%= h_menu("/main/tools", "help_tools",t("mnu_tools")) %>
+						</li>
+					</ul>
+				</div><!-- /btn-group -->
+				<div class="btn-group">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						<%= t(:legend_manage) %> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu" id="classschoolmenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_year_preparation)%></a>
+							<ul class="dropdown-menu">
+								<li>
+									<%= h_menu("/teachers","help_teachers",t("mnu_teachers")) %>
+								</li>
+								<li>
+									<%= h_menu("/matters","help_matters",t("mnu_matters")) %>
+								</li>
+								<li>
+									<%= h_menu("/class_schools","help_class_schools",t("mnu_class_schools")) %>
+								</li>
+								<li>
+									<%= h_menu("/schedules","help_schedules",t("mnu_schedules")) %>
+								</li>
+								<li>
+									<%= h_menu("/teachings","help_teachings",t("mnu_teachings")) %>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown-submenu" id="personmenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_inscriptions)%></a>
+							<ul class="dropdown-menu">
+								<li>
+									<%= h_menu("/responsibles","help_responsibles",t("mnu_responsibles")) %>
+								</li>
+								<li>
+									<%= h_menu("/students","help_students",t("mnu_students")) %>
+								</li>
+							</ul>
+						</li>
 
-					<li class="dropdown-submenu" id="followingmenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_following)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/notebooks","help_notebooks",t("mnu_notebooks")) %>
-							</li>
-							<li>
-								<%= h_menu("/presents","help_presents",t("mnu_presents")) %>
-							</li>
-							<li>
-								<%= h_menu("/grades","help_grades",t("mnu_grades")) %>
-							</li>
-						</ul>
-					</li>
+						<li class="dropdown-submenu" id="followingmenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_following)%></a>
+							<ul class="dropdown-menu">
+								<li><%= h_menu("/notebooks","help_notebooks",t("mnu_notebooks")) %></li>
+								<li><%= h_menu("/presents","help_presents",t("mnu_presents")) %></li>
+								<li><%= h_menu("/grades","help_grades",t("mnu_grades")) %></li>
+							</ul>
+						</li>
 
-				</ul>
-			</div><!-- /btn-group -->
-			<div class="btn-group">
-				<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-					<%= t(:legend_admin) %> <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li class="dropdown-submenu" id="parammenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_param)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/elements","help_elements",t("mnu_elements")) %>
-							</li>
-							<li>
-								<%= h_menu("/grade_contexts","help_grade_contexts",t("mnu_grade_contexts")) %>
-							</li>
-							<li>
-								<%= h_menu("/locations","help_locationss",t("mnu_locations")) %>
-							</li>
-						</ul>
-					</li>
+					</ul>
+				</div><!-- /btn-group -->
+				<div class="btn-group">
+					<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+						<%= t(:legend_admin) %> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu" id="parammenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_param)%></a>
+							<ul class="dropdown-menu">
+								<li><%= h_menu("/elements","help_elements",t("mnu_elements")) %></li>
+								<li><%= h_menu("/grade_contexts","help_grade_contexts",t("mnu_grade_contexts")) %></li>
+								<li><%= h_menu("/locations","help_locationss",t("mnu_locations")) %></li>
+							</ul>
+						</li>
 
-					<li class="dropdown-submenu" id="debugmenu">
-						<a class='menu' tabindex="-1" href="#"><%= t(:legend_debug)%></a>
-						<ul class="dropdown-menu">
-							<li>
-								<%= h_menu("/users","help_users",t("mnu_users")) %>
-							</li>
-							<li>
-								<%= h_menu("/student_responsibles", "help_student_responsibles",t("mnu_student_responsibles")) %>
-							</li>
-							<li>
-								<%= h_menu("/teacher_matters", "help_teacher_matters",t("mnu_teacher_matters")) %>
-							</li>
-							<li>
-								<%= h_menu("/main/index_actions","help_index_actions",t("mnu_index_actions")) %>
-							</li>
+						<li class="dropdown-submenu" id="debugmenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_debug)%></a>
+							<ul class="dropdown-menu">
+								<li><%= h_menu("/users","help_users",t("mnu_users")) %></li>
+								<li>%= h_menu("/student_responsibles", "help_student_responsibles",t("mnu_student_responsibles")) %></li>
+								<li><%= h_menu("/teacher_matters", "help_teacher_matters",t("mnu_teacher_matters")) %></li>
+							</ul>
+						</li>
 
-						</ul>
-					</li>
+					</ul>
+				</div><!-- /btn-group -->
+				<div class="btn-group">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						<%= t(:legend_help)%> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu" id="infomenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_informations)%></a>
+							<ul class="dropdown-menu">
+								<li><%= h_menu("/main/index_actions","help_index_actions",t("mnu_index_actions")) %></li>
+							</ul>						
+						</li>
+						<li class="dropdown-submenu" id="parammenu">
+							<a class='menu' tabindex="-1" href="#"><%= t(:legend_about)%></a>
+							<ul class="dropdown-menu">
+								<li><%= t("toolbar_appli_name")%> : <%= "#{SYLR::V_APP_NAME}" %></span></li>
+								<li><%= t("toolbar_appli_version")%> : <%= "#{SYLR::V_APP_VERSION}"%></li>
+								<li><%= t("toolbar_appli_date")%> : <%= "#{SYLR::V_APP_DATE}"%></li>
+								<li><%= t("toolbar_appli_custo")%> : <%= "#{SYLR::V_APP_CUSTO}"%></li>	
+							</ul>						
+						</li>
+					</ul>
 
-				</ul>
-			</div><!-- /btn-group -->
-		</div><!-- /btn-toolbar -->
-	</div><!-- /navbar-inner -->
-</div><!-- /navbar -->
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+						<%= t(:legend_user_account)%> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<% if logged_in? %>
+						<li><%=t("toolbar_user_connected")%> : <%= "#{current_user.email}"%></li>
+						<li><%=t("toolbar_user_role")%> : <%= "#{current_user.role}"%></li>
+						<li><%= link_to t("mnu_sign_out"), destroy_user_session_path %></li>
+						<% else %>
+						<li><%= link_to t("mnu_sign_in"), new_user_session_path %></li> 
+						<% end %>
+					</ul>
+				</div>
+
+
+			</div><!-- /btn-toolbar -->
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->

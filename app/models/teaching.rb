@@ -61,13 +61,10 @@ class Teaching < ActiveRecord::Base
     end
     # coherence teacher matter
     matters=self.teaching_teacher.matters.to_a
-    puts "================teaching.validity: teacher matters=#{matters} ==? #{self.teaching_matter.ident}"
-    
     unless matters.include? self.teaching_matter
-      msg+=" Le professeur et la matière #{self.teaching_matter} sont incohérents"
-      valid=false
+      msg+=" Le professeur #{self.teaching_teacher.ident} et la matière #{self.teaching_matter.ident} sont incohérents"
+    valid=false
     end
-
     self.errors.add(:base, "Teaching is not valid:#{msg}") unless valid
     valid
   end

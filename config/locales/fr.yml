@@ -46,6 +46,10 @@ fr:
   legend_param: Paramétrage
   legend_debug: Debug
   legend_person: Personnes
+  legend_help: Aide
+  legend_user_account: Compte
+  legend_informations: Informations
+  legend_about: A propos
   mnu_sign_in: Connexion
   mnu_sign_out: Déconnexion
   mnu_main: Bureau
@@ -122,6 +126,24 @@ fr:
   title_new_teaching: Nouvel enseignement
   title_edit_teaching: Edition de l'enseignement
   title_new_session: Fenêtre de connection
+  # conception dans main/index pour le moment
+  title_documentation: Documentation de l'application
+  title_manuals: Manuels 
+  manual_user_guide: Manuel de l'utilisateur
+  manual_installation: Manuel d'installation 
+  manual_parametrization: Manuel de paramétrage 
+  title_conception: Conception
+  conception_usecase: Cas d'utilisation
+  conception_diagram_class: Diagramme de classes
+  # barre des menus
+  toolbar_appli_name: Nom de l'application
+  toolbar_appli_version: Version de l'application'
+  toolbar_appli_date: Date de l'application
+  toolbar_appli_custo: Paramétrage
+  toolbar_user_role: Rôle de l'utilisateur connecté
+  toolbar_user_connected: Utilisateur connecté
+  toolbar_user_disconnect: Déconnexion de l'utilisateur
+  toolbar_user_connect: Connexion d'un user
   # select_inout student_responsibles
   label_student_responsibles: Responsables
   label_student_responsible_ids_out: Responsables choisis
@@ -155,7 +177,8 @@ fr:
   label_nb_max_student: Nombre maxi d'étudiants
   label_default_location: Emplacement
   label_class_school_students: Etudiants 
-  label_class_school_teachings: Enseignements 
+  label_class_school_teachings: Enseignements  
+  label_class_school_teachers: Professeurs
   # element
   label_for_what: Pour quoi
   label_element_responsibles: Responsables 
@@ -239,6 +262,7 @@ fr:
   label_schedule_father_ident: Origine horaire
   label_schedule_teaching_ident: Enseignement
   label_schedule_schedule_teaching: Enseignement
+  label_schedule_repetition_number: "Nombre de répétitions"
   # students
   label_student_class_school: Classe
   label_student_teachers: Professeurs de cet étudiant

@@ -9,8 +9,16 @@ module Models
 
     # methodes of class begin
     module ClassMethods
-      
-      
+      def datetime_short(datetime)
+        #on met la date + heure minutes
+        datetime.to_s[0,datetime.to_s.size-9]
+      end
+
+      def datetime_todate(datetime)
+        #on met la date
+        val.to_s.to_date.to_s
+      end
+
       def get_day_schedules
         Schedule.select("*").where("schedule_teaching_id = -1")
       end
@@ -63,10 +71,11 @@ module Models
     # tronque une chaine en n mots
     def truncate_text_words(text, len = 25, end_string = " ...")
       return if text.blank?
-       words = text.split()
+      words = text.split()
       ret=words[0..(len-1)].join(' ') + (words.length > len ? end_string : '')
       ret
     end
+
   # methodes of object end
 
   end

@@ -34,6 +34,9 @@
 	<%= h_show_label(:label_student_notebooks)%>
 	<%= h_table_notebook([@student.notebook]) unless @student.notebook.nil?%>
 </p>
+<p>
+	<%= h_show_label(:label_student_teachings)%>
+	<%=h_table_teaching(@student.get_teachings) %>
 </p>
 
 <%= h_show_bottom(@student)%>

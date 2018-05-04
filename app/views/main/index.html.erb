@@ -1,5 +1,17 @@
 <h1><%= t(:hello) %></h1>
 <%=raw t(:welcome)%>
-<h1><%= t(:datas_in_database) %></h1>
+<h2><%= t(:datas_in_database) %></h2>
 <%= render(:partial => "main/show_datas") %>
 
+<h2><%=t(:title_documentation)%></h2>
+<h3><%=t(:title_manuals)%></h3>
+<ul>
+	<li><a href="/documentation/manuals/Manuel utilisateur.odt"><%=t(:manual_user_guide)%></li>
+	<li><a href="/documentation/manuals/Manuel installation.odt"><%=t(:manual_installation)%></li>
+	<li><a href="/documentation/manuals/Manuel parametrage.odt"><%=t(:manual_parametrization)%></li>
+</ul>
+<h3><%=t(:title_conception)%></h3>
+<ul>
+	<li><a href="/documentation/conception/Sylrschool-Cas utilisation.ods"><%=t(:conception_usecase)%></li>
+	<li><a href="/documentation/conception/DC_School.png"><%=t(:conception_diagram_class)%></li>
+</ul>

@@ -6,22 +6,20 @@
 
 <div class="field">
 	<%= label_tag :student %>
-	<div id='student_field'>
-		<%= select_tag "present[student_id]", h_options_from_collection_for_select(Student.get_all, :id, :ident,@present.student)%>
-	</div>
+	<%= select_tag "present[student_id]", h_options_from_collection_for_select(Student.get_all, :id, :ident,@present.student)%>
 </div>
 
 <div class="field">
 	<%= label_tag :teaching %>
 	<div id='teaching_field'>
-		<%= render(:partial=>"presents/select_teaching",:locals=>{:present =>@present,:teachings=>[]})%>
+		<%= render(:partial=>"presents/select_teaching",:locals=>{:present =>@present,:teachings=>@teachings})%>
 	</div>
 </div>
 
 <div class="field">
 	<%= label_tag :schedule %>
 	<div id='schedule_field'>
-		<%= render(:partial=>"presents/select_schedule",:locals=>{:present =>@present,:schedules=>[]})%>
+		<%= render(:partial=>"presents/select_schedule",:locals=>{:present =>@present,:schedules=>@schedules})%>
 	</div>
 </div>
 
@@ -35,7 +33,7 @@
 <% end %>
 <script>
 	$('#present_student_id').on("change", function() {
-		alert('present_student_id');
+		//alert('present_student_id');
 		$.ajax({
 			data : {
 				student : $('#present_student_id option:selected').val(),
@@ -47,5 +45,4 @@
 	});
 
 </script>
-
 

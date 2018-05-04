@@ -3,21 +3,24 @@
 <%= form_for(@teaching) do |f| %>
 <%= h_form_errors(@teaching) %>
 
+<%= hidden_field :teaching, :id%>
 <%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :label_teaching_matter %>
+	<%= f.label t(:label_teaching_matter) %>
 	<%= f.collection_select(:teaching_matter_id, Matter.get_all, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_teacher %>
-	<%= f.collection_select(:teaching_teacher_id, Teacher.get_all, :id, :name) %>
+	<%= f.label t(:label_teaching_teacher) %>
+	<div id='teacher_field'>
+		<%= render(:partial=>"teachings/select_teacher",:locals=>{:teaching =>@teaching,:teachers=>Teacher.get_all})%>
+	</div>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_class_school %>
+	<%= f.label t(:label_teaching_class_school) %>
 	<%= f.collection_select(:teaching_class_school_id, ClassSchool.get_all, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_domain %>
+	<%= f.label t(:label_teaching_domain) %>
 	<%= f.collection_select(:teaching_domain_id, Teaching.teaching_domains, :id, :name) %>
 </div>
 <div class="field">
@@ -25,19 +28,33 @@
 	<%= f.collection_select(:teaching_location_id, Location.get_all, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_start_time %>
+	<%= f.label t(:label_teaching_start_time) %>
 	<%= f.datetime_select :teaching_start_time %>
 </div>
 
 <div class="field">
-	<%= f.label :label_teaching_repetition %>
+	<%= f.label t(:label_teaching_repetition) %>
 	<%= f.select(:teaching_repetition, SYLR::C_ALL_TEACHING_REPETITION.map {|r| [r.humanize, r]}) %>
 </div>
 <div class="field">
-	<%= f.label :label_teaching_repetition_number %>
+	<%= f.label t(:label_teaching_repetition_number) %>
 	<%= f.number_field :teaching_repetition_number %>
 </div>
 <%= h_form_description(f) %>
 
 <%= h_form_bottom(f) %>
 <% end %>
+<script>
+	$('#teaching_teaching_matter_id').on("change", function() {
+		//alert('teaching_matter_id');
+		$.ajax({
+			data : {
+				matter : $('#teaching_teaching_matter_id option:selected').val(),
+				teaching_id : $('#teaching_id').val()
+			},
+			url : "/teachings/teacher_selection",
+			type : "GET"
+		});
+	}); 
+</script>
+

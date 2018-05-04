@@ -3,15 +3,15 @@
 
 <%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :label_matter_type %>	
+	<%= f.label t(:label_matter_type) %>	
 	<%= f.collection_select(:matter_type_id, Matter.matter_types, :id, :name) %>
 </div>
 <div class="field">
-	<%= f.label :label_matter_duration %>
+	<%= f.label t(:label_matter_duration) %>
 	<%= f.number_field :matter_duration %>
 </div>
 <div class="field">
-	<%= f.label :label_matter_nb_max_student %>
+	<%= f.label t(:label_matter_nb_max_student) %>
 	<%= f.number_field :matter_nb_max_student %>
 </div>
 

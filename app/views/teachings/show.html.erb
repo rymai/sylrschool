@@ -19,7 +19,7 @@
 
 <p>
 	<%= h_show_label(:label_teaching_start_time)%>
-	<%= @teaching.teaching_start_time %>
+	<%= Teaching.datetime_short(@teaching.teaching_start_time) %>
 </p>
 <p>
 	<%= h_show_label(:label_teaching_duration)%>

@@ -12,6 +12,10 @@ module ApplicationHelper
     ###puts "========== h_options_from_collection_for_select : objects=#{objects.count}"
     ###puts "========== h_options_from_collection_for_select : id=#{id}, name=#{name},defo=#{defo}"
     ret=""
+    # si un seul objet, on en fait une liste
+    unless objects.is_a?(Array)
+      objects=[objects]
+    end
     objects.each do |obj|
       ret<<"\n<option"
       unless defo.nil?
@@ -253,7 +257,7 @@ module ApplicationHelper
       # nombre de lignes ecrites
       nbl=1
       datas.to_a.each do |data|
-        #puts "=============== h_table =========== #{datas.size} nbl=#{nbl}, limite=#{SYLR::V_TABLE_MAXI_LINES}"
+        #puts "=============== h_table =========== #{datas} nbl=#{nbl}, limite=#{SYLR::V_TABLE_MAXI_LINES}"
         if nbl<=SYLR::V_TABLE_MAXI_LINES
           ret << "<tr>"
           cols.count.times do |i|
@@ -283,7 +287,7 @@ module ApplicationHelper
                     #__datetime => on met la date + heure minutes
                     ret << val.to_s[0,val.to_s.size-9]
                  elsif colfields[1]=="date"
-                    #__datetime => on met la date
+                    #__date => on met la date
                     ret << val.to_s.to_date.to_s
                   else
                     #__titi, titi non reconnu=> valeur normale

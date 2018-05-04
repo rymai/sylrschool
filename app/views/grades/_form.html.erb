@@ -3,28 +3,28 @@
 
 
   <div class="field">
-    <%= f.label :label_grade_student %>
+    <%= f.label t(:label_grade_student) %>
     <%= f.collection_select(:grade_student_id, Student.get_all, :id, :name) %>
   </div>
 
   <div class="field">
-    <%= f.label :label_grade_grade_context %>
+    <%= f.label t(:label_grade_grade_context) %>
     <%= f.collection_select(:grade_grade_context_id, GradeContext.get_all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :label_grade_matter %>
+    <%= f.label t(:label_grade_matter) %>
     <%= f.collection_select(:grade_matter_id, Matter.get_all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :label_grade_date %>
+    <%= f.label t(:label_grade_date) %>
     <%= f.date_select :grade_date %>
   </div>
   <div class="field">
-    <%= f.label :label_grade_value %>
+    <%= f.label t(:label_grade_value) %>
     <%= f.text_field :value %>
   </div>
   <div class="field">
-    <%= f.label :label_grade_description %>
+    <%= f.label t(:label_grade_description) %>
     <%= f.text_area :description %>
   </div>
  

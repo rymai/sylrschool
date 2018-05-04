@@ -1,7 +1,7 @@
 <%= select_tag "present[teaching_id]", h_options_from_collection_for_select(teachings, :id, :ident,present.teaching)%>
 <script>
 	$('#present_teaching_id').on("change", function() {
-		alert('present_teaching_id');
+		//alert('present_teaching_id');
 		$.ajax({
 			data : {
 				teaching : $('#present_teaching_id option:selected').val(),

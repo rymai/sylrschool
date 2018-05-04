@@ -2,15 +2,15 @@
 <%= h_form_errors(@schedule) %>
 
 <div class="field">
-	<%= f.label :type %>
+	<%= f.label t(:label_schedule_type) %>
 	<%= f.select(:schedule_type, SYLR::C_ALL_SCHEDULE_TYPES.map {|r| [r.humanize, r]}) %>
 </div>
 <div class="field">
-	<%= f.label :label_start_time %>
+	<%= f.label t(:label_start_time) %>
 	<%= f.datetime_select :start_time,:start_year=>Date.today.year-1,:end_year=>Date.today.year+1 %>
 </div>
 <div class="field">
-	<%= f.label :label_nb_repetition %>
+	<%= f.label t(:label_schedule_repetition_number) %>
 	<%= f.number_field :nb_repetition%>
 </div>
 

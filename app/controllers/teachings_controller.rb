@@ -25,10 +25,14 @@ class TeachingsController < ApplicationController
   # GET /teachings/new
   def new
     @teaching = Teaching.new
+    @matter = @teaching.teaching_matter
+    @teachers = @matter.teachers.to_a
   end
 
   # GET /teachings/1/edit
   def edit
+    @matter = @teaching.teaching_matter
+    @teachers = @matter.teachers.to_a
   end
 
   # POST /teachings
@@ -56,7 +60,6 @@ class TeachingsController < ApplicationController
   # PATCH/PUT /teachings/1
   # PATCH/PUT /teachings/1.json
   def update
-
     respond_to do |format|
       if @teaching.update(teaching_params)
         #si repetition ou repet number change, detruire les scedules et les refaire
@@ -88,6 +91,17 @@ class TeachingsController < ApplicationController
     end
   end
 
+  # pour maj de la liste des professeurs en fonction de la matiere choisie
+  def teacher_selection
+    @teaching = Teaching.find(params[:teaching_id])
+    @matter = Matter.find(params[:matter])
+    @teachers = @matter.teachers.to_a
+    puts "===========teaching_controller.matter_selection=================== @matter=#{@matter.inspect}"
+    puts "===========teaching_controller.matter_selection=================== @teachers=#{@teachers}"
+    respond_to do |format|
+      format.js {  }
+    end
+  end
   private
 
   # Use callbacks to share common setup or constraints between actions.

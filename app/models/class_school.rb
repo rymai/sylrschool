@@ -63,4 +63,14 @@ class ClassSchool < ActiveRecord::Base
     self.errors.add(:base, "Class school can't be destroyed:#{msg}") unless valid
     valid
   end
+  
+  # renvoie les professeurs enseignant pour une classe donnee
+  # on passe par les enseignements auxquels participe le professeur
+  def get_teachers
+    ret=[]
+    self.teachings.each do |teaching|
+      ret<< teaching.teaching_teacher
+    end
+    ret.uniq
+  end
 end

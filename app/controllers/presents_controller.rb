@@ -24,17 +24,20 @@ class PresentsController < ApplicationController
   # GET /presents/new
   def new
     @present = Present.new
+    @teachings = @present.student.student_class_school.teachings.to_a
+    @schedules = @present.teaching.schedules.to_a
   end
 
   # GET /presents/1/edit
   def edit
+    @teachings = @present.student.student_class_school.teachings.to_a
+    @schedules = @present.teaching.schedules.to_a
   end
 
   # POST /presents
   # POST /presents.json
   def create
     @present = Present.new(present_params)
-
     respond_to do |format|
       if @present.save
         format.html { redirect_to @present, notice: 'Present was successfully created.' }

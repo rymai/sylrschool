@@ -1,14 +1,23 @@
 module SYLR
 
+  ##############################################################################################
+  # Variables adaptables acceptees par l'application
   ##################################################
-  # variables adaptables acceptees par l'application
-  ##################################################
+  # Les constantes commençant par V_ peuvent être modifiées AVANT l'utilisation de l'application.
+  # Par contre, les constantes commençant par C_ ne doivent pas être modifiées car elles sont 
+  #   traitées par les algorithme de l'applicationl.
+  ##############################################################################################
   # nom de l'ecole
   V_APP_NAME   = 'SCHOOL'
   #V_APP_VERSION   = '1.0.1'
   #V_APP_DATE  = '2018/02/28'.to_date
-  V_APP_VERSION   = '1.0.2'
-  V_APP_DATE  = '2018/04/01'.to_date
+  #V_APP_VERSION   = '1.0.2'
+  #V_APP_DATE  = '2018/04/01'.to_date
+  V_APP_VERSION   = '1.0.3'
+  V_APP_DATE  = '2018/05/05'.to_date
+  
+  # nom du paramétrage
+  # ATTENTION, il faut le changer avant de créer le 1er objet dans l'application.
   V_APP_CUSTO='scolaire'
 
   # valeurs du type de Presence
@@ -19,7 +28,8 @@ module SYLR
     V_PRESENT_TYPE_EXCUSE,
     V_PRESENT_TYPE_PRESENT]
 
-  # valeurs des themes
+  # valeurs des themes, la valeur par defaut C_DEFAULT_THEME peut être modifiée pour une des valeurs constantes ci dessous
+  # WARNING, seule le thme white est complet et testé.
   C_THEME_WHITE="white"
   C_THEME_BLUE="blue"
   C_THEME_GREEN="green"
@@ -34,9 +44,12 @@ module SYLR
   # nombre maxi de lignes dans les listes simples affiches dans les fiches (show)
   V_TABLE_MAXI_LINES=10
   
+  ####################################################################################
+  # Constantes non modiables.
   ###########################
-  # constantes non modiables
-  ###########################
+  # Ces constantes commençant par C_ ne doivent pas être modifiées car elles sont 
+  #   traitées par les algorithmes de l'application.
+  ####################################################################################
 
   # les langages implémentés
   C_LANGUAGE_EN="en"
@@ -48,10 +61,9 @@ module SYLR
   C_CHECK_FALSE="false"
   C_CHECK_TRUE="true"
 
-  ###########################################
-  #
-  # objects names / nom de certains objets
-  #
+  ###########################################################
+  # Constantes relatives aux différents objet de l'application
+  ###########################################################
   # Elements for_whats
   C_FOR_WHAT_RESPONSIBLE_TYPE="responsible_type"
   C_FOR_WHAT_TEACHING_DOMAIN="teaching_domain"
@@ -80,7 +92,9 @@ module SYLR
     C_SCHEDULE_UNWORKING,
     C_SCHEDULE_WORKING]
   
+  # valeur par defaut d'un enseignement (teaching)
   C_INDIC_DAY_SCHEDULE=-1
+  # valeur par defaut d'un horaire (schedule) qui a des "fils" (de type weekend et holidays)
   C_INDIC_SCHEDULE_FATHER=-2
 
   # les differents statuts des personnes
@@ -89,7 +103,7 @@ module SYLR
   C_ALL_PERSON_STATUS=[C_PERSON_STATUS_ENROLLED,
     C_PERSON_STATUS_WAITING]
 
-  # les frequences de repetition des enseignements sur le clendrier
+  # les frequences de repetition des enseignements sur le calendrier
   C_TEACHING_DAY="day"
   C_TEACHING_WEEK="week"
   C_TEACHING_NONE="none"
@@ -101,8 +115,10 @@ module SYLR
   C_ROLE_STUDENT= 'student'
   C_ROLE_TEACHER='teacher'
   C_ROLE_RESPONSIBLE='responsible'
+  # le support a accès à tous les objets
   C_ROLE_SUPPORT='support'
   C_ROLE_VISITOR='visitor'
+  # l'admin a acces aux objets de paramétrage
   C_ROLE_ADMIN='admin'
   C_ALL_ROLES=[C_ROLE_STUDENT,
     C_ROLE_TEACHER,
@@ -176,35 +192,59 @@ module SYLR
 
 end
 
+# traces
 fname = 'sylr_init.rb:'
 puts ">>>>#{fname}"
 
-#
-# fichier de log specifique
-#
+################################################################
+# fichier de log specifique et création du driver des logs (LOG)
+################################################################
 logfile       = File.join(Rails.root, 'log', 'sylrschool.log')
 LOG           = Logger.new(logfile, 'daily')
-# Install custom formatter!
+# Les lignes contenant les mots suivants ne seront pas affichées
 NOLOGS = [
   'titi','toto'
 ].freeze
 
+##########################################################################
+# Activation des logs
+######################
+# Par defaut (en production par exemple, le debug est désactivée.
+# Pour les autres environnement, si la variable d'environnement Windows ou 
+#   linus SYLRSCHOOL_DEBUG est declarée avec la valeur true, 
+#   l'affichage des logs est effectué.
+##########################################################################
 puts "#{fname}: SYLRSCHOOL_DEBUG=#{ENV.fetch('SYLRSCHOOL_DEBUG')}"
-puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
+
 if ENV.fetch('SYLRSCHOOL_DEBUG', false) == 'true'
   LOG.formatter = Classes::AppClasses::LogFormatter.new(NOLOGS)
 end
 
+##########################################################################
+# Niveau du debug
+##################
+# Par defaut (en production par exemple, le niveau est error)
+# Pour les autres environnement, si la variable d'environnement Windows ou 
+#   linus SYLRSCHOOL_LOG_LEVEL est declarée avec une des valeurs 
+#   ci dessous, ce niveau sera utilisé. 
 # DEBUG INFO WARN ERROR FATAL
+##########################################################################
+puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
 LOG.level = Logger.const_get(ENV.fetch('SYLRSCHOOL_LOG_LEVEL', 'error').upcase)
 puts "#{fname}: LOG.level=#{LOG.level}"
 LOG.info(fname) { 'Lancement SYLRSCHOOL' }
+
+#############################################
+# La liste des constantes est affichée
+#############################################
 LOG.info(fname) { 'Constantes du module SYLR' }
 SYLR.constants.sort.each do |c|
   v = SYLR.const_get(c)
   LOG.debug(fname){"\t#{c}\t\t= #{v}" }
 end
-
+###############
+# informations
+###############
 LOG.info(fname){ "env=#{Rails.env.inspect} loglevel=#{LOG.level}" }
 LOG.info(fname){ '--------------------------------------------' }
 

@@ -3,7 +3,7 @@
 
 <%= h_form_name(f) %>
 <div class="field">
-	<%= f.label :label_usage %>
+	<%= f.label t(:label_usage) %>
 	<%= f.collection_select(:usage_id, Location.location_usages, :id, :name) %>
 </div>
 <div class="field">

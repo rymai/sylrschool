@@ -46,6 +46,10 @@ en:
   legend_param: Parameters
   legend_debug: Debugging
   legend_person: Persons
+  legend_help: Help
+  legend_user_account: User account
+  legend_informations: Informations
+  legend_about: About
   mnu_sign_in: Sign in
   mnu_sign_out: Sign out
   mnu_main: Desktop
@@ -122,6 +126,24 @@ en:
   title_new_teaching: New teaching
   title_edit_teaching: Edit teaching
   title_new_session: Connection panel
+  # conception dans main/index pour le moment
+  title_documentation: Application documentation
+  title_manuals: Manuals  
+  manual_user_guide: User manual
+  manual_installation: Installation manuel
+  manual_parametrization: Parametrization manuel
+  title_conception: Application conception
+  conception_usecase: Use cases
+  conception_diagram_class: Class diagram
+  # barre des menus
+  toolbar_appli_name: Application name
+  toolbar_appli_version: Version 
+  toolbar_appli_date: Date 
+  toolbar_appli_custo: Setting
+  toolbar_user_role: Role
+  toolbar_user_connected: Connected
+  toolbar_user_disconnect: Disconnect 
+  toolbar_user_connect: Connection 
   # select_inout student_responsibles
   label_student_responsibles: Responsibles
   label_student_responsible_ids_out: Responsibles choosen
@@ -156,6 +178,7 @@ en:
   label_default_location: Default location
   label_class_school_students: Students 
   label_class_school_teachings: Teachings 
+  label_class_school_teachers: Teachers
   # element
   label_for_what: For what
   label_element_responsibles: Responsibles 
@@ -239,6 +262,7 @@ en:
   label_schedule_father_ident: Schedule father
   label_schedule_teaching_ident: Teaching
   label_schedule_schedule_teaching: Teaching
+  label_schedule_repetition_number: Repetition number
   # students
   label_student_class_school: Class school
   label_student_teachers: Teachers of student

@@ -38,7 +38,11 @@ class Student < ActiveRecord::Base
     end
     ret
   end
-
+ # get locations used by the student
+  def get_teachings
+    classe=self.student_class_school
+    classe.teachings.to_a
+  end
   # get locations used by the student
   def get_locations
     ret=[]
