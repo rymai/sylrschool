@@ -1,0 +1,2 @@
+console.log("teacher_selection");
+jQuery('#teacher_field').html("<%= j(render(:partial=>'teachings/select_teacher',:locals=>{:teaching=>@teaching,:teachers=>@teachers}))%>");
