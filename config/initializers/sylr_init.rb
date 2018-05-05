@@ -231,7 +231,8 @@ NOLOGS = [
 ##########################################################################
 #puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
 ###LOG.level = Logger.const_get(ENV.fetch('SYLRSCHOOL_LOG_LEVEL', 'error').upcase)
-LOG.level = Logger.const_get('debug').upcase
+###LOG.level = Logger.const_get('debug').upcase
+LOG.level = DEBUG
 puts "#{fname}: LOG.level=#{LOG.level}"
 LOG.info(fname) { 'Lancement SYLRSCHOOL' }
 
