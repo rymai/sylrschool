@@ -68,8 +68,8 @@ gem 'simple_calendar'
 gem 'yaml_db'
 
 # for select_in_out in views
-#gem 'sylrplm_ext', :git => "https://github.com/sylvani/sylrplm_ext.git"
-gem 'sylrplm_ext', :path => "C:/trav/ror/sylrplm_ext"
+###gem 'sylrplm_ext', :git => "https://github.com/sylvani/sylrplm_ext.git"
+###gem 'sylrplm_ext', :path => "C:/trav/ror/sylrplm_ext"
 # for list of objects
 gem 'datagrid' 
 
