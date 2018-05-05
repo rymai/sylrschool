@@ -214,11 +214,11 @@ NOLOGS = [
 #   linus SYLRSCHOOL_DEBUG est declarée avec la valeur true, 
 #   l'affichage des logs est effectué.
 ##########################################################################
-puts "#{fname}: SYLRSCHOOL_DEBUG=#{ENV.fetch('SYLRSCHOOL_DEBUG')}"
+#puts "#{fname}: SYLRSCHOOL_DEBUG=#{ENV.fetch('SYLRSCHOOL_DEBUG')}"
 
-if ENV.fetch('SYLRSCHOOL_DEBUG', false) == 'true'
+#if ENV.fetch('SYLRSCHOOL_DEBUG', false) == 'true'
   LOG.formatter = Classes::AppClasses::LogFormatter.new(NOLOGS)
-end
+#end
 
 ##########################################################################
 # Niveau du debug
@@ -229,8 +229,9 @@ end
 #   ci dessous, ce niveau sera utilisé. 
 # DEBUG INFO WARN ERROR FATAL
 ##########################################################################
-puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
-LOG.level = Logger.const_get(ENV.fetch('SYLRSCHOOL_LOG_LEVEL', 'error').upcase)
+#puts "#{fname}: SYLRSCHOOL_LOG_LEVEL=#{ENV.fetch('SYLRSCHOOL_LOG_LEVEL')}"
+###LOG.level = Logger.const_get(ENV.fetch('SYLRSCHOOL_LOG_LEVEL', 'error').upcase)
+LOG.level = Logger.const_get('debug').upcase
 puts "#{fname}: LOG.level=#{LOG.level}"
 LOG.info(fname) { 'Lancement SYLRSCHOOL' }
 
