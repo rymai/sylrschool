@@ -55,3 +55,22 @@ Student_3:
   custo: scolaire
   created_at: 2018-04-22 13:47:39.063489000 Z
   updated_at: 2018-04-26 20:10:50.567641000 Z
+
+Student_4:
+  id: 4
+  name: fsffs
+  person_status: waiting
+  email: sdf@djdjd.net
+  firstname: ddd
+  lastname: ddd
+  adress: ''
+  postalcode: ''
+  town: ''
+  phone1: ''
+  phone2: ''
+  birthday: 2018-04-28
+  student_class_school_id: 1
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-28 07:58:37.914398000 Z
+  updated_at: 2018-04-28 07:58:37.914398000 Z

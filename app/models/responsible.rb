@@ -23,9 +23,9 @@ class Responsible < ActiveRecord::Base
   def check_destroy
     valid=true
     msg=""
-    if student_responsibles.count > 0
+    if students.count > 0
       valid=false
-      msg+=" There are #{student_responsibles.count} student_responsibles references"
+      msg+=" There are #{students.count} students references"
     end
     self.errors.add(:base, "Responsible can't be destroyed:#{msg}") unless valid
     valid

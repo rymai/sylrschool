@@ -58,9 +58,9 @@ class Student < ActiveRecord::Base
   def check_destroy
     valid=true
     msg=""
-    if student_responsibles.count > 0
+    if responsibles.count > 0
       valid=false
-      msg+=" There are #{student_responsibles.count} student_responsibles references"
+      msg+=" There are #{responsibles.count} students references"
     end
     if presents.count > 0
       valid=false

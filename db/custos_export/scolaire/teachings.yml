@@ -95,22 +95,6 @@ Teaching_8:
   created_at: 2018-04-23 14:48:06.791397000 Z
   updated_at: 2018-04-24 13:36:41.187336000 Z
 
-Teaching_7:
-  id: 7
-  name: 1ere 2 francais
-  teaching_class_school_id: 4
-  teaching_teacher_id: 3
-  teaching_matter_id: 1
-  teaching_domain_id: '12'
-  teaching_start_time: 2018-04-08 14:45:00.000000000 Z
-  teaching_repetition: week
-  teaching_repetition_number: 3
-  description: ''
-  custo: scolaire
-  teaching_location_id: 6
-  created_at: 2018-04-23 14:45:48.574555000 Z
-  updated_at: 2018-04-24 13:37:01.459003000 Z
-
 Teaching_6:
   id: 6
   name: 2de 2 francais
@@ -190,3 +174,19 @@ Teaching_2:
   teaching_location_id: 2
   created_at: 2018-04-23 14:36:43.751188000 Z
   updated_at: 2018-04-24 13:39:01.481534000 Z
+
+Teaching_7:
+  id: 7
+  name: 1ere 2 francais
+  teaching_class_school_id: 4
+  teaching_teacher_id: 5
+  teaching_matter_id: 3
+  teaching_domain_id: '12'
+  teaching_start_time: 2018-04-08 14:45:00.000000000 Z
+  teaching_repetition: week
+  teaching_repetition_number: 3
+  description: ''
+  custo: scolaire
+  teaching_location_id: 6
+  created_at: 2018-04-23 14:45:48.574555000 Z
+  updated_at: 2018-05-03 15:17:02.036333000 Z

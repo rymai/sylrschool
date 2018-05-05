@@ -1,1020 +1,110 @@
 
-Schedule_1:
-  id: 1
-  schedule_type: working
-  start_time: 2018-04-08 14:00:00.000000000 Z
-  schedule_father_id: 1
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 15:05:14.715969000 Z
-  updated_at: 2018-04-05 15:05:14.720007000 Z
-
-Schedule_2:
-  id: 2
-  schedule_type: working
-  start_time: 2018-04-15 14:00:00.000000000 Z
-  schedule_father_id: 1
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 15:05:14.722987000 Z
-  updated_at: 2018-04-05 15:05:14.722987000 Z
-
-Schedule_3:
-  id: 3
-  schedule_type: working
-  start_time: 2018-04-22 14:00:00.000000000 Z
-  schedule_father_id: 1
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 15:05:14.729003000 Z
-  updated_at: 2018-04-05 15:05:14.729003000 Z
-
-Schedule_4:
-  id: 4
-  schedule_type: working
-  start_time: 2018-04-05 15:00:00.000000000 Z
-  schedule_father_id: 4
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 15:07:32.152104000 Z
-  updated_at: 2018-04-05 15:07:32.153107000 Z
-
-Schedule_5:
-  id: 5
-  schedule_type: working
-  start_time: 2018-04-12 15:00:00.000000000 Z
-  schedule_father_id: 4
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 15:07:32.156114000 Z
-  updated_at: 2018-04-05 15:07:32.156114000 Z
-
-Schedule_6:
-  id: 6
-  schedule_type: working
-  start_time: 2018-04-19 15:00:00.000000000 Z
-  schedule_father_id: 4
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 15:07:32.165173000 Z
-  updated_at: 2018-04-05 15:07:32.165173000 Z
-
-Schedule_7:
-  id: 7
-  schedule_type: working
-  start_time: 2018-04-08 14:00:00.000000000 Z
-  schedule_father_id: 7
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:44:35.360496000 Z
-  updated_at: 2018-04-05 16:44:35.362504000 Z
-
-Schedule_8:
-  id: 8
-  schedule_type: working
-  start_time: 2018-04-15 14:00:00.000000000 Z
-  schedule_father_id: 7
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:44:35.365511000 Z
-  updated_at: 2018-04-05 16:44:35.365511000 Z
-
-Schedule_9:
-  id: 9
-  schedule_type: working
-  start_time: 2018-04-22 14:00:00.000000000 Z
-  schedule_father_id: 7
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:44:35.367515000 Z
-  updated_at: 2018-04-05 16:44:35.367515000 Z
-
-Schedule_10:
-  id: 10
-  schedule_type: working
-  start_time: 2018-04-08 14:00:00.000000000 Z
-  schedule_father_id: 10
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:46:42.448761000 Z
-  updated_at: 2018-04-05 16:46:42.451774000 Z
-
-Schedule_11:
-  id: 11
-  schedule_type: working
-  start_time: 2018-04-15 14:00:00.000000000 Z
-  schedule_father_id: 10
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:46:42.456783000 Z
-  updated_at: 2018-04-05 16:46:42.456783000 Z
-
-Schedule_12:
-  id: 12
-  schedule_type: working
-  start_time: 2018-04-22 14:00:00.000000000 Z
-  schedule_father_id: 10
-  schedule_teaching_id: 4
-  custo: scolaire
-  created_at: 2018-04-05 16:46:42.460820000 Z
-  updated_at: 2018-04-05 16:46:42.460820000 Z
-
-Schedule_13:
-  id: 13
-  schedule_type: working
-  start_time: 2018-04-05 15:00:00.000000000 Z
-  schedule_father_id: 13
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 16:47:10.117081000 Z
-  updated_at: 2018-04-05 16:47:10.121089000 Z
-
-Schedule_14:
-  id: 14
-  schedule_type: working
-  start_time: 2018-04-12 15:00:00.000000000 Z
-  schedule_father_id: 13
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 16:47:10.123094000 Z
-  updated_at: 2018-04-05 16:47:10.123094000 Z
-
-Schedule_15:
-  id: 15
-  schedule_type: working
-  start_time: 2018-04-19 15:00:00.000000000 Z
-  schedule_father_id: 13
-  schedule_teaching_id: 5
-  custo: scolaire
-  created_at: 2018-04-05 16:47:10.125099000 Z
-  updated_at: 2018-04-05 16:47:10.125099000 Z
-
-Schedule_16:
-  id: 16
-  schedule_type: working
-  start_time: 2018-04-06 13:59:00.000000000 Z
-  schedule_father_id: 
-  schedule_teaching_id: 
-  custo: scolaire
-  created_at: 2018-04-06 13:59:21.017923000 Z
-  updated_at: 2018-04-06 13:59:21.017923000 Z
-
-Schedule_17:
-  id: 17
-  schedule_type: working
-  start_time: 2018-04-06 14:07:00.000000000 Z
-  schedule_father_id: 
-  schedule_teaching_id: 
-  custo: scolaire
-  created_at: 2018-04-06 14:07:29.495477000 Z
-  updated_at: 2018-04-06 14:07:29.495477000 Z
-
-Schedule_19:
-  id: 19
-  schedule_type: working
-  start_time: 2018-04-06 16:33:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-06 16:44:36.733195000 Z
-  updated_at: 2018-04-06 16:44:36.733195000 Z
-
-Schedule_192:
-  id: 192
-  schedule_type: weekend
-  start_time: 2017-09-09 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.486287000 Z
-  updated_at: 2018-04-09 09:54:44.486287000 Z
-
-Schedule_193:
-  id: 193
-  schedule_type: weekend
-  start_time: 2017-09-10 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.511667000 Z
-  updated_at: 2018-04-09 09:54:44.511667000 Z
-
-Schedule_194:
-  id: 194
-  schedule_type: weekend
-  start_time: 2017-09-16 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.531069000 Z
-  updated_at: 2018-04-09 09:54:44.531069000 Z
-
-Schedule_195:
-  id: 195
-  schedule_type: weekend
-  start_time: 2017-09-17 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.557148000 Z
-  updated_at: 2018-04-09 09:54:44.557148000 Z
-
-Schedule_196:
-  id: 196
-  schedule_type: weekend
-  start_time: 2017-09-23 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.575196000 Z
-  updated_at: 2018-04-09 09:54:44.575196000 Z
-
-Schedule_197:
-  id: 197
-  schedule_type: weekend
-  start_time: 2017-09-24 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.595373000 Z
-  updated_at: 2018-04-09 09:54:44.595373000 Z
-
-Schedule_198:
-  id: 198
-  schedule_type: weekend
-  start_time: 2017-09-30 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.608974000 Z
-  updated_at: 2018-04-09 09:54:44.608974000 Z
-
-Schedule_199:
-  id: 199
-  schedule_type: weekend
-  start_time: 2017-10-01 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.623912000 Z
-  updated_at: 2018-04-09 09:54:44.623912000 Z
-
-Schedule_200:
-  id: 200
-  schedule_type: weekend
-  start_time: 2017-10-07 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.640927000 Z
-  updated_at: 2018-04-09 09:54:44.640927000 Z
-
-Schedule_201:
-  id: 201
-  schedule_type: weekend
-  start_time: 2017-10-08 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.653969000 Z
-  updated_at: 2018-04-09 09:54:44.653969000 Z
-
-Schedule_202:
-  id: 202
-  schedule_type: weekend
-  start_time: 2017-10-14 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.660987000 Z
-  updated_at: 2018-04-09 09:54:44.660987000 Z
-
-Schedule_203:
-  id: 203
-  schedule_type: weekend
-  start_time: 2017-10-15 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.684545000 Z
-  updated_at: 2018-04-09 09:54:44.684545000 Z
-
-Schedule_204:
-  id: 204
-  schedule_type: weekend
-  start_time: 2017-10-21 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.712709000 Z
-  updated_at: 2018-04-09 09:54:44.712709000 Z
-
-Schedule_205:
-  id: 205
-  schedule_type: weekend
-  start_time: 2017-10-22 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.742434000 Z
-  updated_at: 2018-04-09 09:54:44.742434000 Z
-
-Schedule_206:
-  id: 206
-  schedule_type: weekend
-  start_time: 2017-10-28 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.779862000 Z
-  updated_at: 2018-04-09 09:54:44.779862000 Z
-
-Schedule_207:
-  id: 207
-  schedule_type: weekend
-  start_time: 2017-10-29 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.809893000 Z
-  updated_at: 2018-04-09 09:54:44.809893000 Z
-
-Schedule_208:
-  id: 208
-  schedule_type: weekend
-  start_time: 2017-11-04 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.831679000 Z
-  updated_at: 2018-04-09 09:54:44.831679000 Z
-
-Schedule_209:
-  id: 209
-  schedule_type: weekend
-  start_time: 2017-11-05 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.845538000 Z
-  updated_at: 2018-04-09 09:54:44.845538000 Z
-
-Schedule_210:
-  id: 210
-  schedule_type: weekend
-  start_time: 2017-11-11 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.875799000 Z
-  updated_at: 2018-04-09 09:54:44.875799000 Z
-
-Schedule_211:
-  id: 211
-  schedule_type: weekend
-  start_time: 2017-11-12 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.896146000 Z
-  updated_at: 2018-04-09 09:54:44.896146000 Z
-
-Schedule_212:
-  id: 212
-  schedule_type: weekend
-  start_time: 2017-11-18 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.911226000 Z
-  updated_at: 2018-04-09 09:54:44.911226000 Z
-
-Schedule_213:
-  id: 213
-  schedule_type: weekend
-  start_time: 2017-11-19 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.943404000 Z
-  updated_at: 2018-04-09 09:54:44.943404000 Z
-
-Schedule_214:
-  id: 214
-  schedule_type: weekend
-  start_time: 2017-11-25 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.961868000 Z
-  updated_at: 2018-04-09 09:54:44.961868000 Z
-
-Schedule_215:
-  id: 215
-  schedule_type: weekend
-  start_time: 2017-11-26 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:44.993767000 Z
-  updated_at: 2018-04-09 09:54:44.993767000 Z
-
-Schedule_216:
-  id: 216
-  schedule_type: weekend
-  start_time: 2017-12-02 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.022144000 Z
-  updated_at: 2018-04-09 09:54:45.022144000 Z
-
-Schedule_217:
-  id: 217
-  schedule_type: weekend
-  start_time: 2017-12-03 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.043144000 Z
-  updated_at: 2018-04-09 09:54:45.043144000 Z
-
-Schedule_218:
-  id: 218
-  schedule_type: weekend
-  start_time: 2017-12-09 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.064203000 Z
-  updated_at: 2018-04-09 09:54:45.064203000 Z
-
-Schedule_219:
-  id: 219
-  schedule_type: weekend
-  start_time: 2017-12-10 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.094581000 Z
-  updated_at: 2018-04-09 09:54:45.094581000 Z
-
-Schedule_220:
-  id: 220
-  schedule_type: weekend
-  start_time: 2017-12-16 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.118998000 Z
-  updated_at: 2018-04-09 09:54:45.118998000 Z
-
-Schedule_221:
-  id: 221
-  schedule_type: weekend
-  start_time: 2017-12-17 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.129005000 Z
-  updated_at: 2018-04-09 09:54:45.129005000 Z
-
-Schedule_222:
-  id: 222
-  schedule_type: weekend
-  start_time: 2017-12-23 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.161251000 Z
-  updated_at: 2018-04-09 09:54:45.161251000 Z
-
-Schedule_223:
-  id: 223
-  schedule_type: weekend
-  start_time: 2017-12-24 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.174966000 Z
-  updated_at: 2018-04-09 09:54:45.174966000 Z
-
-Schedule_224:
-  id: 224
-  schedule_type: weekend
-  start_time: 2017-12-30 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.195948000 Z
-  updated_at: 2018-04-09 09:54:45.195948000 Z
-
-Schedule_225:
-  id: 225
-  schedule_type: weekend
-  start_time: 2017-12-31 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.210997000 Z
-  updated_at: 2018-04-09 09:54:45.210997000 Z
-
-Schedule_226:
-  id: 226
-  schedule_type: weekend
-  start_time: 2018-01-06 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.235000000 Z
-  updated_at: 2018-04-09 09:54:45.235000000 Z
-
-Schedule_227:
-  id: 227
-  schedule_type: weekend
-  start_time: 2018-01-07 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.244076000 Z
-  updated_at: 2018-04-09 09:54:45.244076000 Z
-
-Schedule_228:
-  id: 228
-  schedule_type: weekend
-  start_time: 2018-01-13 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.270168000 Z
-  updated_at: 2018-04-09 09:54:45.270168000 Z
-
-Schedule_229:
-  id: 229
-  schedule_type: weekend
-  start_time: 2018-01-14 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.300182000 Z
-  updated_at: 2018-04-09 09:54:45.300182000 Z
-
-Schedule_230:
-  id: 230
-  schedule_type: weekend
-  start_time: 2018-01-20 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.323266000 Z
-  updated_at: 2018-04-09 09:54:45.323266000 Z
-
-Schedule_231:
-  id: 231
-  schedule_type: weekend
-  start_time: 2018-01-21 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.340884000 Z
-  updated_at: 2018-04-09 09:54:45.340884000 Z
-
-Schedule_232:
-  id: 232
-  schedule_type: weekend
-  start_time: 2018-01-27 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.362349000 Z
-  updated_at: 2018-04-09 09:54:45.362349000 Z
-
-Schedule_233:
-  id: 233
-  schedule_type: weekend
-  start_time: 2018-01-28 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.377685000 Z
-  updated_at: 2018-04-09 09:54:45.377685000 Z
-
-Schedule_234:
-  id: 234
-  schedule_type: weekend
-  start_time: 2018-02-03 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.400948000 Z
-  updated_at: 2018-04-09 09:54:45.400948000 Z
-
-Schedule_235:
-  id: 235
-  schedule_type: weekend
-  start_time: 2018-02-04 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.429536000 Z
-  updated_at: 2018-04-09 09:54:45.429536000 Z
-
-Schedule_236:
-  id: 236
-  schedule_type: weekend
-  start_time: 2018-02-10 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.457811000 Z
-  updated_at: 2018-04-09 09:54:45.457811000 Z
-
-Schedule_237:
-  id: 237
-  schedule_type: weekend
-  start_time: 2018-02-11 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.489556000 Z
-  updated_at: 2018-04-09 09:54:45.489556000 Z
-
-Schedule_238:
-  id: 238
-  schedule_type: weekend
-  start_time: 2018-02-17 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.509061000 Z
-  updated_at: 2018-04-09 09:54:45.509061000 Z
-
-Schedule_239:
-  id: 239
-  schedule_type: weekend
-  start_time: 2018-02-18 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.550467000 Z
-  updated_at: 2018-04-09 09:54:45.550467000 Z
-
-Schedule_240:
-  id: 240
-  schedule_type: weekend
-  start_time: 2018-02-24 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.565502000 Z
-  updated_at: 2018-04-09 09:54:45.565502000 Z
-
-Schedule_241:
-  id: 241
-  schedule_type: weekend
-  start_time: 2018-02-25 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.578501000 Z
-  updated_at: 2018-04-09 09:54:45.578501000 Z
-
-Schedule_242:
-  id: 242
-  schedule_type: weekend
-  start_time: 2018-03-03 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.612916000 Z
-  updated_at: 2018-04-09 09:54:45.612916000 Z
-
-Schedule_243:
-  id: 243
-  schedule_type: weekend
-  start_time: 2018-03-04 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.647384000 Z
-  updated_at: 2018-04-09 09:54:45.647384000 Z
-
-Schedule_244:
-  id: 244
-  schedule_type: weekend
-  start_time: 2018-03-10 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.675291000 Z
-  updated_at: 2018-04-09 09:54:45.675291000 Z
-
-Schedule_245:
-  id: 245
-  schedule_type: weekend
-  start_time: 2018-03-11 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.692287000 Z
-  updated_at: 2018-04-09 09:54:45.692287000 Z
-
-Schedule_246:
-  id: 246
-  schedule_type: weekend
-  start_time: 2018-03-17 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.715349000 Z
-  updated_at: 2018-04-09 09:54:45.715349000 Z
-
-Schedule_247:
-  id: 247
-  schedule_type: weekend
-  start_time: 2018-03-18 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.729399000 Z
-  updated_at: 2018-04-09 09:54:45.729399000 Z
-
-Schedule_248:
-  id: 248
-  schedule_type: weekend
-  start_time: 2018-03-24 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.761643000 Z
-  updated_at: 2018-04-09 09:54:45.761643000 Z
-
-Schedule_249:
-  id: 249
-  schedule_type: weekend
-  start_time: 2018-03-25 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.791578000 Z
-  updated_at: 2018-04-09 09:54:45.791578000 Z
-
-Schedule_250:
-  id: 250
-  schedule_type: weekend
-  start_time: 2018-03-31 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.803304000 Z
-  updated_at: 2018-04-09 09:54:45.803304000 Z
-
-Schedule_251:
-  id: 251
-  schedule_type: weekend
-  start_time: 2018-04-01 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.831558000 Z
-  updated_at: 2018-04-09 09:54:45.831558000 Z
-
-Schedule_252:
-  id: 252
-  schedule_type: weekend
-  start_time: 2018-04-07 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.872818000 Z
-  updated_at: 2018-04-09 09:54:45.872818000 Z
-
-Schedule_253:
-  id: 253
-  schedule_type: weekend
-  start_time: 2018-04-08 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.904842000 Z
-  updated_at: 2018-04-09 09:54:45.904842000 Z
-
-Schedule_254:
-  id: 254
-  schedule_type: weekend
-  start_time: 2018-04-14 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.924223000 Z
-  updated_at: 2018-04-09 09:54:45.924223000 Z
-
-Schedule_255:
-  id: 255
-  schedule_type: weekend
-  start_time: 2018-04-15 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.949195000 Z
-  updated_at: 2018-04-09 09:54:45.949195000 Z
-
-Schedule_256:
-  id: 256
-  schedule_type: weekend
-  start_time: 2018-04-21 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.963197000 Z
-  updated_at: 2018-04-09 09:54:45.963197000 Z
-
-Schedule_257:
-  id: 257
-  schedule_type: weekend
-  start_time: 2018-04-22 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:45.994280000 Z
-  updated_at: 2018-04-09 09:54:45.994280000 Z
-
-Schedule_258:
-  id: 258
-  schedule_type: weekend
-  start_time: 2018-04-28 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.019516000 Z
-  updated_at: 2018-04-09 09:54:46.019516000 Z
-
-Schedule_259:
-  id: 259
-  schedule_type: weekend
-  start_time: 2018-04-29 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.039851000 Z
-  updated_at: 2018-04-09 09:54:46.039851000 Z
-
-Schedule_260:
-  id: 260
-  schedule_type: weekend
-  start_time: 2018-05-05 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.051886000 Z
-  updated_at: 2018-04-09 09:54:46.051886000 Z
-
-Schedule_261:
-  id: 261
-  schedule_type: weekend
-  start_time: 2018-05-06 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.059909000 Z
-  updated_at: 2018-04-09 09:54:46.059909000 Z
-
-Schedule_262:
-  id: 262
-  schedule_type: weekend
-  start_time: 2018-05-12 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.090878000 Z
-  updated_at: 2018-04-09 09:54:46.090878000 Z
-
-Schedule_263:
-  id: 263
-  schedule_type: weekend
-  start_time: 2018-05-13 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.110622000 Z
-  updated_at: 2018-04-09 09:54:46.110622000 Z
-
-Schedule_264:
-  id: 264
-  schedule_type: weekend
-  start_time: 2018-05-19 09:54:00.000000000 Z
-  schedule_father_id: -1
-  schedule_teaching_id: -1
-  custo: scolaire
-  created_at: 2018-04-09 09:54:46.134260000 Z
-  updated_at: 2018-04-09 09:54:46.134260000 Z
-
-Schedule_265:
-  id: 265
-  schedule_type: weekend
-  start_time: 2018-05-20 09:54:00.000000000 Z
-  schedule_father_id: -1
+Schedule_628:
+  id: 628
+  schedule_type: public_holiday
+  start_time: 2018-05-01 18:35:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.144685000 Z
-  updated_at: 2018-04-09 09:54:46.144685000 Z
+  created_at: 2018-05-05 18:36:00.746222000 Z
+  updated_at: 2018-05-05 18:36:00.746222000 Z
 
-Schedule_266:
-  id: 266
+Schedule_629:
+  id: 629
   schedule_type: weekend
-  start_time: 2018-05-26 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-05 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.169899000 Z
-  updated_at: 2018-04-09 09:54:46.169899000 Z
+  created_at: 2018-05-05 18:36:45.464978000 Z
+  updated_at: 2018-05-05 18:36:45.464978000 Z
 
-Schedule_267:
-  id: 267
+Schedule_630:
+  id: 630
   schedule_type: weekend
-  start_time: 2018-05-27 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-06 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.190340000 Z
-  updated_at: 2018-04-09 09:54:46.190340000 Z
+  created_at: 2018-05-05 18:36:45.467067000 Z
+  updated_at: 2018-05-05 18:36:45.467067000 Z
 
-Schedule_268:
-  id: 268
+Schedule_631:
+  id: 631
   schedule_type: weekend
-  start_time: 2018-06-02 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-12 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.210394000 Z
-  updated_at: 2018-04-09 09:54:46.210394000 Z
+  created_at: 2018-05-05 18:36:45.473872000 Z
+  updated_at: 2018-05-05 18:36:45.473872000 Z
 
-Schedule_269:
-  id: 269
+Schedule_632:
+  id: 632
   schedule_type: weekend
-  start_time: 2018-06-03 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-13 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.237467000 Z
-  updated_at: 2018-04-09 09:54:46.237467000 Z
+  created_at: 2018-05-05 18:36:45.477885000 Z
+  updated_at: 2018-05-05 18:36:45.477885000 Z
 
-Schedule_270:
-  id: 270
+Schedule_633:
+  id: 633
   schedule_type: weekend
-  start_time: 2018-06-09 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-19 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.264542000 Z
-  updated_at: 2018-04-09 09:54:46.264542000 Z
+  created_at: 2018-05-05 18:36:45.483662000 Z
+  updated_at: 2018-05-05 18:36:45.483662000 Z
 
-Schedule_271:
-  id: 271
+Schedule_634:
+  id: 634
   schedule_type: weekend
-  start_time: 2018-06-10 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-20 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.290002000 Z
-  updated_at: 2018-04-09 09:54:46.290002000 Z
+  created_at: 2018-05-05 18:36:45.488676000 Z
+  updated_at: 2018-05-05 18:36:45.488676000 Z
 
-Schedule_272:
-  id: 272
+Schedule_635:
+  id: 635
   schedule_type: weekend
-  start_time: 2018-06-16 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-26 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.310055000 Z
-  updated_at: 2018-04-09 09:54:46.310055000 Z
+  created_at: 2018-05-05 18:36:45.491735000 Z
+  updated_at: 2018-05-05 18:36:45.491735000 Z
 
-Schedule_273:
-  id: 273
+Schedule_636:
+  id: 636
   schedule_type: weekend
-  start_time: 2018-06-17 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-05-27 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.331910000 Z
-  updated_at: 2018-04-09 09:54:46.331910000 Z
+  created_at: 2018-05-05 18:36:45.496102000 Z
+  updated_at: 2018-05-05 18:36:45.496102000 Z
 
-Schedule_274:
-  id: 274
+Schedule_637:
+  id: 637
   schedule_type: weekend
-  start_time: 2018-06-23 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-06-02 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.355972000 Z
-  updated_at: 2018-04-09 09:54:46.355972000 Z
+  created_at: 2018-05-05 18:36:45.498108000 Z
+  updated_at: 2018-05-05 18:36:45.498108000 Z
 
-Schedule_275:
-  id: 275
+Schedule_638:
+  id: 638
   schedule_type: weekend
-  start_time: 2018-06-24 09:54:00.000000000 Z
-  schedule_father_id: -1
+  start_time: 2018-06-03 18:36:00.000000000 Z
+  schedule_father_id: 0
   schedule_teaching_id: -1
   custo: scolaire
-  created_at: 2018-04-09 09:54:46.374020000 Z
-  updated_at: 2018-04-09 09:54:46.374020000 Z
+  created_at: 2018-05-05 18:36:45.500734000 Z
+  updated_at: 2018-05-05 18:36:45.500734000 Z

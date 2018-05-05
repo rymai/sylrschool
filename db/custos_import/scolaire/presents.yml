@@ -1,22 +1,33 @@
 
+Present_3:
+  id: 3
+  student_id: 2
+  schedule_id: 276
+  teaching_id: 10
+  present_type: present
+  description: ''
+  custo: scolaire
+  created_at: 2018-04-24 17:38:16.335697000 Z
+  updated_at: 2018-04-25 13:50:35.201605000 Z
+
 Present_1:
   id: 1
   student_id: 1
-  schedule_id: 1
-  teaching_id: 4
+  schedule_id: 317
+  teaching_id: 11
   present_type: absent
   description: ''
   custo: scolaire
   created_at: 2018-04-10 06:06:30.526676000 Z
-  updated_at: 2018-04-10 06:06:30.526676000 Z
+  updated_at: 2018-05-03 14:39:55.796413000 Z
 
 Present_2:
   id: 2
   student_id: 1
-  schedule_id: 5
-  teaching_id: 5
+  schedule_id: 317
+  teaching_id: 11
   present_type: excuse
   description: ''
   custo: scolaire
   created_at: 2018-04-10 06:07:20.700770000 Z
-  updated_at: 2018-04-10 06:07:20.700770000 Z
+  updated_at: 2018-05-03 15:03:08.807097000 Z
